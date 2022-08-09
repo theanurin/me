@@ -1,0 +1,25 @@
+{% assign project = include.project %}
+{% assign company = site.data.company | where: "id", project.company-ref | first %}
+<div class="project">
+	<div class="company">
+		{% for role in project.roles %}{{role | capitalize_all}}{% unless forloop.last %}, {% endunless %}{% endfor %}
+		{% if company.title %}
+		at
+		{{company.title}}
+		{% endif %}
+		<span class="time">{{project.period.from}} - {% if project.period.to %}{{project.period.to}}{% else %}Now{% endif %}</span>
+	</div> 
+{% if project.link %}
+	<span>
+		<a class="link-title" href="{{project.link}}">{{project.title}}</a>
+	</span>
+{% else %}
+	<span class="no-link-title">{{project.title}}</span>
+{% endif %}
+	<span class="description">{{project.description}}</span>
+	<ul>
+		<li class="sdk">{% for lang in project.langs %}{{lang}}{% unless forloop.last %}, {% endunless %}{% endfor %}</li>
+		<li class="sdk">{% for sdk in project.sdks %}{{sdk}}{% unless forloop.last %}, {% endunless %}{% endfor %}</li>
+		<li class="tool">{% for tool in project.tools %}{{tool}}{% unless forloop.last %}, {% endunless %}{% endfor %}</li>
+	</ul>
+</div>

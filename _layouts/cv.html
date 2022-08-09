@@ -1,0 +1,36 @@
+{% assign data = site.data %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Styles -->
+		<link rel="stylesheet" href="{{'/assets/css/cv.css' | absolute_url}}">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<!-- Meta tags -->
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+	
+		<!-- Favicon -->
+		<link rel="shortcut icon" href="favicon.ico">
+		
+		<title>{{ site.data.contact.name }} {{ page.title | default: site.title }}</title>
+	</head>
+<body>
+	<div class="container">
+{% if site.support_dark_mode %}
+		<div class="header">
+			<h1 class="title">{{site.data.contact.name}}</h1>
+			<input type="checkbox" id="switch" name="mode" class="toggle-dark"></input>
+			<label for="switch"><i id="moon" data-feather="moon" fill="var(--fg-color)"></i></label>
+		</div>
+{%endif%}
+
+		{{content}}
+	</div>
+</body>
+<script src="{{'/assets/vendor/feather.min.js' | absolute_url}}"></script>
+{% if site.support_dark_mode %}
+  <script src="{{'/assets/js/cv.js' | absolute_url}}"></script>
+{% endif %}
+<script>feather.replace();</script>
+</html>

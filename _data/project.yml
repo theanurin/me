@@ -1,0 +1,81 @@
+- title: CEX Pay
+  link: https://cexpay.io/
+  description: |
+    Bitcoin & Crypto Payment Gateway
+  period:
+    from: 2018-04
+  company-ref: com.cexiolabs
+  roles:
+  - team lead
+  - product owner
+  - project manager
+  langs:
+  - TypeScript
+  - C#
+  - Dart
+  - Python
+  - SQL
+  tools:
+  - VSCode
+  - pgAdmin
+  - RabbitMQ Cli
+  - Redis Commander
+  - GitLab (source control, CI/CD, packages, pages)
+  - GitHub (source control, CI/CD, packages, pages)
+  - JIRA
+  - Confluence
+  sdks:
+  - NodeJS (express)
+  - React, VueJS, Angular
+  - AngularDart, Flutter
+
+
+- title: Queue bursting
+#  link:
+  description: |
+    Automatization of retail sales
+  period:
+    from: 2006-11
+    to: 2008-05
+  company-ref: ua.com.systemgroup
+  roles:
+  - developer
+  langs:
+  - C#
+  - C++
+  tools:
+  - SQL Management Studio 2005
+  - Visual Studio 8
+  sdks:
+  - WinCE
+  - .NET
+  - .NET CF
+  - XML WebService
+  - SQLCE
+
+- title: Warehouse
+#  link:
+  description: |
+    Automatization of warehouse of Moscow Domodedovo Airport
+  period:
+    from: 2006-11
+    to: 2008-05
+  company-ref: ua.com.systemgroup
+  roles:
+  - developer
+  - support
+  - team lead
+  langs:
+  - C#
+  - C++
+  tools:
+  - SQL Management Studio 2005
+  - Visual Studio 7/8
+  sdks:
+  - .NET 2.0
+  - .NET CF
+  - SOAP
+  - Windows Service
+  - T-SQL
+  - Barcode
+  - RFID
