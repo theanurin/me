@@ -1,21 +1,13 @@
 ---
 layout: cv
-title: TEST
+title: Software Developer
+role: developer
 ---
-<div class="container-block">
-	<div class="sidebar">
-	{% include contact.html %}
-	</div>
 
-	<div class="main">
-		{% assign projects = site.data.project %}
-		{% if projects %}
-		<section class="projects">
-			<h2 class="title">Projects</h2>
-			{% for project in projects %}
-				{% include project.html project=project company=company %}
-			{% endfor %}
-		</section>
-		{% endif %}
-	</div>
-</div>
+Overall 10 years of work experience in Software Engineering.
+
+
+Proven skills for effective team communication and collaboration, ability to
+troubleshoot and solve complex issues, meticulous attention to details, wide experience
+in effective knowledge transfer across distributed teams, highly motivated to learn new
+up-to-date technologies.

@@ -23,7 +23,9 @@ email: me@anurin.name
 description: >- # this means to ignore newlines until "baseurl:"
   TBD
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://anurin.name" # the base hostname & protocol for your site, e.g. http://example.com
+# url: "https://anurin.name" # the base hostname & protocol for your site, e.g. http://example.com
+sources_url: "https://github.com/theanurin/me"
+theme_sources_url: "https://github.com/Stavrospanakakis/jekyll-cv"
 #twitter_username: theanurin
 #github_username:  theanurin
 support_dark_mode: true

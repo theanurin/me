@@ -1,0 +1,21 @@
+hard:
+  - TypeScript
+  - C#
+  - Dart
+  - Node.js
+  - ".NET Core"
+  - Python
+  - Redis
+  - SQL
+  - RabbitMQ
+  - "GitLab CI/CD"
+  - Bash
+
+soft:
+  - Subversion
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter

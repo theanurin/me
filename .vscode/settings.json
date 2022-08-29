@@ -18,5 +18,6 @@
 	"files.encoding": "utf8",
 	"files.eol": "\n",
 	"git.enabled": true,
-	"git.rebaseWhenSync": true
+	"git.rebaseWhenSync": true,
+	"html.format.wrapLineLength": 0
 }

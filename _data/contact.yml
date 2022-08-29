@@ -1,7 +1,27 @@
 name: Maksym Anurin
 email: maxim.anurin@gmail.com
-github: theanurin
-linkedin: theanurin
 phone: "+380991379065"
-gitlab: theanurin
-twitter: theanurin
+social:
+  - name: GitHub
+    icon: fa-github
+    url: https://github.com/theanurin
+
+  - name: "Stack Overflow"
+    icon: fa-stack-overflow
+    url: https://stackexchange.com/users/2288108/maksym-anurin
+
+  - name: Reddit
+    icon: fa-reddit
+    url: https://www.reddit.com/user/theanurin
+
+  - name: LinkedIn
+    icon: fa-linkedin
+    url: https://www.linkedin.com/in/theanurin/
+
+  - name: Twitter
+    icon: fa-twitter
+    url: https://twitter.com/theanurin
+
+  # - icon: fa-upwork
+  #   name: Upwork
+  #   url: https://www.upwork.com/freelancers/~018ef1b9d37e5a886b

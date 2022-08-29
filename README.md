@@ -19,3 +19,7 @@ https://www.anurin.name
 	bundle exec jekyll serve --host 127.0.0.1 --port 4000
 	```
 1. Browse to http://127.0.0.1:4000
+
+## References
+
+* Base Jekyll Theme - https://github.com/Stavrospanakakis/jekyll-cv

@@ -1,36 +1,135 @@
 {% assign data = site.data %}
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- Styles -->
-		<link rel="stylesheet" href="{{'/assets/css/cv.css' | absolute_url}}">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		
-		<!-- Meta tags -->
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width,initial-scale=1.0">
-	
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="favicon.ico">
-		
-		<title>{{ site.data.contact.name }} {{ page.title | default: site.title }}</title>
-	</head>
+
+<head>
+	<!-- Styles -->
+	<link rel="stylesheet" href="{{'/assets/css/cv.css' | absolute_url}}">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	<!-- Meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<title>{{ site.data.contact.name }} {{ page.title | default: site.title }}</title>
+</head>
+
 <body>
 	<div class="container">
-{% if site.support_dark_mode %}
 		<div class="header">
-			<h1 class="title">{{site.data.contact.name}}</h1>
-			<input type="checkbox" id="switch" name="mode" class="toggle-dark"></input>
-			<label for="switch"><i id="moon" data-feather="moon" fill="var(--fg-color)"></i></label>
+			<div class="header_icon">
+				<a href="{{site.sources_url}}">
+					<i class="fa fa-file-code-o" aria-hidden="true"></i>
+				</a>
+			</div>
+			<div class="header_icon">
+				<a href="{{site.theme_sources_url}}">
+					<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+				</a>
+			</div>
+			{% if site.support_dark_mode %}
+			<div class="header_icon">
+				<input type="checkbox" id="mode-switch-checkbox" class="toggle-dark"></input>
+				<label for="mode-switch-checkbox"><i id="mode-switch-icon" class="fa fa-moon-o" aria-hidden="true"></i></label>
+			</div>
+			{%endif%}
 		</div>
-{%endif%}
 
-		{{content}}
+		<div class="container-block">
+			<div class="sidebar">
+				<section class="name">
+					<img src="assets/img/cv/photo.jpeg" alt="Photo">
+					<h1>{{site.data.contact.name}}</h1>
+				</section>
+
+				<br style="clear:both" />
+
+				{% assign contact = site.data.contact %}
+				{% if contact %}
+				<section class="contact">
+					<div class="title">Contact</div>
+
+					{% if contact.email %}
+					<div class="contact-item">
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+						<a href="mailto:{{contact.email}}">
+							{{contact.email}}
+						</a>
+					</div>
+					{% endif %}
+				
+					{% if contact.phone %}
+					<div class="contact-item">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<a href="tel:{{contact.phone}}">
+							{{contact.phone}}
+						</a>
+					</div>
+					{% endif %}
+				
+					{% if contact.social %}
+					{% for socialItem in contact.social %}
+					<div class="contact-item">
+						<i class="fa {{socialItem.icon}}" aria-hidden="true"></i>
+						<a href="{{socialItem.url}}">
+							{{socialItem.name}}
+						</a>
+					</div>
+					{% endfor %}
+					{% endif %}
+				</section>
+				{% endif %}
+				
+				{% assign hardskills = site.data.skills.hard %}
+				{% if hardskills %}
+				<section>
+					<div class="title">Hard Skills</div>
+					{% for hardskill in hardskills %}
+					<div class="skill">{{hardskill}}</div>
+					{% endfor %}
+				</section>
+				{% endif %}
+
+				{% assign softskills = site.data.skills.soft %}
+				{% if softskills %}
+				<section>
+					<div class="title">Soft Skills</div>
+					{% for softskill in softskills %}
+					<div class="skill">{{softskill}}</div>
+					{% endfor %}
+				</section>
+				{% endif %}
+				<br style="clear:both" />
+			</div>
+		
+			<div class="main">
+				<section class="summary">
+					<h2 class="title">Summary</h2>
+					<span>
+						{{content}}
+					</span>
+				</section>
+		
+				{% assign projects = site.data.project %}
+				{% if projects %}
+				<section class="projects">
+					<h2 class="title">Professional Experience</h2>
+					{% for project in projects %}
+						{%if project.roles contains page.role %}
+							{% include project.html project=project company=company %}
+						{%endif%}
+					{% endfor %}
+				</section>
+				{% endif %}
+			</div>
+		</div>
 	</div>
 </body>
-<script src="{{'/assets/vendor/feather.min.js' | absolute_url}}"></script>
 {% if site.support_dark_mode %}
-  <script src="{{'/assets/js/cv.js' | absolute_url}}"></script>
+<script src="{{'/assets/js/cv.js' | absolute_url}}"></script>
 {% endif %}
-<script>feather.replace();</script>
+
 </html>

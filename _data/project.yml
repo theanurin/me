@@ -7,6 +7,44 @@
   company-ref: com.cexiolabs
   roles:
   - team lead
+  - developer
+  - devops
+  langs:
+  - TypeScript
+  - C#
+  - Dart
+  - Python
+  - SQL
+  tools:
+  - VSCode
+  - pgAdmin
+  - RabbitMQ CLI
+  - Redis Commander
+  - GitLab
+  - GitHub
+  - JIRA
+  - Confluence
+  sdks:
+  - NodeJS
+  - PostgreSQL
+  - Redis
+  - RabbitMQ
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter
+
+- title: CEX Pay
+  link: https://cexpay.io/
+  description: |
+    Bitcoin & Crypto Payment Gateway
+  period:
+    from: 2018-04
+  company-ref: com.cexiolabs
+  roles:
+  - team lead
   - product owner
   - project manager
   langs:
@@ -18,16 +56,289 @@
   tools:
   - VSCode
   - pgAdmin
-  - RabbitMQ Cli
+  - RabbitMQ CLI
   - Redis Commander
-  - GitLab (source control, CI/CD, packages, pages)
-  - GitHub (source control, CI/CD, packages, pages)
+  - GitLab
+  - GitHub
   - JIRA
   - Confluence
   sdks:
-  - NodeJS (express)
-  - React, VueJS, Angular
-  - AngularDart, Flutter
+  - NodeJS
+  - PostgreSQL
+  - Redis
+  - RabbitMQ
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter
+
+- title: CEX Pay
+  link: https://cexpay.io/
+  description: |
+    Bitcoin & Crypto Payment Gateway
+  period:
+    from: 2018-04
+  company-ref: com.cexiolabs
+  roles:
+  - team lead
+  - product owner
+  - project manager
+  langs:
+  - TypeScript
+  - C#
+  - Dart
+  - Python
+  - SQL
+  tools:
+  - VSCode
+  - pgAdmin
+  - RabbitMQ CLI
+  - Redis Commander
+  - GitLab
+  - GitHub
+  - JIRA
+  - Confluence
+  sdks:
+  - NodeJS
+  - PostgreSQL
+  - Redis
+  - RabbitMQ
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter
+
+- title: CEX Pay
+  link: https://cexpay.io/
+  description: |
+    Bitcoin & Crypto Payment Gateway
+  period:
+    from: 2018-04
+  company-ref: com.cexiolabs
+  roles:
+  - team lead
+  - product owner
+  - project manager
+  langs:
+  - TypeScript
+  - C#
+  - Dart
+  - Python
+  - SQL
+  tools:
+  - VSCode
+  - pgAdmin
+  - RabbitMQ CLI
+  - Redis Commander
+  - GitLab
+  - GitHub
+  - JIRA
+  - Confluence
+  sdks:
+  - NodeJS
+  - PostgreSQL
+  - Redis
+  - RabbitMQ
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter
+
+- title: CEX Pay
+  link: https://cexpay.io/
+  description: |
+    Bitcoin & Crypto Payment Gateway
+  period:
+    from: 2018-04
+  company-ref: com.cexiolabs
+  roles:
+  - team lead
+  - product owner
+  - project manager
+  langs:
+  - TypeScript
+  - C#
+  - Dart
+  - Python
+  - SQL
+  tools:
+  - VSCode
+  - pgAdmin
+  - RabbitMQ CLI
+  - Redis Commander
+  - GitLab
+  - GitHub
+  - JIRA
+  - Confluence
+  sdks:
+  - NodeJS
+  - PostgreSQL
+  - Redis
+  - RabbitMQ
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter
+
+- title: CEX Pay
+  link: https://cexpay.io/
+  description: |
+    Bitcoin & Crypto Payment Gateway
+  period:
+    from: 2018-04
+  company-ref: com.cexiolabs
+  roles:
+  - team lead
+  - product owner
+  - project manager
+  langs:
+  - TypeScript
+  - C#
+  - Dart
+  - Python
+  - SQL
+  tools:
+  - VSCode
+  - pgAdmin
+  - RabbitMQ CLI
+  - Redis Commander
+  - GitLab
+  - GitHub
+  - JIRA
+  - Confluence
+  sdks:
+  - NodeJS
+  - PostgreSQL
+  - Redis
+  - RabbitMQ
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter
+
+- title: CEX Pay
+  link: https://cexpay.io/
+  description: |
+    Bitcoin & Crypto Payment Gateway
+  period:
+    from: 2018-04
+  company-ref: com.cexiolabs
+  roles:
+  - team lead
+  - product owner
+  - project manager
+  langs:
+  - TypeScript
+  - C#
+  - Dart
+  - Python
+  - SQL
+  tools:
+  - VSCode
+  - pgAdmin
+  - RabbitMQ CLI
+  - Redis Commander
+  - GitLab
+  - GitHub
+  - JIRA
+  - Confluence
+  sdks:
+  - NodeJS
+  - PostgreSQL
+  - Redis
+  - RabbitMQ
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter
+
+- title: CEX Pay
+  link: https://cexpay.io/
+  description: |
+    Bitcoin & Crypto Payment Gateway
+  period:
+    from: 2018-04
+  company-ref: com.cexiolabs
+  roles:
+  - team lead
+  - product owner
+  - project manager
+  langs:
+  - TypeScript
+  - C#
+  - Dart
+  - Python
+  - SQL
+  tools:
+  - VSCode
+  - pgAdmin
+  - RabbitMQ CLI
+  - Redis Commander
+  - GitLab
+  - GitHub
+  - JIRA
+  - Confluence
+  sdks:
+  - NodeJS
+  - PostgreSQL
+  - Redis
+  - RabbitMQ
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter
+
+- title: CEX Pay
+  link: https://cexpay.io/
+  description: |
+    Bitcoin & Crypto Payment Gateway
+  period:
+    from: 2018-04
+  company-ref: com.cexiolabs
+  roles:
+  - team lead
+  - product owner
+  - project manager
+  langs:
+  - TypeScript
+  - C#
+  - Dart
+  - Python
+  - SQL
+  tools:
+  - VSCode
+  - pgAdmin
+  - RabbitMQ CLI
+  - Redis Commander
+  - GitLab
+  - GitHub
+  - JIRA
+  - Confluence
+  sdks:
+  - NodeJS
+  - PostgreSQL
+  - Redis
+  - RabbitMQ
+  - MongoDB
+  - React
+  - VueJS
+  - Angular
+  - AngularDart
+  - Flutter
 
 
 - title: Queue bursting
