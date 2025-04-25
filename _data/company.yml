@@ -1,10 +1,83 @@
-- id: ua.com.systemgroup
-  title: System Group
+- id: company.evo
+  title:
+    en-US: EVO Company
+    uk-UA: EVO – українська продуктова IT-компанія
   location: Kyiv, Ukraine
-  url: http://systemgroup.com.ua
+  url: https://evo.company/
+
+- id: com.algsystems
+  title:
+    en-US: ALG Systems
+    uk-UA: ALG Systems
+  location: Kyiv, Ukraine
+  url: http://algsystems.com/
+
+- id: com.intro-pro
+  title:
+    en-US: IntroPro
+    uk-UA: IntroPro
+  location: Kyiv, Ukraine
+  url: http://www.intro-pro.com
 
 - id: com.cexiolabs
-  title: CEX.IO.LABS
+  title:
+    en-US: CEX.IO.LABS
+    uk-UA: CEX.IO.LABS
   location: Kyiv, Ukraine
   url: https://cexiolabs.com/
 
+- id: com.luxoft
+  title:
+    en-US: Luxoft - A leading IT company for cutting-edge software engineering and digital transformation services
+    uk-UA: Luxoft - A leading IT company for cutting-edge software engineering and digital transformation services
+  location: Kyiv, Ukraine
+  url: https://www.luxoft.com/
+
+- id: com.mackiev
+  title:
+    en-US: Software MacKiev (SMK)
+    uk-UA: Software MacKiev (SMK)
+  location: Kyiv, Ukraine
+  url: http://www.mackiev.com/kidpix
+
+- id: com.softheme
+  title:
+    en-US: Softheme
+    uk-UA: Softheme
+  location: Kyiv, Ukraine
+  url: https://www.softheme.com/
+
+- id: com.upwork
+  title:
+    en-US: Freelancer at UpWork
+    uk-UA: Freelancer at UpWork
+  location: Worldwide
+  url: http://www.upwork.com/o/profiles/users/_~018ef1b9d37e5a886b/
+
+- id: net.finport
+  title:
+    en-US: Finport Technologies
+    uk-UA: Finport Technologies
+  location: Kyiv, Ukraine
+  url: https://www.finport.net/
+
+- id: ua.com.evoplay
+  title:
+    en-US: Evoplay - Complete B2B solutions for the online gaming industry
+    uk-UA: Evoplay - Комплексні B2B рішення для індустрії онлайн ігор
+  location: Kyiv, Ukraine
+  url: https://evoplay.com.ua/
+
+- id: ua.com.systemgroup
+  title:
+    en-US: System Group
+    uk-UA: System Group
+  location: Kyiv, Ukraine
+  url: http://systemgroup.com.ua
+
+- id: ua.novapay
+  title:
+    en-US: NovaPay – це різноманіття продуктів і сервісів для вирішення фінансових завдань online та offline
+    uk-UA: NovaPay – це різноманіття продуктів і сервісів для вирішення фінансових завдань online та offline
+  location: Kyiv, Ukraine
+  url: https://novapay.ua/

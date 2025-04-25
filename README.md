@@ -27,3 +27,4 @@ git submodule update --init
 
 - My Jekyll Theme - [jekyll-theme-anurina](https://github.com/theanurin/jekyll-theme-anurina)
 - Base Jekyll Theme - https://github.com/Stavrospanakakis/jekyll-cv
+- Wikipedia [Résumé](https://en.wikipedia.org/wiki/R%C3%A9sum%C3%A9)
