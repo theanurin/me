@@ -1,9 +1,3 @@
----
-layout: cv
-title: Software Developer
-role: developer
----
-
 Overall 10 years of work experience in Software Engineering.
 
 

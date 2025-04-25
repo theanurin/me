@@ -1,25 +1,29 @@
-# Max Anurin's website
-https://www.anurin.name
+# Content Of My Landing Site
+
+See [https://www.anurin.name](https://www.anurin.name)
 
 ## Development
 
-### Jekyll via Docker
-1. Build the site and make it available on a local server inside [Docker](https://www.docker.com/)
-  ```bash
-  docker run --interactive --rm --volume ${PWD}:/data --publish 4000:4000 zxteamorg/jekyll:20220717
-  ```
-1. Browse to http://127.0.0.1:4000
+```shell
+docker run --interactive --rm --publish 127.0.0.1:4000:4000 --publish 127.0.0.1:4001:4001 --workdir "${PWD}" \
+  --mount type=bind,source="${PWD}",target="${PWD}" --volume name-anurin-me-bundle-data:"${PWD}/vendor/bundle" \
+  theanurin/jekyll:4.3.4-02
+```
 
-### Jekyll local
-1. Install Jekyll. See https://jekyllrb.com/docs/
-1. Build the site and make it available on a local server
-	```bash
-	cd docs
-	bundle install
-	bundle exec jekyll serve --host 127.0.0.1 --port 4000
-	```
-1. Browse to http://127.0.0.1:4000
+Browse to http://127.0.0.1:4000
+
+## Setup Development Environment
+
+```shell
+git clone -b dev git@github.com:theanurin/me.git theanurin-me
+
+cd theanurin-me
+
+git submodule update --init
+```
+
 
 ## References
 
-* Base Jekyll Theme - https://github.com/Stavrospanakakis/jekyll-cv
+- My Jekyll Theme - [jekyll-theme-anurina](https://github.com/theanurin/jekyll-theme-anurina)
+- Base Jekyll Theme - https://github.com/Stavrospanakakis/jekyll-cv

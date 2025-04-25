@@ -1,0 +1,4 @@
+[submodule ".submodules/jekyll-theme-anurina"]
+	path = .submodules/jekyll-theme-anurina
+	url = git@github.com:theanurin/jekyll-theme-anurina.git
+	branch = mvp

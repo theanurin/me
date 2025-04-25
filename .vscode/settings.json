@@ -14,10 +14,14 @@
 	"editor.wordWrapColumn": 1024,
 	"files.autoSave": "afterDelay",
 	"files.autoSaveDelay": 5000,
-	"files.insertFinalNewline": true,
+	"files.insertFinalNewline": false,
 	"files.encoding": "utf8",
 	"files.eol": "\n",
 	"git.enabled": true,
 	"git.rebaseWhenSync": true,
-	"html.format.wrapLineLength": 0
+	"html.format.wrapLineLength": 0,
+	"cSpell.words": [
+		"anurina",
+		"theanurin"
+	]
 }

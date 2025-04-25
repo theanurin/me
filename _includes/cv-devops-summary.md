@@ -1,9 +1,3 @@
----
-layout: cv
-title: DevOps
-role: devops
----
-
 Overall 10 years of work experience in Software Engineering.
 
 
