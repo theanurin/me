@@ -1,5 +1,6 @@
-{% assign project = include.project %}
-{% assign company = site.data.company | where: "id", project.company-ref | first %}
+{%- assign project = include.project -%}
+{%- assign page_language = page.collection | default: site.anurina.locale.default | default: 'en-US' -%}
+{%- assign company = site.data.company | where: "id", project.company-ref | first -%}
 <div class="project">
 	<div class="company">
 		<span>
@@ -8,10 +9,10 @@
 			at
 			{% if company.url %}
 			<a href="{{company.url}}">
-				{{company.title}}
+				{{company.title[page_language]}}
 			</a>
 			{% else %}
-			{{company.title}}
+			{{company.title[page_language]}}
 			{% endif %}
 			{% endif %}
 		</span>
