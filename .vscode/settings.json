@@ -1,6 +1,6 @@
 {
 	"editor.detectIndentation": false,
-	"editor.insertSpaces": false,
+	"editor.insertSpaces": true,
 	"editor.lineNumbers": "on",
 	"editor.renderWhitespace": "all",
 	"editor.rulers": [

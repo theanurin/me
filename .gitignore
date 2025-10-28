@@ -7,7 +7,7 @@ _site
 .DS_Store
 
 # FreeCAD files
-.FCBak
-.lck
+*.FCBak
+*.lck
 
 *.local*
