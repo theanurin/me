@@ -3,4 +3,11 @@ _site
 .jekyll-cache
 .jekyll-metadata
 
+# MacOS files
+.DS_Store
+
+# FreeCAD files
+.FCBak
+.lck
+
 *.local*
