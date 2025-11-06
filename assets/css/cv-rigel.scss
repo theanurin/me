@@ -72,6 +72,23 @@ body {
 				div {
 					text-align: left;
 				}
+				.title {
+					font-weight: bold;
+					text-transform: uppercase;
+					display: inline-block;
+					position: relative;
+					padding-bottom: 3px;
+					font-size: 16px;
+					&::after {
+						content: "";
+						position: absolute;
+						left: 0;
+						bottom: 0;
+						width: 100%;
+						height: 1px;
+						background-color: #00629b;
+					}
+				}
 			}
 		}
 	}
@@ -128,8 +145,8 @@ body {
 }
 
 :root {
-	--bg-color: #aaaaaa;
-	--bg-color-cv: #cccccc;
+	--bg-color: #f1f1f1;
+	--bg-color-cv: #ffffff;
 	--fg-color: #00629b;
 	--fg-color-icon: #023b5b;
 	--fg-color-body: #5e6369;
@@ -151,6 +168,21 @@ body {
 
 		h2 {
 			@include header;
+			font-weight: bold;
+			text-transform: uppercase;
+			display: inline-block;
+			position: relative;
+			padding-bottom: 3px;
+			font-size: 16px;
+			&::after {
+				content: "";
+				position: absolute;
+				left: 0;
+				bottom: 0;
+				width: 100%;
+				height: 1px;
+				background-color: #00629b;
+			}
 		}
 	}
 }
@@ -197,6 +229,23 @@ body {
 
 	.skill {
 		@include body-text;
+	}
+	.title {
+		font-weight: bold;
+		text-transform: uppercase;
+		display: inline-block;
+		position: relative;
+		padding-bottom: 3px;
+		font-size: 16px;
+		&::after {
+			content: "";
+			position: absolute;
+			left: 0;
+			bottom: 0;
+			width: 100%;
+			height: 1px;
+			background-color: #00629b;
+		}
 	}
 }
 
@@ -275,3 +324,14 @@ body {
 		}
 	}
 }
+
+
+
+
+// @import "includes/career-profile";
+// @import "includes/education";
+// @import "includes/languages";
+// @import "includes/skills";
+// @import "includes/experience";
+// @import "includes/publications";
+// @import "includes/volunteering";
