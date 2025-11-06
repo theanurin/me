@@ -1,0 +1,3 @@
+- postgresql vs mssql?
+- sql indexes?
+- knowledge of TypeScript 1..10?
