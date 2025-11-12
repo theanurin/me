@@ -1,7 +1,5 @@
-_site
-.sass-cache
-.jekyll-cache
-.jekyll-metadata
+dist/
+node_modules/
 
 # MacOS files
 .DS_Store
@@ -11,3 +9,4 @@ _site
 *.lck
 
 *.local*
+.DS_Store
