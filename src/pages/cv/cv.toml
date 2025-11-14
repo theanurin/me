@@ -1,0 +1,5 @@
+layout = "layouts/cv.html"
+#
+# Optional filter by role
+#
+#role = "developer"

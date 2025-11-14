@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="{{ page.data.lang | default: site.defaultLocale }}">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>{{ title | default: site.name }}</title>
+    <meta name="description" content="{{ description | default: site.name }}" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        {% if site.defaultLocale == 'uk' %}
+          <a href="/uk/">{{ site.name }}</a>
+        {% else %}
+          <a href="/{{ site.defaultLocale }}/">{{ site.name }}</a>
+        {% endif %}
+        <a href="/uk/blog/">Blog (UK)</a>
+        <a href="/en/blog/">Blog (EN)</a>
+      </nav>
+    </header>
+
+    <main>
+      {{ content }}
+    </main>
+
+    <footer>
+      <small>&copy; {{ currentYear }} — {{ site.name }}</small>
+    </footer>
+  </body>
+</html>

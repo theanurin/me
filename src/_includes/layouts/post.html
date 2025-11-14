@@ -1,0 +1,31 @@
+---
+layout: layouts/base.html
+---
+<article>
+  <h1>{{ title }}</h1>
+  <h2>{{ cover }}</h2>
+  <p><small>{% if page.data.lang == 'en' %}{{ date | dateLocale: 'en-US' }}{% else %}{{ date | dateLocale: 'uk-UA' }}{% endif %}</small></p>
+  
+  {% if tags %}
+    <ul class="tags">
+    {% for tag in tags %}
+      <li>{{ tag }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+  
+  {% if cover %}
+    <img src="{{ cover }}" alt="{{ title }} cover" />
+  {% endif %}
+  <div>
+    {{ content }}
+  </div>
+
+  {% if page.data.slug %}
+    {% if page.data.lang == 'uk' %}
+      <p><a href="/en/blog/{{ page.data.slug }}/">View English version</a></p>
+    {% else %}
+      <p><a href="/uk/blog/{{ page.data.slug }}/">Переглянути українську версію</a></p>
+    {% endif %}
+  {% endif %}
+</article>

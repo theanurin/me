@@ -1,0 +1,38 @@
+{%- assign project = include.project -%}
+{%- assign company_id = project.company-ref | default: '' -%}
+{%- assign page_language = lang | default: site.locale.default | default: 'en-US' -%}
+{%- assign company = info.company | where: "id", company_id | first -%}
+{%- assign company_title = company.title -%}
+<div class="project">
+	<div class="company">
+		<span>
+			{% for role in project.roles %}{{role | capitalize_all}}{% unless forloop.last %}, {% endunless %}{% endfor %}
+			{% if company %}
+			at
+			{% if company.url %}
+			<a href="{{company.url}}">
+				{{company_title[page_language]}}
+			</a>
+			{% else %}
+			{{company_title[page_language]}}
+			{% endif %}
+			{% endif %}
+		</span>
+		<span class="time">{{project.period.from}} - {% if project.period.to %}{{project.period.to}}{% else %}Now{% endif %}</span>
+	</div>
+	{% if project.link %}
+	<span>
+		<a href="{{project.link}}">{{project.title}}</a>
+	</span>
+	{% else %}
+	<span>{{project.title}}</span>
+	{% endif %}
+	<span class="description">{{project.description}}</span>
+	<ul>
+		<li class="sdk">{% for lang in project.langs %}{{lang}}{% unless forloop.last %}, {% endunless %}{% endfor %}
+		</li>
+		<li class="sdk">{% for sdk in project.sdks %}{{sdk}}{% unless forloop.last %}, {% endunless %}{% endfor %}</li>
+		<li class="tool">{% for tool in project.tools %}{{tool}}{% unless forloop.last %}, {% endunless %}{% endfor %}
+		</li>
+	</ul>
+</div>
