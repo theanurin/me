@@ -1,36 +1,43 @@
 {
-	"editor.detectIndentation": false,
-	"editor.insertSpaces": true,
-	"editor.lineNumbers": "on",
-	"editor.renderWhitespace": "all",
-	"editor.rulers": [
-		80,
-		160,
-		240,
-		320
-	],
-	"editor.trimAutoWhitespace": true,
-	"editor.useTabStops": true,
-	"editor.wordWrapColumn": 1024,
-	"files.autoSave": "afterDelay",
-	"files.autoSaveDelay": 5000,
-	"files.insertFinalNewline": false,
-	"files.encoding": "utf8",
-	"files.eol": "\n",
-	"git.enabled": true,
-	"git.rebaseWhenSync": true,
-	"html.format.wrapLineLength": 0,
-	"cSpell.words": [
-		"algsystems",
-		"anurina",
-		"cexiolabs",
-		"evoplay",
-		"luxoft",
-		"mackiev",
-		"novapay",
-		"softheme",
-		"systemgroup",
-		"theanurin",
-		"upwork"
-	]
+    "editor.detectIndentation": false,
+    "editor.insertSpaces": true,
+    "editor.lineNumbers": "on",
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80,
+        160,
+        240,
+        320
+    ],
+    "editor.trimAutoWhitespace": true,
+    "editor.useTabStops": true,
+    "editor.wordWrapColumn": 1024,
+    "files.associations": {
+        "*.nc": "gcode"
+    },
+    "files.autoSave": "afterDelay",
+    "files.autoSaveDelay": 5000,
+    "files.insertFinalNewline": false,
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    "git.enabled": true,
+    "git.rebaseWhenSync": true,
+    "html.format.wrapLineLength": 0,
+    "cSpell.words": [
+        "algsystems",
+        "anurina",
+        "cexiolabs",
+        "evoplay",
+        "luxoft",
+        "mackiev",
+        "novapay",
+        "softheme",
+        "systemgroup",
+        "theanurin",
+        "upwork"
+    ],
+    "[gcode]": {
+        // Not used; superseded by .editorconfig. Kept as a reminder.
+        "files.eol": "\r\n",
+    }
 }
