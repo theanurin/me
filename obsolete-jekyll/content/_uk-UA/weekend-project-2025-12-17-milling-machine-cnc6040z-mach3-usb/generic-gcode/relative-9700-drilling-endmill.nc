@@ -39,13 +39,13 @@ O9700 (sub-program)
 G0 Z2
 G0 X[[#1 - #2] / 2] Y0
 G0 Z-2
-M98 P9701 L[#4 / #3]                          (call sub-program few times)
-G3 X0 Y0 I[0 - [[#1 - #2] / 2]] J0 F[0 + #9]  (360 by circle without Z inset)
-G0 Z[[#4 / #3] * #3] F[0 + #8]                (go to original Z position)
+M98 P9701 L[#4 / #3]                                    (call sub-program few times)
+G3 X0 Y0 I[0 - [[#1 - #2] / 2]] J0 F[0 + #9]            (360 by circle without Z inset)
+G0 Z[[#4 / #3] * #3] F[0 + #8]                          (go to original Z position)
 G0 Z2
 G0 X[0 - [[#1 - #2] / 2]] Y0
 G0 Z-2
-M99                                           ; return from sub-program
+M99                                                     ; return from sub-program
 
 O9701 (sub-program)
 G3 X0 Y0 Z[0 - #3] I[0 - [[#1 - #2] / 2]] J0 F[0 + #9]  (helical interpolation)

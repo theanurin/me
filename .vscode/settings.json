@@ -39,5 +39,6 @@
     "[gcode]": {
         // Not used; superseded by .editorconfig. Kept as a reminder.
         "files.eol": "\r\n",
+        "files.encoding": "iso88591"
     }
 }
