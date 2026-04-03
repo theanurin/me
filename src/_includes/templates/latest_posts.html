@@ -1,0 +1,21 @@
+{%- assign posts_collection = include.posts_collection -%}
+{%- if locale -%}
+{%- assign localized_posts_collection = posts_collection | where_exp: "item", "item[locale] != nil" -%}
+<ul>
+  {% for post_collection_item in localized_posts_collection limit:5 -%}
+    {%- assign post_data = post_collection_item[locale].data -%}
+    {%- assign page = post_collection_item[locale].page -%}
+    <li>
+      <article>
+      <span class="post-meta">{{ post_collection_item.postDate | dateLocale: locale }}</span>
+      <h3>
+        <a class="post-link" href="{{ post_data.permalink }}">{{ post_data.title | escape }}</a>
+      </h3>
+      {{ page.excerpt }}
+      </article>
+    </li>
+  {% endfor %}
+</ul>
+{%- else -%}
+<p>Unable to render latest posts due to missing "locale" variable in current context.</p>
+{%- endif -%}

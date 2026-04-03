@@ -357,14 +357,16 @@ eleventyExcludeFromCollections: true
 
 Аналогічно для en: `src/en/rss.njk` з `permalink: "/en/rss.xml"` і `collections.posts_en`.
 
-_site.json (src/_data/site.json)
-```json
-{
-  "name": "YOUR NAME",
-  "url": "https://YOUR-DOMAIN",
-  "defaultLocale": "uk",
-  "locales": ["uk", "en"]
-}
+_site.yaml (src/_data/site.yaml)
+```yaml
+"name": "YOUR NAME"
+"url": "https://YOUR-DOMAIN"
+"defaultLocale": "uk-UA"
+"locales":
+  "uk-UA":
+    "title": "Українська"
+  "en-US":
+    "title": "English"
 ```
 
 ---

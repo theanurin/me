@@ -1,0 +1,209 @@
+// $border-primary-color: #000000;
+
+// // @import
+// //   "anurina/skins/{{ site.anurina.skin | default: 'classic' }}",
+// //   "anurina/initialize";
+// $content-width:    800px !default;
+// $spacing-unit:     30px !default;
+// $on-palm:          600px !default;
+// $on-laptop:        800px !default;
+// $on-medium:        $on-palm !default;
+// $on-large:         $on-laptop !default;
+// //
+
+// .main-content {
+//   margin-top: 200px;
+//   margin-bottom: 100px;
+// }
+
+// .background-header, .background-footer {
+//   margin: 0;
+//   padding: 0;
+//   position: fixed;
+//   width: 100%;
+//   background-repeat: repeat-x;
+//   z-index: -1;
+// }
+
+// .background-header {
+//   top: 0;
+//   height: 256px;
+//   background-image: url('{{ "/assets/image/bg-header.png" | relative_url }}');
+// }
+
+// .background-footer {
+//   bottom: 0;
+//   height: 192px;
+//   background-image: url('{{ "/assets/image/bg-footer.png" | relative_url }}');
+// }
+
+// .body-outer {
+//   display: table;
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   height: 100%;
+//   width: 100%;
+// }
+
+// .body-middle {
+//   display: table-cell;
+//   vertical-align: middle;
+// }
+
+// .body-content {
+//   justify-content: center;
+//   margin-top: 128px;
+//   margin-bottom: 32px;
+//   background: rgba(255, 255, 255, 0.96);
+//   margin-left: auto;
+//   margin-right: auto;
+//   max-width: calc(#{$content-width} - (#{$spacing-unit}));
+//   padding-right: $spacing-unit * .5;
+//   padding-left: $spacing-unit * .5;
+//   z-index: 0;
+
+//   @media screen and (min-width: $on-large) {
+//     max-width: calc(#{$content-width} - (#{$spacing-unit} * 2));
+//     padding-right: $spacing-unit;
+//     padding-left: $spacing-unit;
+//   }
+// }
+
+// .site-header {
+//   background-color: white;
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   transition: top 0.6s ease-in-out; 
+// }
+
+// .site-header.hidden {
+//   top: -($spacing-unit * 1.865);
+// }
+
+// .projects {
+
+//   &-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//     position: relative;
+//   }
+
+//   &-item {
+//     border: 1px solid $border-primary-color;
+//     width: calc((100% / 3) - 1rem);
+//     margin-right: 1rem;
+//     margin-bottom: 1rem;
+//     background-color: rgba(255, 255, 255, 0.9);
+
+//     & a {
+//       padding: 0 0.5rem 0 0.5rem;
+//     }
+
+//     & p {
+//       padding: 0 0.5rem 0 0.5rem;
+//       font-size: 0.8rem;
+//       text-align: justify;
+//     }
+
+//     & img {
+//       width: 100%;
+//     }
+
+//     &:nth-child(3n) {
+//       margin-right: 0;
+//     }
+//   }
+// }
+
+
+// $lm-text-color:            #111111 !default;
+// $lm-link-base-color:       #2a7ae2 !default;
+// $lm-link-visited-color:    darken($lm-link-base-color, 15%) !default;
+// $lm-link-hover-color:      $lm-text-color !default;
+
+// $lm-brand-color:           #828282 !default;
+// $lm-brand-color-light:     lighten($lm-brand-color, 40%) !default;
+// $lm-brand-color-dark:      darken($lm-brand-color, 25%) !default;
+
+// $lm-border-color-01:       $lm-brand-color-light !default;
+// $lm-border-color-02:       lighten($lm-brand-color, 35%) !default;
+// $lm-border-color-03:       $lm-brand-color-dark !default;
+
+// $border-color-01: $lm-border-color-01;
+// $border-color-02: $lm-border-color-02;
+// $border-color-03: $lm-border-color-03;
+
+// $link-base-color: $lm-link-base-color;
+// $link-visited-color: $lm-link-visited-color;
+// $link-hover-color: $lm-link-hover-color;
+
+
+
+// /**
+//  * Links
+//  */
+// a {
+//   color: $link-base-color;
+//   text-decoration: none;
+
+//   &:visited {
+//     color: $link-visited-color;
+//   }
+
+//   &:hover {
+//     color: $link-hover-color;
+//     text-decoration: underline;
+//   }
+
+//   .locales-list &:hover {
+//     text-decoration: none;
+
+//     .username {
+//       text-decoration: underline;
+//     }
+//   }
+// }
+
+// .locales-list {
+//   list-style: none;
+//   margin-left: 0;
+// }
+
+// .locales-list {
+//   display: table;
+//   margin: 0 auto;
+//   li {
+//     float: left;
+//     margin: 1px 2px 1px 0;
+//     &:last-of-type { margin-right: 0 }
+//     a {
+//       display: block;
+//       padding: 1px 2px;
+//       border: 1px solid $border-color-01;
+//       &:hover { border-color: $border-color-02 }
+//     }
+//   }
+// }
+
+.contact-icon {
+    margin: 0.25em;
+    font-size: 32px;
+    vertical-align: middle;
+}
+
+.contact-icon-viber {
+    background-color: #7360f2;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0.5em;
+    padding: 0.4em;
+    width: 36px;
+    height: 36px;
+}
+
+.contact-icon-viber img {
+    vertical-align: unset;
+}

@@ -1,11 +1,12 @@
 ---
 layout: layouts/base.html
-title: "Головна"
+title: "Home"
 ---
 
 <h1>{{ title }}</h1>
 <h2>{{ locale }}</h2>
-<p>Привіт — це тестова стартова сторінка (uk).</p>
+<p>Welcome — this is a test home page (en).</p>
 
-<h2>Останні пости</h2>
+<h2>Latest posts</h2>
 {% include 'templates/latest_posts.html', posts_collection: collections.posts %}
+
