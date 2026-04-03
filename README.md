@@ -29,3 +29,8 @@ git submodule update --init
 - Base Jekyll Theme - https://github.com/Stavrospanakakis/jekyll-cv
 - [https://github.com/pavlovalor](Pavló Valor)
 - Wikipedia [Résumé](https://en.wikipedia.org/wiki/R%C3%A9sum%C3%A9)
+
+
+https://roadmap.sh/backend
+https://roadmap.sh/linux
+https://roadmap.sh/devops

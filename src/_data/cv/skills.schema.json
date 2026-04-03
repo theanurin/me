@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skills",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "core_expertise",
+    "soft",
+    "tools",
+    "languages",
+    "programming",
+    "backend",
+    "frontend"
+  ],
+  "properties": {
+    "core_expertise": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/lingualItem"
+      }
+    },
+    "soft": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/lingualItem"
+      }
+    },
+    "tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/lingualItem"
+      }
+    },
+    "programming": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "backend": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "frontend": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "$defs": {
+    "lingualItem": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en-GB", "uk-UA"],
+      "properties": {
+        "en-GB": {
+          "type": "string"
+        },
+        "uk-UA": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}

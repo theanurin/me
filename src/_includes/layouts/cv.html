@@ -1,11 +1,11 @@
-{% assign role = role | default: '' %}
+{%- assign contact = contact | required -%}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 	<!-- Styles -->
 	<link rel="stylesheet" href="/assets/css/cv.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="/vendor/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" />
 
 	<!-- Meta tags -->
 	<meta charset="utf-8">
@@ -14,120 +14,214 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="favicon.ico">
 
-	<title>{{ info.contact.name }} {{ title | default: site.title }}</title>
+	{%- render 'templates/umami_script.html', umami: site.analytics.umami %}
+
+	<title>{{ contact.name[locale] | required }} {{ title | default: site.title }}</title>
 </head>
 
 <body>
 	<div class="container">
 		<div class="header">
-			<div class="header_icon">
-				<a href="{{site.sources_url}}">
-					<i class="fa fa-file-code-o" aria-hidden="true"></i>
-				</a>
-			</div>
-			<div class="header_icon">
-				<a href="{{site.theme_sources_url}}">
-					<i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-				</a>
-			</div>
 			{% if site.support_dark_mode %}
 			<div class="header_icon">
 				<input type="checkbox" id="mode-switch-checkbox" class="toggle-dark"></input>
 				<label for="mode-switch-checkbox"><i id="mode-switch-icon" class="fa fa-moon-o" aria-hidden="true"></i></label>
 			</div>
 			{%endif%}
+			<div class="header_icon">
+				<input type="checkbox" id="print-button" onclick="window.print(); return false;"></input>
+				<label for="print-button"><i id="mode-switch-icon" class="fa fa-print" aria-hidden="true"></i></label>
+			</div>
 		</div>
 
 		<div class="container-block">
 			<div class="sidebar">
+				{% assign socialProfiles = socialProfiles | required %}
 				<section class="name">
-					<img src="/assets/img/cv/photo.jpeg" alt="Photo">
-					<h1>{{info.contact.name}}</h1>
+					<img src="/assets/img/cv/ava2026.jpg" alt="Photo">
+					<h1>{{ contact.name[locale]| required }}</h1>
 				</section>
 
 				<br style="clear:both" />
 
-				{% assign contact = info.contact %}
-				{% if contact %}
 				<section class="contact">
-					<div class="title">Contact</div>
+					<div class="title">{{ title_skill__contact | required }}</div>
 
-					{% if contact.email %}
+					<div class="contact-item">
+						<i class="fa fa-home" aria-hidden="true"></i>
+						<a href="/{{ locale }}/">www.anurin.name</a>
+					</div>
+
 					<div class="contact-item">
 						<i class="fa fa-envelope-o" aria-hidden="true"></i>
-						<a href="mailto:{{contact.email}}">
-							{{contact.email}}
+						<a id="cv_contact_email" href="#" rel="author">
+							...
 						</a>
+						<script>
+							document.addEventListener('DOMContentLoaded', function () {
+								const el = document.getElementById('cv_contact_email');
+								const data = "{{ contact.email | required | base64_encode }}";
+								el.href = "mailto:" + atob(data);
+								el.textContent = atob(data);
+							});
+						</script>
 					</div>
-					{% endif %}
-				
-					{% if contact.phone %}
+
 					<div class="contact-item">
 						<i class="fa fa-phone" aria-hidden="true"></i>
-						<a href="tel:{{contact.phone}}">
-							{{contact.phone}}
-						</a>
+						<a id="cv_contact_phone" href="#" rel="author">...</a>
+						<script>
+							document.addEventListener('DOMContentLoaded', function () {
+								const el = document.getElementById('cv_contact_phone');
+								const data = "{{ contact.phone | required | base64_encode }}";
+								el.href = "tel:" + atob(data);
+								el.textContent = atob(data);
+							});
+						</script>
 					</div>
-					{% endif %}
-				
-					{% if contact.social %}
-					{% for socialItem in contact.social %}
-					<div class="contact-item">
-						<i class="fa {{socialItem.icon}}" aria-hidden="true"></i>
-						<a href="{{socialItem.url}}">
-							{{socialItem.name}}
-						</a>
-					</div>
-					{% endfor %}
-					{% endif %}
-				</section>
-				{% endif %}
-				
-				{% assign hardskills = info.skills.hard %}
-				{% if hardskills %}
-				<section>
-					<div class="title">Hard Skills</div>
-					{% for hardskill in hardskills %}
-					<div class="skill">{{hardskill}}</div>
-					{% endfor %}
-				</section>
-				{% endif %}
 
-				{% assign softskills = info.skills.soft %}
-				{% if softskills %}
+					<div class="contact-item contact-item-location">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+						<div>{{ contact.location[locale] | required }}</div>
+					</div>
+
+					{% for social_profile in socialProfiles -%}
+					{% if social_profile.isShowInCV %}
+					<div class="contact-item">
+						{% render 'templates/social_profile_cv_icon.html', platform: social_profile.platform %}
+						<a href="{{social_profile.url}}">
+							{{social_profile.name}}
+						</a>
+					</div>
+					{% endif %}
+					{%- endfor %}
+				</section>
+
+				{% assign skills = cv.skills | required %}
+
 				<section>
-					<div class="title">Soft Skills</div>
-					{% for softskill in softskills %}
-					<div class="skill">{{softskill}}</div>
+					<div class="title">{{ title_skill__languages | required }}</div>
+					{% for skill in skills.languages | required %}
+					<div class="skill">{{ skill[locale] }}</div>
 					{% endfor %}
 				</section>
-				{% endif %}
+
+				<section>
+					<div class="title">{{ title_skill__core_expertise | required }}</div>
+					{% for skill in skills.core_expertise | required %}
+					<div class="skill">{{ skill[locale] }}</div>
+					{% endfor %}
+				</section>
+
+				<section>
+					<div class="title">{{ title_skill__soft | required }}</div>
+					{% for skill in skills.soft | required %}
+					<div class="skill">{{ skill[locale] }}</div>
+					{% endfor %}
+				</section>
+
+				<section>
+					<div class="title">{{ title_skill__tools | required }}</div>
+					<div class="skills-container-inline">
+					{% for skill in skills.tools | required %}
+					<div class="skill">{{ skill }}</div>
+					{% endfor %}
+					</div>
+				</section>
+
+				<section>
+					<div class="title">{{ title_skill__programming | required }}</div>
+					<div class="skills-container-inline">
+					{% for skill in skills.programming | required %}
+					<div class="skill">{{ skill }}</div>
+					{% endfor %}
+					</div>
+				</section>
+
+				<section>
+					<div class="title">{{ title_skill__backend | required }}</div>
+					<div class="skills-container-inline">
+					{% for skill in skills.backend | required %}
+					<div class="skill">{{ skill }}</div>
+					{% endfor %}
+					</div>
+				</section>
+
+				<section>
+					<div class="title">{{ title_skill__frontend | required }}</div>
+					<div class="skills-container-inline">
+					{% for skill in skills.frontend | required %}
+					<div class="skill">{{ skill }}</div>
+					{% endfor %}
+					</div>
+				</section>
+
 				<br style="clear:both" />
 			</div>
-		
+
 			<div class="main">
 				<section class="summary">
-					<h2 class="title">Summary</h2>
+					<h2 class="title">{{ title_summary }}</h2>
 					<span>{{content}}</span>
 				</section>
-		
-				{% assign projects = info.project %}
-				{% if projects %}
-				<section class="projects">
-					<h2 class="title">Professional Experience</h2>
-					{%- for project in projects %}
-						{%if role == '' or project.roles contains role %}
-							{% include 'templates/project.html', project: project %}
-						{%endif%}
+
+				<section class="experience">
+					<h2 class="title">{{ title_experience }}</h2>
+					{%- for experience_item in cv.experience %}
+					<div class="experience-item">
+						{% assign from_parts = experience_item.period.from | required | split: "-" %}
+						{% assign from_year = from_parts[0] %}
+						{% capture from_month %}{% render 'templates/month_by_number.html', locale: locale, month: from_parts[1] %}{% endcapture %}
+						{% assign to = experience_item.period.to | required %}
+						{% if to == "PRESENT" and locale == "en-GB" %}
+							{% assign to_text = "PRESENT" %}
+						{% elsif to == "PRESENT" and locale == "uk-UA" %}
+							{% assign to_text = "ТЕПЕРІШНІЙ ЧАС" %}
+						{% else %}
+							{% assign to_parts = experience_item.period.to | required | split: "-" %}
+							{% assign to_year = to_parts[0] %}
+							{% capture to_month %}{% render 'templates/month_by_number.html', locale: locale, month: to_parts[1] %}{% endcapture %}
+							{% capture to_text %}{{ to_month }} {{ to_year }}{% endcapture %}
+						{% endif %}
+						<div class="date">{{ from_month }} {{ from_year }} - {{ to_text }}</div>
+						<div class="job-title">
+							<strong>{{ experience_item.position[locale] | required }}</strong>, {{ experience_item.employer[locale] | required }}
+						</div>
+						<ul class="details-list">
+							{%- for comment in experience_item.comments %}
+							<li>{{ comment[locale] | required }}</li>
+							{% endfor -%}
+						</ul>
+					</div>
 					{% endfor -%}
 				</section>
-				{% endif %}
+
+				<section class="education">
+					<h2 class="title">{{ title_education }}</h2>
+					{%- for education_item in cv.education %}
+					<div class="education-item">
+						{% if education_item.period.to == "PRESENT" and locale == "en-GB" %}
+							{% assign to_text = "PRESENT" %}
+						{% elsif education_item.period.to == "PRESENT" and locale == "uk-UA" %}
+							{% assign to_text = "ТЕПЕРІШНІЙ ЧАС" %}
+						{% else %}
+							{% assign to_text = education_item.period.to | required | split: "-" %}
+						{% endif %}
+						<div class="date">{{ education_item.period.from }} - {{ to_text }}</div>
+						<ul class="details-list">
+							{%- for comment in education_item.comments[locale] | required %}
+							<li>{{ comment }}</li>
+							{% endfor -%}
+						</ul>
+					</div>
+					{% endfor -%}
+				</section>
 			</div>
 		</div>
 	</div>
 </body>
-{% if site.support_dark_mode %}
+{%- if site.support_dark_mode %}
 <script src="/assets/js/cv.js"></script>
 {% endif %}
-
+<script async src="/assets/js/cv-analytics.js"></script>
 </html>

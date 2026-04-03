@@ -1,30 +1,123 @@
-<!doctype html>
-<html lang="{{ page.data.lang | default: site.defaultLocale }}">
+{%- raw %}{% endraw %}<!doctype html>
+{%- if site.buildConfiguration != 'release' -%}
+<!-- (layout: base) site.buildConfiguration: {{ site.buildConfiguration }} -->
+<!-- (layout: base) site.defaultLocale: {{ site.defaultLocale }} -->
+<!-- (layout: base) page keys: {% for page_item in page %}{{ page_item[0] }}, {% endfor %} -->
+<!-- (layout: base) page.filePathStem: {{ page.filePathStem }} -->
+<!-- (layout: base) page.fileSlug: {{ page.fileSlug }} -->
+<!-- (layout: base) page.date: {{ page.date }} -->
+<!-- (layout: base) locale: {{ locale }} -->
+<!-- (layout: base) layout: {{ layout }} -->
+<!-- (layout: base) disableRobots: {{ disableRobots }} -->
+<!-- (layout: base) permalink: {{ permalink }} -->
+<!-- (layout: base) fileDirectoryStem: {{ fileDirectoryStem }} -->
+<!-- (layout: base) date: {{ date }} -->
+{% raw %}{% endraw -%}{%- endif -%}
+{%- assign locale = locale | default: "uk-UA" -%}
+<html lang="{{ locale }}">
+
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>{{ title | default: site.name }}</title>
-    <meta name="description" content="{{ description | default: site.name }}" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if disableRobots -%}
+    <meta name="robots" content="noindex, nofollow">
+    {% endif -%}
+    <link rel="icon" href="/favicon-48.ico" sizes="48x48" />
+    <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta name="description" content="{{ site.description }}" />
+    <link rel="stylesheet" href="/vendor/bootstrap/v5.2.3/bootstrap.min.css" integrity="sha384-zsixv+GzRX8l37UyyztdfbLSTHSHb2cfsqIE0OgKkQ/bF5lh08Ija6eBihBru5us" />
+    <link rel="stylesheet" href="/vendor/bootstrap-icons/v1.13.1/bootstrap-icons.min.css" integrity="sha384-CK2SzKma4jA5H/MXDUU7i1TqZlCFaD4T01vtyDFvPlD97JQyS+IsSh1nI2EFbpyk" />
+    <link rel="stylesheet" href="/vendor/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" />
+    <link rel="stylesheet" href="/assets/css/style.css">
+{%- if css %}
+    <link rel="stylesheet" href="{{ css }}">
+{% endif %}
+    {%- render 'templates/umami_script.html', umami: site.analytics.umami %}
   </head>
-  <body>
-    <header>
-      <nav>
-        {% if site.defaultLocale == 'uk' %}
-          <a href="/uk/">{{ site.name }}</a>
-        {% else %}
-          <a href="/{{ site.defaultLocale }}/">{{ site.name }}</a>
-        {% endif %}
-        <a href="/uk/blog/">Blog (UK)</a>
-        <a href="/en/blog/">Blog (EN)</a>
-      </nav>
-    </header>
 
-    <main>
-      {{ content }}
-    </main>
+  <body class="font-roboto antialiased d-flex flex-column min-vh-100">
+    <div class="container-fluid d-flex flex-column flex-grow-1" id="root">
+      <header>
+        <nav class="navbar navbar-expand-md bg-light overflow-hidden">
+          <div class="container-xxl px-5">
+            <a class="navbar-brand" href="/{{ locale | default: site.defaultLocale }}/">{{ site.name }}</a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarScroll"
+              aria-controls="navbarScroll"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarScroll">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                  <a class="nav-link{% if fileDirectoryStem == '/pages/blog' %} active{% endif %}" href="/{{ locale }}/blog" {% if fileDirectoryStem == '/pages/blog' %}aria-current="page"{% endif %}><i class="bi bi-book"></i> {{ "blog" | t }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link{% if fileDirectoryStem == '/pages/projects' %} active{% endif %}" href="/{{ locale }}/projects" {% if fileDirectoryStem == '/pages/cv' %}aria-current="page"{% endif %}><i class="bi bi-grid-3x3-gap"></i> {{ "projects" | t }}</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link{% if fileDirectoryStem == '/pages/cv' %} active{% endif %}" href="/{{ locale }}/cv" {% if fileDirectoryStem == '/pages/cv' %}aria-current="page"{% endif %}>
+                    <i class="bi bi-file-earmark-person"></i> {{ "cv" | t }}
+                  </a>
+                </li>
+              </ul>
+              <ul class="navbar-nav me-1">
+              {% for site_locale_pair in site.locales %}
+                {% assign site_locale = site_locale_pair[0] -%}
+                {% assign site_locale_meta = site_locale_pair[1] -%}
+                {% if site_locale == locale %}
+                  {% assign is_current_locale = true -%}
+                  {% assign translation_href = permalink -%}
+                {% else %}
+                  {% assign is_current_locale = false -%}
+                  {% assign translation_href = locales[site_locale] -%}
+                  {% if not translation_href %}
+                    {% assign translation_href = "/" | append: site_locale -%}
+                  {% endif %}
+                {%- endif %}
+                <li class="nav-item">
+                  <a class="nav-link" href="{{translation_href}}">
+                    <img src="/assets/language-icons/{{site_locale}}.svg" alt="{{site_locale}} language icon" class="align-middle" style="width:24px;" />
+                    {% if is_current_locale %}
+                    <b>{{ site_locale_meta.title }}</b>
+                    {% else %}
+                    {{ site_locale_meta.title }}
+                    {% endif %}
+                  </a>
+                </li>
+              {% endfor %}
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
 
-    <footer>
-      <small>&copy; {{ currentYear }} — {{ site.name }}</small>
-    </footer>
+      <main class="container-xxl flex-grow-1 d-flex flex-column overflow-hidden">
+        {%- if title %}
+        <h1 class="mt-3">{{ title }}</h1>
+        {% endif -%}
+        {{ content }}
+      </main>
+
+      <footer class="mt-5 bg-light mt-auto overflow-hidden">
+        <div class="container-xxl">
+          <section class="mb-1 mt-3">
+              {% render 'templates/contacts.html', contacts_data: contact, social_profiles_data: socialProfiles %}
+          </section>
+          <section class="text-center bg-gray-500">
+            <small>&copy; 2025—{{ currentYear }} {{ site.name }}</small>
+          </section>
+        </div>
+      </footer>
+    </div>
+    <script src="/vendor/bootstrap/v5.2.3/bootstrap.bundle.min.js" integrity="sha384-jUw7ah3fTugNmTvdUZ0lH3Ok36bB/qlAd91R/qbMM/2v3GLirqmw9ChtgcDgvIB0"></script>
+    <script src="/assets/js/script.js"></script>
   </body>
 </html>

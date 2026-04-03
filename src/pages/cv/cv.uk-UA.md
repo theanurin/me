@@ -1,10 +1,18 @@
 ---
 title: Розробник
+title_summary: Коротко про себе
+title_experience: Професійний досвід
+title_skill__contact: Контакти 
+title_skill__core_expertise: Ключова експертиза
+title_skill__soft: М'які навички
+title_skill__tools: Інструменти
+title_skill__programming: Програмування
+title_skill__languages: Мови
+title_skill__backend: Бекенд (Backend)
+title_skill__frontend: Фронтенд (Frontend)
+title_education: Освіта
 ---
 
-Overall 10 years of work experience in Software Engineering.
+**Досвідчений Software Engineer** із понад 20-річним стажем, чий шлях розпочався у **«золоту еру»** домашніх комп'ютерів. Від хакінгу на **Z80 Assembler** до архітектури **високонавантажених банківських і криптоплатформ** — мною завжди рухає глибоке розуміння того, **як усе працює**.
 
-Proven skills for effective team communication and collaboration, ability to
-troubleshoot and solve complex issues, meticulous attention to details, wide experience
-in effective knowledge transfer across distributed teams, highly motivated to learn new
-up-to-date technologies.
+Як відданий **Individual Contributor**, я надаю пріоритет **технічній досконалості, коду та архітектурі**, а не менеджменту. Мій досвід в **embedded-системах, DevOps та full-stack розробці** дозволяє поєднувати **низькорівневі обмеження** з **високорівневою бізнес-логікою** для створення надійних та оптимізованих рішень.

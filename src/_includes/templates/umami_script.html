@@ -1,0 +1,3 @@
+{%- if umami %}
+    <script async defer data-website-id="{{ umami.websiteId | required }}" src="{{ umami.umamiInstanceUrl | required }}/script.js" onload="window.dispatchEvent(new Event('umami:ready'))"></script>
+{% endif %}

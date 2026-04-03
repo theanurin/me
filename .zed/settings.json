@@ -1,0 +1,14 @@
+{
+  "format_on_save": "off",
+  "file_types": {
+    "src/_includes/**/*.html": ["text"]
+  },
+  "file_scan_exclusions": [
+      "**/node_modules",
+      "**/dist",
+      "**/.git",
+      "gh-pages/**"
+    ],
+    "hard_tabs": true,
+    "show_whitespaces": "all"
+}

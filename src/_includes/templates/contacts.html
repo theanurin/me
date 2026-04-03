@@ -1,0 +1,33 @@
+{%- assign contact = contacts_data | required -%}
+{%- assign social_profiles = social_profiles_data | required -%}
+
+<div class="d-flex flex-wrap gap-3 justify-content-center align-items-center">
+    {% if contact.phone %}
+    <a id="contact_phone" href="#" rel="author">
+        <i class="bi bi-telephone social-profile-link-icon" style="color: #25d366"></i>
+    </a>
+    <script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const el = document.getElementById('contact_phone');
+			const data = "{{ contact.phone | required | base64_encode }}";
+			el.href = "tel:" + atob(data);
+		});
+	</script>
+    {% endif %}
+    {% if contact.email %}
+    <a id="contact_email" href="#" rel="author">
+        <i class="bi bi-envelope-at social-profile-link-icon" style="color: #4285f4"></i>
+    </a>
+    {%- capture email_link_data -%}{{contact.email}}{% if contact.emailSubject %}?subject={{ contact.emailSubject | url_encode }}{% endif %}{%- endcapture -%}
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			const el = document.getElementById('contact_email');
+			const data = "{{ email_link_data | required | base64_encode }}";
+			el.href = "mailto:" + atob(data);
+		});
+	</script>
+    {% endif %}
+    {% for social_profile in social_profiles %}
+      {% render 'templates/social_profile_link.html', social_profile_entry: social_profile %}
+    {% endfor %}
+</div>

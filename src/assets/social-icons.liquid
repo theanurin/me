@@ -1,0 +1,52 @@
+---
+permalink: /assets/social-icons.svg
+---
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+{%- comment %}
+Generate content of /assets/social-icons.svg
+
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <symbol id="youtube" ...>
+            <path ... />
+        </symbol>
+        <symbol id="telegram" ...>
+            <path ... />
+        </symbol>
+        <symbol id="github" ...>
+            <path ... />
+        </symbol>
+        <symbol id="rss" ...>
+            <path ... />
+        </symbol>
+    </svg>
+
+
+Use following shell commands to regenerate links:
+
+    ls -1 src/_includes/templates/social_icon | while read SVG_FILE; do \
+      SVG_KEY=$(basename $SVG_FILE .svg); \
+      echo "{%- render 'templates/social_icon_symbol.html', key: '${SVG_KEY}' -%}"; \
+    done
+{% endcomment %}
+{{""}}
+{%- render 'templates/social_icon_symbol.html', key: 'devto' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'dribbble' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'facebook' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'flickr' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'github' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'gitlab' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'google_scholar' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'instagram' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'keybase' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'linkedin' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'mastodon' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'microdotblog' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'pinterest' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'rss' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'stackoverflow' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'telegram' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'twitter' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'upwork' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'viber' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'x' -%}
+{%- render 'templates/social_icon_symbol.html', key: 'youtube' -%}</svg>

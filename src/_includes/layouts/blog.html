@@ -1,0 +1,22 @@
+---
+layout: layouts/base.html
+---
+
+<p>{{ content }}</p>
+
+{%- assign localized_posts_collection = collections.posts | where_exp: "item", "item[locale] != nil" -%}
+<ul>
+  {% for post_collection_item in localized_posts_collection limit:5 -%}
+  {%- assign post_item = post_collection_item[locale] -%}
+  {%- assign post_data = post_item.data -%}
+    <li>
+      <article>
+      <span class="post-meta">{{ post_collection_item.postDate | dateLocale: locale }}</span>
+      <h3>
+        <a class="post-link" href="{{ post_data.permalink }}">{{ post_data.title | escape }}</a>
+      </h3>
+      {{ post_item.content }}
+      </article>
+    </li>
+  {% endfor %}
+</ul>

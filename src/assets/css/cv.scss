@@ -3,7 +3,6 @@
 
 * {
 	font-family: 'Helvetica', 'Arial', sans-serif;
-	text-align: justify;
 	line-height: 1.5;
 }
 
@@ -23,22 +22,22 @@ body {
 	margin-bottom: 30px;
 
 	.container-block {
-		width: 90%;
-		margin: 0 auto;
-		padding: 20px;
-		display: grid;
-		grid-template-columns: 2fr 5fr;
-
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+        display: block;
+        overflow: hidden;
 		.sidebar {
 			margin-top: 20px;
 		}
-	}
+    }
 }
 
 @media print {
 	@page {
 		size: A4;
 	}
+
 	.container {
 		margin:0;
 		padding:0;
@@ -52,10 +51,15 @@ body {
 
 		.header {
 			input, label {
-				display: none;
+				display: none !important;
 			}
 		}
 	}
+
+    .experience-item, .education-item {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -63,8 +67,6 @@ body {
 		background-color: var(--bg-color-cv);
 	}
 	.container {
-		// padding:0;
-		// margin:0;
 		box-shadow: none;
 		.container-block {
 
@@ -78,11 +80,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-	// .container {
-	// 	.container-block {
-	// 		display: block;
-	// 	}
-	// }
 	.header {
 		display: block;
 		.title {
@@ -118,7 +115,7 @@ body {
 
 @mixin sub-header {
 	font-size: 16px;
-	font-weight: 700; 
+	font-weight: 700;
 	color: var(--fg-color);
 }
 
@@ -146,11 +143,16 @@ body {
 }
 
 .main {
+    display: block;
+
 	section {
 		@include body-text;
 
 		h2 {
 			@include header;
+            clear: none; /* дозволяє обтікання */
+            display: flex; /* залишає лінію */
+            overflow: hidden; /* змушує блок "підлаштуватися" під вільний простір поруч з float */
 		}
 	}
 }
@@ -185,6 +187,10 @@ body {
 .sidebar {
 	color: var(--fg-color);
 	width: auto;
+    padding-right: 2em;
+    float: left;
+    width: 30%;
+    margin-top: 20px;
 
 	section {
 		margin-top: 1em;
@@ -195,8 +201,14 @@ body {
 		@include sub-header;
 	}
 
-	.skill {
+	.skill, .contact-item-location {
 		@include body-text;
+	}
+
+	.contact-item-location{
+	    div {
+		    margin-left: 8px;
+		}
 	}
 }
 
@@ -219,32 +231,30 @@ body {
 }
 
 .contact {
-	// margin-bottom: 20px;
-	
 	h1 {
 		color: var(--fg-color);
 	}
-		
+
 	.contact-item {
 		display: flex;
 		align-items: center;
-		
+
 		svg {
 			width: 18px;
 			display: inline-block;
 			color: var(--fg-color);
 		}
-		
+
 		i {
 			color: var(--fg-color);
 		}
-		
+
 		a {
 			text-decoration: none;
 			padding-top: 4px;
 			padding-left: 4px;
 			@include body-text;
-			
+
 			&:hover {
 				text-decoration: underline;
 			}
@@ -252,37 +262,58 @@ body {
 	}
 }
 
-
-.projects {
-// .title {
-	// 	@include header;
-	// }
-	
-	.project {
-		a {
-			@include body-text;
-		}
-		
-		.company {
-			@include body-text;
-			font-weight: bold;
-			
-			.time {
-				float: right;
-				color: var(--fg-color-title-sm);
-				font-weight: 100;
-			}
-		}
-	}
+.skills-container-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
 }
 
+.skills-container-inline .skill {
+    display: inline-block;
+}
 
+.skills-container-inline .skill:not(:last-child)::after {
+    content: ", ";
+}
 
+.experience-item, .education-item {
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    display: flow-root;
+}
 
-// @import "includes/career-profile";
-// @import "includes/education";
-// @import "includes/languages";
-// @import "includes/skills";
-// @import "includes/experience";
-// @import "includes/publications";
-// @import "includes/volunteering";
+.experience-item .date, .education-item .date {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.experience-item .job-title {
+    font-size: 1.1rem;
+    margin: 4px 0;
+}
+
+.details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.details-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+.details-list li::before {
+    content: "—";
+    margin-right: 15px;
+    margin-left: 20px;
+    color: #333333;
+    flex-shrink: 0;
+}
+[data-theme='dark'] .details-list li::before {
+    color: #a9b2bd;
+}

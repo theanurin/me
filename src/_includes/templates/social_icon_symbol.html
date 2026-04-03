@@ -1,0 +1,8 @@
+{% comment %}
+The template render <symbol ...><svg ...>...</svg..></symbol> for
+specified "key" using a related file from "social_icon" directory
+{% endcomment %}
+{%- capture svg_path -%}templates/social_icon/{{ key | required }}.svg{%- endcapture -%}
+{{ "" }}    <symbol id="{{ key | required }}" fill-rule="evenodd" clip-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="1.414" viewBox="0 0 16 16">
+        {{ "" }}{%- render svg_path -%}
+{{ "" }}    </symbol>

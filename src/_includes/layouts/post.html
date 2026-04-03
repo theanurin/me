@@ -2,30 +2,21 @@
 layout: layouts/base.html
 ---
 <article>
-  <h1>{{ title }}</h1>
-  <h2>{{ cover }}</h2>
-  <p><small>{% if page.data.lang == 'en' %}{{ date | dateLocale: 'en-US' }}{% else %}{{ date | dateLocale: 'uk-UA' }}{% endif %}</small></p>
-  
+  <p><small>{{ page.date | dateLocale: locale }}</small></p>
+
   {% if tags %}
-    <ul class="tags">
+    <p>
     {% for tag in tags %}
-      <li>{{ tag }}</li>
+      <span class="badge rounded-pill text-bg-secondary">{{ tag }}</span>
     {% endfor %}
-    </ul>
+    </p>
   {% endif %}
-  
+
   {% if cover %}
-    <img src="{{ cover }}" alt="{{ title }} cover" />
+    <img src="{{ cover }}" alt="{{ title }} cover" class="img-fluid rounded mb-4"/>
   {% endif %}
+
   <div>
     {{ content }}
   </div>
-
-  {% if page.data.slug %}
-    {% if page.data.lang == 'uk' %}
-      <p><a href="/en/blog/{{ page.data.slug }}/">View English version</a></p>
-    {% else %}
-      <p><a href="/uk/blog/{{ page.data.slug }}/">Переглянути українську версію</a></p>
-    {% endif %}
-  {% endif %}
 </article>

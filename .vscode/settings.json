@@ -1,4 +1,22 @@
 {
+    "[gcode]": {
+        "files.encoding": "iso88591",
+        // Not used; superseded by .editorconfig. Kept as a reminder.
+        "files.eol": "\r\n"
+    },
+    "cSpell.words": [
+        "algsystems",
+        "anurina",
+        "cexiolabs",
+        "evoplay",
+        "luxoft",
+        "mackiev",
+        "novapay",
+        "softheme",
+        "systemgroup",
+        "theanurin",
+        "upwork"
+    ],
     "editor.detectIndentation": false,
     "editor.insertSpaces": true,
     "editor.lineNumbers": "on",
@@ -17,28 +35,10 @@
     },
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 5000,
-    "files.insertFinalNewline": false,
     "files.encoding": "utf8",
     "files.eol": "\n",
+    "files.insertFinalNewline": false,
     "git.enabled": true,
     "git.rebaseWhenSync": true,
-    "html.format.wrapLineLength": 0,
-    "cSpell.words": [
-        "algsystems",
-        "anurina",
-        "cexiolabs",
-        "evoplay",
-        "luxoft",
-        "mackiev",
-        "novapay",
-        "softheme",
-        "systemgroup",
-        "theanurin",
-        "upwork"
-    ],
-    "[gcode]": {
-        // Not used; superseded by .editorconfig. Kept as a reminder.
-        "files.eol": "\r\n",
-        "files.encoding": "iso88591"
-    }
+    "html.format.wrapLineLength": 0
 }

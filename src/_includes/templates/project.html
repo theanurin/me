@@ -1,6 +1,6 @@
 {%- assign project = include.project -%}
 {%- assign company_id = project.company-ref | default: '' -%}
-{%- assign page_language = lang | default: site.locale.default | default: 'en-US' -%}
+{%- assign page_language = locale | default: site.defaultLocale | default: 'en-US' -%}
 {%- assign company = info.company | where: "id", company_id | first -%}
 {%- assign company_title = company.title -%}
 <div class="project">

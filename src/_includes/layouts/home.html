@@ -1,0 +1,10 @@
+---
+layout: layouts/base.html
+---
+
+<p>{{ head_title }}</p>
+
+{{ content }}
+
+<h2>{{ latest_posts_title }}</h2>
+{% include 'templates/latest_posts.html', posts_collection: collections.posts %}

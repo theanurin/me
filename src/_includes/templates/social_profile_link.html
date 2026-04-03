@@ -1,0 +1,55 @@
+{% comment %}
+Render <a><svg ...>...</svg>...</a> from passed social profile entry
+
+Social profile entries look like:
+    { platform: <profile_platform_kind>, ...platform specific attrbites... }
+{% endcomment %}
+{%- assign entry = social_profile_entry | required  -%}
+{%- assign platform = entry.platform | required  -%}
+{%- case platform -%}
+  {%- when "youtube" -%}
+    {%- assign icon_color = '#FF0000' -%}
+    {%- assign icon_kind = 'bi' -%}
+  {%- when "facebook" -%}
+    {%- assign icon_color = '#3A5795' -%}
+    {%- assign icon_kind = 'bi' -%}
+  {%- when "github" -%}
+    {%- assign icon_color = '#000000' -%}
+    {%- assign icon_kind = 'bi' -%}
+  {%- when "linkedin" -%}
+    {%- assign icon_color = '#0A66C2' -%}
+    {%- assign icon_kind = 'bi' -%}
+  {%- when "reddit" -%}
+    {%- assign icon_color = '#FF4500' -%}
+    {%- assign icon_kind = 'bi' -%}
+  {%- when "stack-overflow" -%}
+    {%- assign icon_color = '#F48024' -%}
+    {%- assign icon_kind = 'bi' -%}
+  {%- when "telegram" -%}
+    {%- assign icon_color = '#2AABEE' -%}
+    {%- assign icon_kind = 'bi' -%}
+  {%- when "upwork" -%}
+    {%- assign icon_color = '#14A800' -%}
+  {%- when "viber" -%}
+    {%- assign icon_color = '#7360F2' -%}
+  {%- when "whatsapp" -%}
+    {%- assign icon_color = '#25D366' -%}
+    {%- assign icon_kind = 'bi' -%}
+  {%- when "x" -%}
+    {%- assign icon_color = '#000000' -%}
+    {%- assign icon_kind = 'bi' -%}
+    {%- assign icon_kind_bi = 'twitter-x' -%}
+  {%- else -%}
+    {%- assign icon_color = '#828282' -%}
+{%- endcase -%}
+<a {% unless platform == 'rss' %}rel="me noopener" target="_blank" {% endunless %}href="{{ entry.url | required }}" title="{{ entry.title | default: entry.platform }}">
+{%- if icon_kind == 'bi' -%}
+    <i class="bi bi-{{ icon_kind_bi | default: platform }} social-profile-child social-profile-link-icon social-profile-link-icon-bi social-profile-link-icon-{{ platform }}" style="color: {{ icon_color | required }}"></i>
+{%- elsif icon_kind == 'fa' -%}
+    <i class="fa fa-brands fa-{{ icon_kind_bi | default: platform }} social-profile-link-icon social-profile-link-icon-fa social-profile-link-icon-{{ platform }}" style="color: {{ icon_color | required }}"></i>
+{%- else -%}
+    <svg class="social-profile-child social-profile-link-svg" style="color: {{ icon_color | required }}">
+        <use xlink:href="{{ '/assets/social-icons.svg#' | append: platform | htmlBaseUrl }}"></use>
+    </svg>
+{%- endif -%}
+</a>

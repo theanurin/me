@@ -1,0 +1,63 @@
+# yaml-language-server: $schema=./skills.schema.json
+
+core_expertise:
+  - en-GB: Distributed Systems
+    uk-UA: Розподілені системи
+  - en-GB: High-load Backend
+    uk-UA: Високонавантажений бекенд
+  - en-GB: DevOps, CI/CD, SDLC
+    uk-UA: DevOps, CI/CD, SDLC
+  - en-GB: FinTech/Crypto
+    uk-UA: Фінтех/Криптовалюти
+  - en-GB: System Architecture
+    uk-UA: Системна архітектура
+
+soft:
+  - en-GB: Team leadership
+    uk-UA: Лідерство в команді
+  - en-GB: Mentoring
+    uk-UA: Менторство
+  - en-GB: Communication
+    uk-UA: Комунікація
+  - en-GB: Problem solving
+    uk-UA: Вирішення проблем
+  - en-GB: System design
+    uk-UA: Проєктування систем
+
+tools:
+  - GitLab
+  - GitHub
+  - Git
+  - Zed
+  - Ollama
+
+languages:
+  - en-GB: Ukrainian
+    uk-UA: Українська
+  - en-GB: English
+    uk-UA: Англійська
+
+programming:
+  - TypeScript
+  - C#
+  - Python
+  - SQL
+  - Bash
+
+backend:
+  - Node.js
+  - .NET Core
+  - Redis
+  - RabbitMQ
+  - PostgreSQL
+  - MongoDB
+
+frontend:
+  - React
+  - Vue.js
+  - Angular
+  - AngularDart
+  - Knockout
+  - DartWeb
+  - Flutter
+  - Apache Cordova
