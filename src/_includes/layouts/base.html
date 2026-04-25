@@ -1,5 +1,5 @@
 {%- raw %}{% endraw %}<!doctype html>
-{%- if site.buildConfiguration != 'production' -%}
+{%- if site.buildConfiguration != 'release' -%}
 <!-- (layout: base) site.buildConfiguration: {{ site.buildConfiguration }} -->
 <!-- (layout: base) site.defaultLocale: {{ site.defaultLocale }} -->
 <!-- (layout: base) page keys: {% for page_item in page %}{{ page_item[0] }}, {% endfor %} -->
@@ -8,6 +8,7 @@
 <!-- (layout: base) page.date: {{ page.date }} -->
 <!-- (layout: base) locale: {{ locale }} -->
 <!-- (layout: base) layout: {{ layout }} -->
+<!-- (layout: base) disableRobots: {{ disableRobots }} -->
 <!-- (layout: base) permalink: {{ permalink }} -->
 <!-- (layout: base) fileDirectoryStem: {{ fileDirectoryStem }} -->
 <!-- (layout: base) date: {{ date }} -->
@@ -18,6 +19,9 @@
     <title>{{ title | default: site.name }}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% if disableRobots -%}
+    <meta name="robots" content="noindex, nofollow">
+    {% endif -%}
     <link rel="icon" href="/favicon-48.ico" sizes="48x48" />
     <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />

@@ -1,9 +1,12 @@
 name: CI/CD Website Pipeline
 
+env:
+  # Коли переїдете на власний домен, просто змініть це на: SITE_PREFIX: "/"
+  SITE_PREFIX: "/${{ github.event.repository.name }}/"
+
 on:
   push:
     branches:
-      - "main"
       - "eleventy-migration"
     tags:
       - "v*"
@@ -17,15 +20,14 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Fetch dependencies
         run: |
           npm install --include dev
       - name: Build History Version
         run: |
-          export BUILD_PREFIX=/history/${{ github.ref_name }}
-          npx eleventy --pathprefix='${BUILD_PREFIX}' --output='dist-history/${BUILD_PREFIX}/'
-      - uses: actions/upload-artifact@v4
+          BUILD_CONFIGURATION=release npx eleventy --pathprefix='${{ env.SITE_PREFIX }}history/${{ github.ref_name }}' --output='dist-history/${{ github.ref_name }}/'
+      - uses: actions/upload-artifact@v7
         with:
           name: history-artifact
           path: dist-history/
@@ -35,28 +37,31 @@ jobs:
     if: startsWith(github.ref, 'refs/tags/')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
       - name: Fetch dependencies
         run: |
           npm install --include dev
       - name: Build Root Version
         run: |
-          npx eleventy --pathprefix='/' --output='dist-history/'
-      - uses: actions/upload-artifact@v4
+          BUILD_CONFIGURATION=release npx eleventy --pathprefix='${{ env.SITE_PREFIX }}' --output='dist-root/'
+      - uses: actions/upload-artifact@v7
         with:
           name: root-artifact
           path: dist-root/
 
   # 1.3 Білд для preview (тільки main branch)
   build-preview:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/eleventy-migration'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
+      - name: Fetch dependencies
+        run: |
+          npm install --include dev
       - name: Build Preview
         run: |
-          npx eleventy --pathprefix='/preview' --output='dist-preview/'
-      - uses: actions/upload-artifact@v4
+          BUILD_CONFIGURATION=snapshot npx eleventy --pathprefix='${{ env.SITE_PREFIX }}preview' --output='dist-preview/'
+      - uses: actions/upload-artifact@v7
         with:
           name: preview-artifact
           path: dist-preview/
@@ -68,19 +73,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Checkout Pages Branch
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
         with:
           ref: 'gh-pages'
           path: 'deployment-dir'
 
-      # Завантажуємо всі доступні артефакти (якщо їх немає - крок просто пропуститься)
-      - name: Download all artifacts
-        uses: actions/download-artifact@v4
+# 1. Завантажуємо корінь (тільки якщо був тег)
+      - name: Download Root Artifact
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/download-artifact@v7
         with:
-          path: incoming-artifacts
+          name: root-artifact
+          path: incoming-artifacts/root-artifact
+
+      # 2. Завантажуємо історію (тільки якщо був тег)
+      - name: Download History Artifact
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: actions/download-artifact@v7
+        with:
+          name: history-artifact
+          path: incoming-artifacts/history-artifact
+
+      # 3. Завантажуємо прев'ю (тільки якщо це бранч)
+      - name: Download Preview Artifact
+        if: github.ref == 'refs/heads/eleventy-migration'
+        uses: actions/download-artifact@v7
+        with:
+          name: preview-artifact
+          path: incoming-artifacts/preview-artifact
+
+      - name: Debug(List) incoming artifacts
+        run: |
+          cd deployment-dir
+          ls -l ../
+          ls -l ../incoming-artifacts
 
       - name: Prepare and Merge Content
         run: |
@@ -92,6 +121,11 @@ jobs:
 
           # 1. Обробка кореня (якщо прийшов тег)
           if [ -d "../incoming-artifacts/root-artifact" ]; then
+            # Видаляємо все в корені, ОКРІМ папок history, preview та системної .git
+            # Це гарантує, що видалені файли в Eleventy зникнуть і з сервера
+            find . -maxdepth 1 ! -name '.' ! -name '..' ! -name '.git' ! -name 'history' ! -name 'preview' ! -name '.nojekyll' -exec rm -rf {} +
+
+            # Копіюємо новий чистий білд
             cp -r ../incoming-artifacts/root-artifact/* .
           fi
 
@@ -109,9 +143,23 @@ jobs:
             cp -r ../incoming-artifacts/preview-artifact/* preview/
           fi
 
+      - name: Generate robots.txt
+        run: |
+          cd deployment-dir
+          cat <<EOF | tee robots.txt
+          User-agent: *
+          Disallow: ${{ env.SITE_PREFIX }}preview/
+          EOF
+
+      - name: Push changed
+        run: |
+          cd deployment-dir
+
+          touch .nojekyll
+
           # Комітимо та пушимо, якщо є зміни
           git add --all
           git status
-          git diff-index --quiet HEAD || git commit -m "Deploy update from ${{ github.ref_name }} / ${{ github.sha }}"
-          git log
-          #git push origin gh-pages
+          git commit -m "Deploy update from ${{ github.ref_name }} / ${{ github.sha }}"
+          git log -1
+          git push origin gh-pages

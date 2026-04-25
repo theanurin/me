@@ -9,7 +9,6 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const pluginSitemap = require("@quasibit/eleventy-plugin-sitemap");
 
 const siteConfig = {
-  buildConfiguration: "snapshot",
   support_dark_mode: true,
   url: "https://example.com/", // Your site's base URL
   name: "theanurin",
@@ -32,15 +31,47 @@ const siteConfig = {
   },
   socialProfiles: [
     { platform: "github", name: "GitHub", url: "https://github.com/theanurin" },
-    { platform: "facebook", name: "Facebook", url: "https://www.facebook.com/theanurin42" },
-    { platform: "stack-overflow", name: "Stack Overflow", url: "https://stackexchange.com/users/2288108/maksym-anurin" },
-    { platform: "linkedin", name: "LinkedIn", url: "https://www.linkedin.com/in/theanurin/" },
-    { platform: "reddit", name: "Reddit", url: "https://www.reddit.com/user/theanurin" },
-    { platform: "whatsapp", name: "WhatsApp", url: "https://api.whatsapp.com/send/?phone=380991379065&text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%21&type=phone_number&app_absent=0" },
+    {
+      platform: "facebook",
+      name: "Facebook",
+      url: "https://www.facebook.com/theanurin42",
+    },
+    {
+      platform: "stack-overflow",
+      name: "Stack Overflow",
+      url: "https://stackexchange.com/users/2288108/maksym-anurin",
+    },
+    {
+      platform: "linkedin",
+      name: "LinkedIn",
+      url: "https://www.linkedin.com/in/theanurin/",
+    },
+    {
+      platform: "reddit",
+      name: "Reddit",
+      url: "https://www.reddit.com/user/theanurin",
+    },
+    {
+      platform: "whatsapp",
+      name: "WhatsApp",
+      url: "https://api.whatsapp.com/send/?phone=380991379065&text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%21&type=phone_number&app_absent=0",
+    },
     { platform: "telegram", name: "Telegram", url: "https://t.me/theanurin" },
-    { platform: "youtube", name: "YouTube", url: "https://www.youtube.com/@theanurin42" },
-    { platform: "viber", name: "Viber", url: "viber://pa?chatURI=380991379065" },
-    { platform: "upwork", name: "Upwork", url: "https://www.upwork.com/freelancers/~018ef1b9d37e5a886b" },
+    {
+      platform: "youtube",
+      name: "YouTube",
+      url: "https://www.youtube.com/@theanurin42",
+    },
+    {
+      platform: "viber",
+      name: "Viber",
+      url: "viber://pa?chatURI=380991379065",
+    },
+    {
+      platform: "upwork",
+      name: "Upwork",
+      url: "https://www.upwork.com/freelancers/~018ef1b9d37e5a886b",
+    },
     { platform: "x", name: "X", url: "https://x.com/theanurin" },
   ],
 };
@@ -51,10 +82,22 @@ const POST_FILE_PATH_STEM_REGEX = /^\/posts\/(\d{4})\/\d+-([\w-]+)\/\w+$/;
  * @param {UserConfig} eleventyConfig
  */
 module.exports = function (eleventyConfig) {
+  const buildConfiguration = process.env.BUILD_CONFIGURATION || null;
+  switch (buildConfiguration) {
+    case "release":
+    case "snapshot":
+      break;
+    default:
+      throw new Error(
+        `Wrong BUILD_CONFIGURATION value '${buildConfiguration}'. Expected 'snapshot' or 'release'`,
+      );
+  }
+
   const md = markdownIt();
 
   eleventyConfig.addGlobalData("site", {
     ...siteConfig,
+    buildConfiguration,
   });
 
   //
@@ -227,6 +270,16 @@ module.exports = function (eleventyConfig) {
 
   // Global computed data for blog post permalinks and locale
   eleventyConfig.addGlobalData("eleventyComputed", {
+    disableRobots: (data) => {
+      // Отримуємо значення --pathprefix= з глобального об'єкта eleventy
+      const prefix = eleventyConfig.pathPrefix;
+
+      const allowRobots =
+        typeof prefix === "string" &&
+        (prefix === "/" || prefix.startsWith("/history/"));
+
+      return !allowRobots;
+    },
     fileDirectoryStem: (data) => {
       const { filePathStem } = data.page;
       return path.dirname(filePathStem);
