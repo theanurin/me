@@ -1,0 +1,18 @@
+{%- assign contact = contacts_data | required -%}
+{%- assign social_profiles = social_profiles_data | required -%}
+
+<div class="d-flex flex-wrap gap-3 justify-content-center align-items-center">
+    {% if contact.phone %}
+    <a href="tel:{{contact.phone}}" rel="author">
+        <i class="bi bi-telephone social-profile-link-icon" style="color: #25d366"></i>
+    </a>
+    {% endif %}
+    {% if contact.email %}
+    <a href="mailto:{{contact.email}}{% if contact.emailSubject %}?subject={{ contact.emailSubject | url_encode }}{% endif %}" rel="author">
+        <i class="bi bi-envelope-at social-profile-link-icon" style="color: #4285f4"></i>
+    </a>
+    {% endif %}
+    {% for social_profile in social_profiles %}
+      {% render 'templates/social_profile_link.html', social_profile_entry: social_profile %}
+    {% endfor %}
+</div>

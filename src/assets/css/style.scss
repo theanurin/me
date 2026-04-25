@@ -1,3 +1,19 @@
+body {
+    min-width: 242px !important;
+}
+
+/**
+ * Icons
+ */
+.svg-icon {
+  width: 2em;
+  height: 2em;
+  display: inline-block;
+  fill: currentColor;
+  vertical-align: text-bottom;
+}
+
+
 // $border-primary-color: #000000;
 
 // // @import
@@ -76,7 +92,7 @@
 //   top: 0;
 //   left: 0;
 //   width: 100%;
-//   transition: top 0.6s ease-in-out; 
+//   transition: top 0.6s ease-in-out;
 // }
 
 // .site-header.hidden {
@@ -188,22 +204,27 @@
 //   }
 // }
 
-.contact-icon {
-    margin: 0.25em;
-    font-size: 32px;
+$social-icon-size: 2.5rem;
+$social-margin: 0.5rem;
+
+.social-profile-link-icon,
+.social-profile-link-svg {
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.social-profile-link-icon {
+    margin: $social-margin;
+    font-size: $social-icon-size;
+    line-height: 1;
+    align-items: center;
+    justify-content: center;
     vertical-align: middle;
 }
-
-.contact-icon-viber {
-    background-color: #7360f2;
-    border-radius: 50%;
-    display: inline-block;
-    margin: 0.5em;
-    padding: 0.4em;
-    width: 36px;
-    height: 36px;
-}
-
-.contact-icon-viber img {
-    vertical-align: unset;
+.social-profile-link-svg {
+    width: $social-icon-size + $social-margin * 2;
+    height: $social-icon-size + $social-margin * 2;
+    fill: currentColor;
+    vertical-align: middle;
 }

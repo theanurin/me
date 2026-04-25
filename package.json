@@ -4,9 +4,8 @@
   "private": true,
   "scripts": {
     "clean": "rm -r ./dist",
-    "dev": "eleventy --serve --pathprefix=/dev",
-    "build": "eleventy",
-    "preview": "eleventy --serve --port=8080 --pathprefix=/dev"
+    "build": "eleventy --pathprefix=/dev",
+    "dev": "  eleventy --pathprefix=/dev --serve --port=8080"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.5",

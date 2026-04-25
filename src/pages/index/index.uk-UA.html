@@ -1,11 +1,6 @@
 ---
-layout: layouts/base.html
+layout: layouts/home.html
 title: "Головна"
+head_title: Привіт — це тестова стартова сторінка (uk).
+latest_posts_title: Останні пости
 ---
-
-<h1>{{ title }}</h1>
-<h2>{{ locale }}</h2>
-<p>Привіт — це тестова стартова сторінка (uk).</p>
-
-<h2>Останні пости</h2>
-{% include 'templates/latest_posts.html', posts_collection: collections.posts %}

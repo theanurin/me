@@ -1,5 +1,4 @@
 {%- assign posts_collection = include.posts_collection -%}
-{%- if locale -%}
 {%- assign localized_posts_collection = posts_collection | where_exp: "item", "item[locale] != nil" -%}
 <ul>
   {% for post_collection_item in localized_posts_collection limit:5 -%}
@@ -11,11 +10,8 @@
       <h3>
         <a class="post-link" href="{{ post_data.permalink }}">{{ post_data.title | escape }}</a>
       </h3>
-      {{ page.excerpt }}
+      {{ page.excerpt | markdownify }}
       </article>
     </li>
   {% endfor %}
 </ul>
-{%- else -%}
-<p>Unable to render latest posts due to missing "locale" variable in current context.</p>
-{%- endif -%}

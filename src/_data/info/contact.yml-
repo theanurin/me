@@ -1,0 +1,58 @@
+name: Maksym Anurin
+email: theanurin@gmail.com
+phone: "+380991379065"
+social:
+  - name: GitHub
+    icon: bi-github
+    icon-color: "#000000"
+    url: https://github.com/theanurin
+
+  - name: "Facebook"
+    icon: bi-facebook
+    icon-color: "#3A5795"
+    url: https://www.facebook.com/theanurin42
+
+  - name: "Stack Overflow"
+    icon: bi-stack-overflow
+    icon-color: "#F48024"
+    url: https://stackexchange.com/users/2288108/maksym-anurin
+
+  - name: Reddit
+    icon: bi-reddit
+    icon-color: "#FF4500"
+    url: https://www.reddit.com/user/theanurin
+
+  - name: LinkedIn
+    icon: fa-linkedin
+    icon-color: "#0A66C2"
+    url: https://www.linkedin.com/in/theanurin/
+
+  - name: YouTube
+    icon: bi-youtube
+    icon-color: "#FF0000"
+    url: https://www.youtube.com/@theanurin42
+
+  - name: WhatsApp
+    icon: bi-whatsapp
+    icon-color: "#25D366"
+    url: "https://api.whatsapp.com/send/?phone=380991379065&text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%21&type=phone_number&app_absent=0"
+
+  - name: Telegram
+    icon: bi-telegram
+    icon-color: "#2AABEE"
+    url: "https://t.me/theanurin"
+
+  - name: Viber
+    icon: contact-icon-viber
+    icon-color: "#25D366"
+    url: "viber://pa?chatURI=cvyntar_bot"
+
+  - name: Upwork
+    icon: fa-upwork
+    icon-color: "#25D366"
+    url: https://www.upwork.com/freelancers/~018ef1b9d37e5a886b
+
+  - name: X
+    icon: bi-twitter-x
+    icon-color: "#828282"
+    url: https://x.com/theanurin

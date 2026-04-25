@@ -1,0 +1,6 @@
+{
+  "format_on_save": "off",
+  "file_types": {
+    "src/_includes/**/*.html": ["text"]
+  }
+}
