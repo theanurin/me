@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Styles -->
+	<link rel="stylesheet" href="/preview/assets/css/cv.css">
+	<link rel="stylesheet" href="/preview/vendor/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN">
+
+	<!-- Meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="theanurin">
+	<meta property="og:url" content="[https://www.anurin.name/preview](https://www.anurin.name/preview/en-GB/cv/)">
+	<meta property="og:title" content="Максим Анурін | CV">
+	<meta property="og:description" content="Інженер-програміст із понад 20-річним досвідом. Експертиза в програмуванні, оптимізації ядра Linux та управлінні інфраструктурою. Ознайомтеся з моїм професійним шляхом.">
+	<meta property="og:image" content="https://www.anurin.name/preview/assets/images/avatar.jpg">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="[https://www.anurin.name/preview](https://www.anurin.name/preview/en-GB/cv/)">
+	<meta property="twitter:title" content="Максим Анурін | CV">
+	<meta property="twitter:description" content="Інженер-програміст із понад 20-річним досвідом. Експертиза в програмуванні, оптимізації ядра Linux та управлінні інфраструктурою. Ознайомтеся з моїм професійним шляхом.">
+	<meta property="twitter:image" content="https://www.anurin.name/preview/assets/images/avatar.jpg">
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+
+	<title>Максим Анурін Розробник</title>
+</head>
+
+<body>
+	<div class="container">
+		<div class="header">
+			
+			<div class="header_icon">
+				<input type="checkbox" id="mode-switch-checkbox" class="toggle-dark">
+				<label for="mode-switch-checkbox"><i id="mode-switch-icon" class="fa fa-moon-o" aria-hidden="true"></i></label>
+			</div>
+			
+			<div class="header_icon">
+				<input type="checkbox" id="print-button" onclick="window.print(); return false;">
+				<label for="print-button"><i id="mode-switch-icon" class="fa fa-print" aria-hidden="true"></i></label>
+			</div>
+		</div>
+
+		<div class="container-block">
+			<div class="sidebar">
+				
+				<section class="name">
+					<img src="/preview/assets/img/cv/ava2026.jpg" alt="Photo">
+					<h1>Максим Анурін</h1>
+				</section>
+
+				<br style="clear:both">
+
+				<section class="contact">
+					<div class="title">Контакти</div>
+
+					<div class="contact-item">
+						<i class="fa fa-home" aria-hidden="true"></i>
+						<a href="/preview/uk-UA/">www.anurin.name</a>
+					</div>
+
+					<div class="contact-item">
+						<i class="fa fa-envelope-o" aria-hidden="true"></i>
+						<a id="cv_contact_email" href="#" rel="author">
+							...
+						</a>
+						<script>
+							document.addEventListener('DOMContentLoaded', function () {
+								const el = document.getElementById('cv_contact_email');
+								const data = "dGhlYW51cmluQGdtYWlsLmNvbQ==";
+								el.href = "mailto:" + atob(data);
+								el.textContent = atob(data);
+							});
+						</script>
+					</div>
+
+					<div class="contact-item">
+						<i class="fa fa-phone" aria-hidden="true"></i>
+						<a id="cv_contact_phone" href="#" rel="author">...</a>
+						<script>
+							document.addEventListener('DOMContentLoaded', function () {
+								const el = document.getElementById('cv_contact_phone');
+								const data = "KzM4MDk5MTM3OTA2NQ==";
+								el.href = "tel:" + atob(data);
+								el.textContent = atob(data);
+							});
+						</script>
+					</div>
+
+					<div class="contact-item contact-item-location">
+						<i class="fa fa-map-marker" aria-hidden="true"></i>
+						<div>Кропивницький, Киів</div>
+					</div>
+
+					
+					<div class="contact-item">
+						<i class="fa fa-github" aria-hidden="true"></i>
+						<a href="https://github.com/theanurin">
+							GitHub
+						</a>
+					</div>
+					
+					<div class="contact-item">
+						<i class="fa fa-stack-overflow" aria-hidden="true"></i>
+						<a href="https://stackexchange.com/users/2288108/maksym-anurin">
+							Stack Overflow
+						</a>
+					</div>
+					
+					<div class="contact-item">
+						<i class="fa fa-linkedin" aria-hidden="true"></i>
+						<a href="https://www.linkedin.com/in/theanurin/">
+							LinkedIn
+						</a>
+					</div>
+					
+					<div class="contact-item">
+						<i class="fa fa-reddit" aria-hidden="true"></i>
+						<a href="https://www.reddit.com/user/theanurin">
+							Reddit
+						</a>
+					</div>
+					
+				</section>
+
+				
+
+				<section>
+					<div class="title">Мови</div>
+					
+					<div class="skill">Українська</div>
+					
+					<div class="skill">Англійська</div>
+					
+				</section>
+
+				<section>
+					<div class="title">Ключова експертиза</div>
+					
+					<div class="skill">Розподілені системи</div>
+					
+					<div class="skill">Високонавантажений бекенд</div>
+					
+					<div class="skill">DevOps, CI/CD, SDLC</div>
+					
+					<div class="skill">Фінтех/Криптовалюти</div>
+					
+					<div class="skill">Системна архітектура</div>
+					
+				</section>
+
+				<section>
+					<div class="title">М'які навички</div>
+					
+					<div class="skill">Лідерство в команді</div>
+					
+					<div class="skill">Менторство</div>
+					
+					<div class="skill">Комунікація</div>
+					
+					<div class="skill">Вирішення проблем</div>
+					
+					<div class="skill">Проєктування систем</div>
+					
+				</section>
+
+				<section>
+					<div class="title">Інструменти</div>
+					<div class="skills-container-inline">
+					
+					<div class="skill">GitLab</div>
+					
+					<div class="skill">GitHub</div>
+					
+					<div class="skill">Git</div>
+					
+					<div class="skill">Zed</div>
+					
+					<div class="skill">Ollama</div>
+					
+					</div>
+				</section>
+
+				<section>
+					<div class="title">Програмування</div>
+					<div class="skills-container-inline">
+					
+					<div class="skill">TypeScript</div>
+					
+					<div class="skill">C#</div>
+					
+					<div class="skill">Python</div>
+					
+					<div class="skill">SQL</div>
+					
+					<div class="skill">Bash</div>
+					
+					</div>
+				</section>
+
+				<section>
+					<div class="title">Бекенд (Backend)</div>
+					<div class="skills-container-inline">
+					
+					<div class="skill">Node.js</div>
+					
+					<div class="skill">.NET Core</div>
+					
+					<div class="skill">Redis</div>
+					
+					<div class="skill">RabbitMQ</div>
+					
+					<div class="skill">PostgreSQL</div>
+					
+					<div class="skill">MongoDB</div>
+					
+					</div>
+				</section>
+
+				<section>
+					<div class="title">Фронтенд (Frontend)</div>
+					<div class="skills-container-inline">
+					
+					<div class="skill">React</div>
+					
+					<div class="skill">Vue.js</div>
+					
+					<div class="skill">Angular</div>
+					
+					<div class="skill">AngularDart</div>
+					
+					<div class="skill">Knockout</div>
+					
+					<div class="skill">DartWeb</div>
+					
+					<div class="skill">Flutter</div>
+					
+					<div class="skill">Apache Cordova</div>
+					
+					</div>
+				</section>
+
+				<br style="clear:both">
+			</div>
+
+			<div class="main">
+				<section class="summary">
+					<h2 class="title">Коротко про себе</h2>
+					<span><p><strong>Досвідчений Software Engineer</strong> із понад 20-річним стажем, чий шлях розпочався у <strong>«золоту еру»</strong> домашніх комп'ютерів. Від хакінгу на <strong>Z80 Assembler</strong> до архітектури <strong>високонавантажених банківських і криптоплатформ</strong> — мною завжди рухає глибоке розуміння того, <strong>як усе працює</strong>.</p>
+<p><strong>Спеціалізуюся на відмовостійких високопродуктивних архітектурах, керованих вебхуками, з глибокою експертизою в забезпеченні надійності розподілених систем — включно з circuit breaker-патернами, експоненційним backoff, розподіленим трасуванням та надійними підходами до безпеки (mTLS, шифрування payload-даних і валідація HMAC-підписів).</strong></p>
+<p>Як відданий <strong>Individual Contributor</strong>, я надаю пріоритет <strong>технічній досконалості, коду та архітектурі</strong>, а не менеджменту. Мій досвід в <strong>embedded-системах, DevOps та full-stack розробці</strong> дозволяє поєднувати <strong>низькорівневі обмеження</strong> з <strong>високорівневою бізнес-логікою</strong> для створення надійних та оптимізованих рішень.</p>
+</span>
+				</section>
+
+				<section class="experience">
+					<h2 class="title">Професійний досвід</h2>
+					<div class="experience-item">
+						
+						
+						
+						
+						
+							
+						
+						<div class="date">Квітень 2025 - ТЕПЕРІШНІЙ ЧАС</div>
+						<div class="job-title">
+							<strong>ІТ-консультант</strong>, Фрілансер
+						</div>
+						<ul class="details-list">
+							<li>Перевіряв реалізацію рішень для обробки криптовалютних транзакцій</li>
+							
+							<li>Розгортав і підтримував високодоступну інфраструктуру Docker Swarm, що обробляла понад 5 тис. запитів за секунду та понад 100 тис. одночасних WebSocket-з’єднань</li>
+							
+							<li>Забезпечував доступність високонавантаженої веб-платформи на рівні 99,9% (три дев’ятки)</li>
+							
+							<li>Підвищив ефективність команди шляхом впровадження процесів SDLC та надійних CI/CD-пайплайнів.</li>
+							
+							<li>Технології: TypeScript, SQL, PHP, Docker, Kubernetes, Redis, MySQL, PostgreSQL, Google Cloud Platform (GCP), Amazon Web Services (AWS)</li>
+							</ul>
+					</div>
+					
+					<div class="experience-item">
+						
+						
+						
+						
+						
+							
+							
+							
+							
+						
+						<div class="date">Квітень 2024 - Квітень 2025</div>
+						<div class="job-title">
+							<strong>Старший Full-Stack інженер</strong>, EVO (RozetkaPay)
+						</div>
+						<ul class="details-list">
+							<li>Керував повним життєвим циклом вебзастосунку для оформлення банківських кредитів — від розробки до продакшну, включно з автоматизованими CI/CD-процесами та UAT</li>
+							
+							<li>Технології: TypeScript, Docker, Kubernetes, ArgoCD, RabbitMQ, Redis, PostgreSQL, Google Cloud Platform</li>
+							</ul>
+					</div>
+					
+					<div class="experience-item">
+						
+						
+						
+						
+						
+							
+							
+							
+							
+						
+						<div class="date">Квітень 2018 - Квітень 2024</div>
+						<div class="job-title">
+							<strong>Старший розробник / DevOps інженер / Тімлід</strong>, CEXIO Labs
+						</div>
+						<ul class="details-list">
+							<li>Спроєктував і розгорнув власний шлюз для криптовалютних платежів з нуля</li>
+							
+							<li>Рефакторив та оптимізував застарілі системи, що призвело до значного зменшення кількості звернень до L3 підтримки</li>
+							
+							<li>Технології: TypeScript, JavaScript, C#, Lua, Python, Docker (+Swarm), Kubernetes, RabbitMQ, Redis, PostgreSQL</li>
+							</ul>
+					</div>
+					
+					<div class="experience-item">
+						
+						
+						
+						
+						
+							
+							
+							
+							
+						
+						<div class="date">Вересень 2013 - Березень 2018</div>
+						<div class="job-title">
+							<strong>Старший розробник</strong>, UBS (в Luxoft)
+						</div>
+						<ul class="details-list">
+							<li>Розробляв і підтримував стратегічну аналітичну платформу для банківського сектору (MBS — іпотечні цінні папери, ABS — забезпечені активами цінні папери) з розширеними можливостями розрахунку ринкових ризиків.</li>
+							
+							<li>Технології: Java, C/C++, C#, Python, TypeScript, Perl, WPF, WCF, ASP.NET, SyBase, MSSQL, Tibco EMS, XML Stack, JSON, Gradle, Maven, MSBuild</li>
+							</ul>
+					</div>
+					
+					<div class="experience-item">
+						
+						
+						
+						
+						
+							
+							
+							
+							
+						
+						<div class="date">Вересень 2012 - Червень 2013</div>
+						<div class="job-title">
+							<strong>Розробник</strong>, Фрілансер (Upwork.com)
+						</div>
+						<ul class="details-list">
+							<li>Розробив високорозширювану торгову платформу з плагінною архітектурою</li>
+							
+							<li>Розробив нативний поштовий клієнт, оптимізований для Windows 8</li>
+							
+							<li>Технології: C++, C#, Java, JavaScript, HTML, CSS, ASP.NET, .NET 4.5, WPF, WCF, MEF, Metro, WPF, T-SQL</li>
+							</ul>
+					</div>
+					
+					<div class="experience-item">
+						
+						
+						
+						
+						
+							
+							
+							
+							
+						
+						<div class="date">Вересень 2010 - Серпень 2012</div>
+						<div class="job-title">
+							<strong>Розробник</strong>, Software MacKiev
+						</div>
+						<ul class="details-list">
+							<li>Розробив набір креативних інструментів для дітей, включаючи графічний, відео- та аудіоредактори</li>
+							
+							<li>Технології: C++, C#, QuickTime SDK, iTunes SDK, .NET 4, WPF, CLR/C#/C++, Managed/Unmanaged bridges</li>
+							</ul>
+					</div>
+					
+					<div class="experience-item">
+						
+						
+						
+						
+						
+							
+							
+							
+							
+						
+						<div class="date">Червень 2008 - Вересень 2010</div>
+						<div class="job-title">
+							<strong>Розробник</strong>, OTP Bank (via ALG Systems)
+						</div>
+						<ul class="details-list">
+							<li>Розробив автоматизовану систему звітності для дебетових карток, що забезпечувала своєчасну та безпечну доставку клієнтам</li>
+							
+							<li>Підтримував та супроводжував автоматизовані системи продажу кредитних і депозитних продуктів</li>
+							
+							<li>Керував розробкою та підтримкою централізованої системи управління комісіями та зборами</li>
+							
+							<li>Технології: C#, PowerScript, T-SQL, SQL Server, MS Reporting Service, DBMail, ActiveX, Hosting WPF/.NET 3.0 in Win32App, XML, XSLT, XSD, XPath</li>
+							</ul>
+					</div>
+					
+					<div class="experience-item">
+						
+						
+						
+						
+						
+							
+							
+							
+							
+						
+						<div class="date">Листопад 2004 - Травень 2008</div>
+						<div class="job-title">
+							<strong>Молодший розробник</strong>, SystemGroup
+						</div>
+						<ul class="details-list">
+							<li>Автоматизував роздрібні операції, розробивши мобільне рішення для збору даних зі скануванням штрихкодів та безшовною інтеграцією з CRM</li>
+							
+							<li>Розробив RFID-рішення для управління складом, що автоматизувало відстеження палет, їх позиціонування та логістичні процеси в одному з великих аеропортів</li>
+							
+							<li>Технології: C++, C#, T-SQL, SQLCE, .NET 2.0/CF, SQL Server, SOAP, WinCE, XML WebService, Windows Service, Barcode, RFID</li>
+							</ul>
+					</div>
+					
+					<div class="experience-item">
+						
+						
+						
+						
+						
+							
+							
+							
+							
+						
+						<div class="date">Червень 1998 - Жовтень 2004</div>
+						<div class="job-title">
+							<strong>Системний адміністратор</strong>, Компьютерний клуб
+						</div>
+						<ul class="details-list">
+							<li>Керував обслуговуванням апаратного та програмного забезпечення великого парку робочих станцій, забезпечуючи безперервну (24/7) стабільність роботи</li>
+							
+							<li>Керував складним мережевим середовищем із понад 1 000 вузлів, включаючи налаштування обладнання, кабельну інфраструктуру та поточне обслуговування інфраструктури</li>
+							
+							<li>Розробив систему управління робочими станціями та білінгу для інтернет-клубу, що контролювала час користувацьких сесій та доступ</li>
+							
+							<li>Технології: Windows, DOS, Linux, Visual Basic, MS Access, PHP, HTML, MySQL, DHCP, BOOTP, FTP, PPTP, VPN, iptables</li>
+							</ul>
+					</div>
+					</section>
+
+				<section class="education">
+					<h2 class="title">Освіта</h2>
+					<div class="education-item">
+						
+							
+						
+						<div class="date">2023 - ТЕПЕРІШНІЙ ЧАС</div>
+						<ul class="details-list">
+							<li>Центральноукраїнський національний технічний університет</li>
+							
+							<li>Автоматизація, комп'ютерно-інтегровані технології та робототехніка</li>
+							</ul>
+					</div>
+					
+					<div class="education-item">
+						
+							
+						
+						<div class="date">2001 - 2005</div>
+						<ul class="details-list">
+							<li>Кіровоградський Національний Технічний Університет</li>
+							
+							<li>Системне програмування</li>
+							
+							<li>Ступінь бакалавра</li>
+							</ul>
+					</div>
+					</section>
+			</div>
+		</div>
+	</div>
+</body>
+<script src="/preview/assets/js/cv.js"></script>
+
+<script async="" src="/preview/assets/js/cv-analytics.js"></script>
+</html>
