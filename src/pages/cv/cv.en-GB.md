@@ -12,7 +12,7 @@ title_skill__frontend: Frontend
 title_education: Education
 ---
 
-**A seasoned Software Engineer with 20+ years** of official expertise and roots in the **"golden era"** of home computing. From hacking **Z80 Assembler** and building **DIY Laser FSO systems** to architecting modern **high-load banking and crypto platforms**, I have always been driven by a **"how it works"** mindset. 
+**A seasoned Software Engineer with 20+ years** of official expertise and roots in the **"golden era"** of home computing. From hacking **Z80 Assembler** and building **DIY Laser FSO systems** to architecting modern **high-load banking and crypto platforms**, I have always been driven by a **"how-it-works"** mindset. 
 
 I am a firm believer in the **Individual Contributor path**, choosing to stay close to the **code, hardware, and architecture**. I prioritize technical excellence and hands-on problem-solving over traditional management roles.
 

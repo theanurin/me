@@ -19,7 +19,6 @@ devops_and_tools:
   - Gitea
   - Drone CI
   - Git
-  - Subversion
 
 languages:
   en-GB:
