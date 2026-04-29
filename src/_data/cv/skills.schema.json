@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Skills",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "soft",
+    "devops_and_tools",
+    "languages",
+    "programming",
+    "backend",
+    "frontend"
+  ],
+  "properties": {
+    "soft": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en-GB", "uk-UA"],
+      "properties": {
+        "en-GB": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uk-UA": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "devops_and_tools": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "languages": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["en-GB", "uk-UA"],
+      "properties": {
+        "en-GB": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "uk-UA": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "programming": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "backend": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "frontend": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

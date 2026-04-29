@@ -1,25 +1,78 @@
 ---
-title: Oops! Not Found
+layout: ''
 permalink: 404.html
 ---
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Сторінку не знайдено</title>
+    <style>
+        /* 1. Центрування по всьому екрану */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center; /* Горизонтальне центрування */
+            align-items: center;     /* Вертикальне центрування */
+            /* Легкий сірий фон, щоб виділити кружечок, якщо PNG має білі елементи */
+            background-color: #f4f4f9;
+            overflow: hidden; /* Щоб не було скролу */
+            font-family: sans-serif;
+        }
 
-<style type="text/css" media="screen">
-  .container {
-    margin: 10px auto;
-    max-width: 600px;
-    text-align: center;
-  }
-  h1 {
-    margin: 30px 0;
-    font-size: 4em;
-    line-height: 1;
-    letter-spacing: -1px;
-  }
-</style>
+        /* 2. Контейнер для кружечка (Аватарка) */
+        .avatar-container {
+            width: 400px;  /* Фіксована ширина */
+            height: 400px; /* Фіксована висота */
+            background-color: white; /* Фон кружечка */
+            border-radius: 50%;      /* Робимо кружечок */
+            display: flex;
+            justify-content: center;
+            align-items: center;
 
-<div class="container">
-  <h1>404</h1>
+            /* Елегантна тінь для ефекту глибини */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 
-  <p><strong>Page not found :(</strong></p>
-  <p>The requested page could not be found.</p>
-</div>
+            /* Декоративна рамка (опціонально) */
+            border: 8px solid white;
+
+            /* Забезпечує, щоб картинка не виходила за межі кола */
+            overflow: hidden;
+        }
+
+        /* 3. Стилізація самої картинки */
+        .avatar-container img {
+            /* Картинка розширюється, щоб повністю заповнити коло,
+               але не деформується */
+            width: 100%;
+            height: 100%;
+
+            /* Це ключова властивість: вона обрізає картинку по центру,
+               зберігаючи пропорції, як background-size: cover */
+            object-fit: cover;
+
+            /* Початковий масштаб (можна трохи підкоригувати, якщо треба) */
+            transform: scale(1.05);
+        }
+
+        /* Адаптивність для маленьких екранів */
+        @media (max-width: 450px) {
+            .avatar-container {
+                width: 300px;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="avatar-container">
+        <img src="/assets/img/404.png" alt="Error 404 - Broken Robot">
+    </div>
+
+</body>
+</html>

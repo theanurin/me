@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EducationHistory",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "additionalProperties": false,
+    "required": ["period", "comments"],
+    "properties": {
+      "period": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["from", "to"],
+        "properties": {
+          "from": {
+            "type": "string"
+          },
+          "to": {
+            "type": "string"
+          }
+        }
+      },
+      "comments": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["en-GB", "uk-UA"],
+        "properties": {
+          "en-GB": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "uk-UA": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
+}

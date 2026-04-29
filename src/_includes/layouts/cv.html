@@ -1,3 +1,4 @@
+{%- assign contact = contact | required -%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +14,7 @@
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="favicon.ico">
 
-	<title>{{ info.contact.name }} {{ title | default: site.title }}</title>
+	<title>{{ contact.name | required }} {{ title | default: site.title }}</title>
 </head>
 
 <body>
@@ -29,8 +30,7 @@
 
 		<div class="container-block">
 			<div class="sidebar">
-    			{% assign contact = site.contact | required %}
-    			{% assign socialProfiles = site.socialProfiles | required %}
+    			{% assign socialProfiles = socialProfiles | required %}
 				<section class="name">
 					<img src="/assets/img/cv/ava2026.jpg" alt="Photo">
 					<h1>{{ contact.name | required }}</h1>
@@ -72,7 +72,7 @@
 					{%- endfor %}
 				</section>
 
-				{% assign skills = info.skills | required %}
+				{% assign skills = cv.skills | required %}
 
 				<section>
 				    <div class="title">{{ title_skill__languages | required }}</div>
@@ -136,7 +136,7 @@
 
 				<section class="experience">
 					<h2 class="title">{{ title_experience }}</h2>
-					{%- for experience_item in info.experience %}
+					{%- for experience_item in cv.experience %}
 					<div class="experience-item">
 					    {% assign from_parts = experience_item.period.from | required | split: "-" %}
 						{% assign from_year = from_parts[0] %}
@@ -167,7 +167,7 @@
 
 				<section class="education">
 					<h2 class="title">{{ title_education }}</h2>
-					{%- for education_item in info.education %}
+					{%- for education_item in cv.education %}
 					<div class="education-item">
 						{% if education_item.period.to == "PRESENT" and locale == "en-GB" %}
 						    {% assign to_text = "PRESENT" %}

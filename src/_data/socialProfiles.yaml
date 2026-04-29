@@ -1,0 +1,47 @@
+- platform: github
+  name: GitHub
+  url: https://github.com/theanurin
+  isShowInCV: true
+
+- platform: facebook
+  name: Facebook
+  url: https://www.facebook.com/theanurin42
+
+- platform: stack-overflow
+  name: Stack Overflow
+  url: https://stackexchange.com/users/2288108/maksym-anurin
+  isShowInCV: true
+
+- platform: linkedin
+  name: LinkedIn
+  url: https://www.linkedin.com/in/theanurin/
+  isShowInCV: true
+
+- platform: reddit
+  name: Reddit
+  url: https://www.reddit.com/user/theanurin
+  isShowInCV: true
+
+- platform: whatsapp
+  name: WhatsApp
+  url: https://api.whatsapp.com/send/?phone=380991379065&text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%21&type=phone_number&app_absent=0
+
+- platform: telegram
+  name: Telegram
+  url: https://t.me/theanurin
+
+- platform: youtube
+  name: YouTube
+  url: https://www.youtube.com/@theanurin42
+
+- platform: viber
+  name: Viber
+  url: viber://pa?chatURI=380991379065
+
+- platform: upwork
+  name: Upwork
+  url: https://www.upwork.com/freelancers/~018ef1b9d37e5a886b
+
+- platform: x
+  name: X
+  url: https://x.com/theanurin

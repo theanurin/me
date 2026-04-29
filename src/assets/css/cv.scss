@@ -3,7 +3,6 @@
 
 * {
 	font-family: 'Helvetica', 'Arial', sans-serif;
-	//text-align: justify;
 	line-height: 1.5;
 }
 
@@ -26,14 +25,8 @@ body {
         width: 90%;
         margin: 0 auto;
         padding: 20px;
-        /* Видаляємо або коментуємо ці рядки: */
-        /* display: grid; */
-        /* grid-template-columns: 2fr 5fr; */
-
-        /* Додаємо це для коректної обробки висоти блоку, що містить float: */
         display: block;
         overflow: hidden;
-
 		.sidebar {
 			margin-top: 20px;
 		}
@@ -44,6 +37,7 @@ body {
 	@page {
 		size: A4;
 	}
+
 	.container {
 		margin:0;
 		padding:0;
@@ -57,7 +51,7 @@ body {
 
 		.header {
 			input, label {
-				display: none;
+				display: none !important;
 			}
 		}
 	}
@@ -68,8 +62,6 @@ body {
 		background-color: var(--bg-color-cv);
 	}
 	.container {
-		// padding:0;
-		// margin:0;
 		box-shadow: none;
 		.container-block {
 
@@ -83,11 +75,6 @@ body {
 }
 
 @media screen and (max-width: 768px) {
-	// .container {
-	// 	.container-block {
-	// 		display: block;
-	// 	}
-	// }
 	.header {
 		display: block;
 		.title {
@@ -151,7 +138,6 @@ body {
 }
 
 .main {
-    /* Текст автоматично почне обтікати сайдбар */
     display: block;
 
 	section {
@@ -196,11 +182,9 @@ body {
 .sidebar {
 	color: var(--fg-color);
 	width: auto;
-    padding-right: 2em; /* збільшив відступ, щоб текст не прилипав */
-
-    /* Додайте ці рядки: */
+    padding-right: 2em;
     float: left;
-    width: 30%; /* або конкретне значення, наприклад 250px */
+    width: 30%;
     margin-top: 20px;
 
 	section {
@@ -236,8 +220,6 @@ body {
 }
 
 .contact {
-	// margin-bottom: 20px;
-
 	h1 {
 		color: var(--fg-color);
 	}
@@ -269,34 +251,27 @@ body {
 	}
 }
 
-/* Контейнер стає флекс-панеллю з перенесенням рядків */
 .skills-container-inline {
     display: flex;
     flex-wrap: wrap;
-    gap: 4px; /* Відступ між елементами */
+    gap: 4px;
 }
 
-/* Налаштування окремого елемента */
 .skills-container-inline .skill {
     display: inline-block;
 }
 
-/* Додавання коми після кожного елемента, крім останнього */
 .skills-container-inline .skill:not(:last-child)::after {
     content: ", ";
 }
 
-
 .experience-item, .education-item {
-    font-family: Arial, sans-serif; /* або ваш шрифт */
+    font-family: Arial, sans-serif;
     line-height: 1.5;
     margin-bottom: 20px;
-
-    /* Додайте цей рядок */
     display: flow-root;
 }
 
-/* Верхній рядок з датами */
 .experience-item .date, .education-item .date {
     color: #b0b0b0;
     font-size: 0.85rem;
@@ -304,15 +279,13 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* Посада та компанія */
 .experience-item .job-title {
     font-size: 1.1rem;
     margin: 4px 0;
 }
 
-/* Список обов'язків */
 .details-list {
-    list-style: none; /* прибираємо стандартні точки */
+    list-style: none;
     padding: 0;
     margin: 0;
 }
@@ -323,13 +296,12 @@ body {
     margin-bottom: 4px;
 }
 
-/* Створення тире через псевдоелемент */
 .details-list li::before {
     content: "—";
     margin-right: 15px;
     margin-left: 20px;
     color: #333333;
-    flex-shrink: 0; /* щоб тире не стискалося */
+    flex-shrink: 0;
 }
 [data-theme='dark'] .details-list li::before {
     color: #a9b2bd;

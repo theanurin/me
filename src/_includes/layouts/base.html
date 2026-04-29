@@ -13,6 +13,7 @@
 <!-- (layout: base) fileDirectoryStem: {{ fileDirectoryStem }} -->
 <!-- (layout: base) date: {{ date }} -->
 {% raw %}{% endraw -%}{%- endif -%}
+{%- assign locale = locale | default: "uk-UA" -%}
 <html lang="{{ locale }}">
 
   <head>
@@ -33,6 +34,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/assets/css/style.css">
+{%- if css %}
+    <link rel="stylesheet" href="{{ css }}">
+{% endif %}
   </head>
 
   <body class="font-roboto antialiased d-flex flex-column min-vh-100">
@@ -107,10 +111,10 @@
       <footer class="mt-5 bg-light mt-auto overflow-hidden">
         <div class="container-xxl">
           <section class="mb-1 mt-3">
-              {% render 'templates/contacts.html', contacts_data: site.contact, social_profiles_data: site.socialProfiles %}
+              {% render 'templates/contacts.html', contacts_data: contact, social_profiles_data: socialProfiles %}
           </section>
           <section class="text-center bg-gray-500">
-            <small>&copy; {{ currentYear }} — {{ site.name }}</small>
+            <small>&copy; 2025—{{ currentYear }} {{ site.name }}</small>
           </section>
         </div>
       </footer>

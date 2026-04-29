@@ -23,73 +23,6 @@ const siteConfig = {
       title: "English",
     },
   },
-  contact: {
-    name: "Maksym Anurin",
-    email: "theanurin@gmail.com",
-    emailSubject: "Question from the blog",
-    phone: "+380991379065",
-  },
-  socialProfiles: [
-    {
-      platform: "github",
-      name: "GitHub",
-      url: "https://github.com/theanurin",
-      isShowInCV: true,
-    },
-    {
-      platform: "facebook",
-      name: "Facebook",
-      url: "https://www.facebook.com/theanurin42",
-    },
-    {
-      platform: "stack-overflow",
-      name: "Stack Overflow",
-      url: "https://stackexchange.com/users/2288108/maksym-anurin",
-      isShowInCV: true,
-    },
-    {
-      platform: "linkedin",
-      name: "LinkedIn",
-      url: "https://www.linkedin.com/in/theanurin/",
-      isShowInCV: true,
-    },
-    {
-      platform: "reddit",
-      name: "Reddit",
-      url: "https://www.reddit.com/user/theanurin",
-      isShowInCV: true,
-    },
-    {
-      platform: "whatsapp",
-      name: "WhatsApp",
-      url: "https://api.whatsapp.com/send/?phone=380991379065&text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%21&type=phone_number&app_absent=0",
-    },
-    {
-      platform: "telegram",
-      name: "Telegram",
-      url: "https://t.me/theanurin",
-    },
-    {
-      platform: "youtube",
-      name: "YouTube",
-      url: "https://www.youtube.com/@theanurin42",
-    },
-    {
-      platform: "viber",
-      name: "Viber",
-      url: "viber://pa?chatURI=380991379065",
-    },
-    {
-      platform: "upwork",
-      name: "Upwork",
-      url: "https://www.upwork.com/freelancers/~018ef1b9d37e5a886b",
-    },
-    {
-      platform: "x",
-      name: "X",
-      url: "https://x.com/theanurin",
-    },
-  ],
 };
 
 const POST_FILE_PATH_STEM_REGEX = /^\/posts\/(\d{4})\/\d+-([\w-]+)\/\w+$/;
@@ -278,7 +211,6 @@ module.exports = function (eleventyConfig) {
       locale = env.locale || siteConfig.defaultLocale;
     }
     const localeData = env.i18n[locale];
-    // throw new Error(Object.keys(localeData));
     return localeData
       ? localeData[key] || `MISSING_TRANSLATION_${key}`
       : `MISSING_LOCALE_${locale}`;
@@ -350,13 +282,12 @@ module.exports = function (eleventyConfig) {
 
       if (filePathStem.startsWith("/posts/")) {
         // Only apply to blog posts: src/posts/2025/2025-01-15-hello-world/...
-        console.log("Resolving locales for /posts");
         const match = filePathStem.match(
           /^(\/posts\/\d{4}\/\d{4}-\d{2}-\d{2}-[\w-]+\/[\w-]+)\.[\w-]+$/,
         );
         if (match) {
           const slug = match[1];
-          translationPages = data.collections.all.filter((p) =>
+          const translationPages = data.collections.all.filter((p) =>
             p.filePathStem.startsWith(slug),
           );
           const map = {};
@@ -373,7 +304,7 @@ module.exports = function (eleventyConfig) {
         const match = filePathStem.match(/^(\/pages\/[\w-]+\/[\w-]+)\.[\w-]+$/);
         if (match) {
           const slug = match[1];
-          translationPages = data.collections.all.filter((p) =>
+          const translationPages = data.collections.all.filter((p) =>
             p.filePathStem.startsWith(slug),
           );
           const map = {};
