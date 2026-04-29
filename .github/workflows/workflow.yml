@@ -157,6 +157,13 @@ jobs:
           Disallow: ${{ env.SITE_PREFIX }}preview/
           EOF
 
+      - name: Generate CNAME
+        run: |
+          cd deployment-dir
+          cat <<EOF | tee CNAME
+          anurin.name
+          EOF
+
       - name: Push changed
         run: |
           cd deployment-dir
