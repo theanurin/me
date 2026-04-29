@@ -1,21 +1,60 @@
-hard:
-  - TypeScript
-  - C#
-  - Dart
-  - Node.js
-  - ".NET Core"
-  - Python
-  - Redis
-  - SQL
-  - RabbitMQ
-  - "GitLab CI/CD"
-  - Bash
-
 soft:
+  en-GB:
+  - Team leadership
+  - Mentoring
+  - Communication
+  - Problem solving
+  - System design
+  uk-UA:
+  - Лідерство в команді
+  - Менторство
+  - Комунікація
+  - Вирішення проблем
+  - Проєктування систем
+
+devops_and_tools:
+  - GitLab
+  - GitHub
+  - Bitbucket
+  - Gitea
+  - Drone CI
+  - Git
   - Subversion
+
+languages:
+  en-GB:
+  - Ukrainian (native)
+  - English (intermediate)
+  uk-UA:
+  - Українська (рідна)
+  - Англійська (середній рівень)
+
+programming:
+  - TypeScript
+  - SQL
+  - C#
+  - Python
+  - Bash
+  - Dart
+  - Rust
+  - Lua
+  - C++
+  - Java
+
+backend:
+  - Node.js
+  - .NET Core
+  - Redis
+  - RabbitMQ
+  - PostgreSQL
   - MongoDB
+
+frontend:
   - React
-  - VueJS
+  - Vue.js
   - Angular
   - AngularDart
+  - Knockout
+  - DartWeb
   - Flutter
+  - Apache Cordova

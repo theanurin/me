@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://schemas.anurin.name/v1/experience.json",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "period": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "type": "string",
+            "pattern": "^[1-9]\\d{3}-\\d{2}$",
+            "description": "Example: 2020-01"
+          },
+          "to": {
+            "type": "string",
+            "pattern": "^(20\\d{2}-\\d{2})|(PRESENT)$",
+            "description": "Example: 2022-12"
+          }
+        },
+        "required": ["from", "to"],
+        "additionalProperties": false
+      },
+      "position": {
+        "type": "object",
+        "properties": {
+          "en-GB": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uk-UA": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": ["en-GB", "uk-UA"]
+      },
+      "employer": {
+        "type": "object",
+        "properties": {
+          "en-GB": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uk-UA": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": ["en-GB", "uk-UA"]
+      },
+      "comments": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "en-GB": {
+              "type": "string",
+              "minLength": 1
+            },
+            "uk-UA": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": ["en-GB", "uk-UA"]
+        }
+      }
+    },
+    "required": ["period", "position", "employer", "comments"],
+    "additionalProperties": false
+  }
+}

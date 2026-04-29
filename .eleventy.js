@@ -30,7 +30,12 @@ const siteConfig = {
     phone: "+380991379065",
   },
   socialProfiles: [
-    { platform: "github", name: "GitHub", url: "https://github.com/theanurin" },
+    {
+      platform: "github",
+      name: "GitHub",
+      url: "https://github.com/theanurin",
+      isShowInCV: true,
+    },
     {
       platform: "facebook",
       name: "Facebook",
@@ -40,23 +45,30 @@ const siteConfig = {
       platform: "stack-overflow",
       name: "Stack Overflow",
       url: "https://stackexchange.com/users/2288108/maksym-anurin",
+      isShowInCV: true,
     },
     {
       platform: "linkedin",
       name: "LinkedIn",
       url: "https://www.linkedin.com/in/theanurin/",
+      isShowInCV: true,
     },
     {
       platform: "reddit",
       name: "Reddit",
       url: "https://www.reddit.com/user/theanurin",
+      isShowInCV: true,
     },
     {
       platform: "whatsapp",
       name: "WhatsApp",
       url: "https://api.whatsapp.com/send/?phone=380991379065&text=%D0%9F%D1%80%D0%B8%D0%B2%D1%96%D1%82%21&type=phone_number&app_absent=0",
     },
-    { platform: "telegram", name: "Telegram", url: "https://t.me/theanurin" },
+    {
+      platform: "telegram",
+      name: "Telegram",
+      url: "https://t.me/theanurin",
+    },
     {
       platform: "youtube",
       name: "YouTube",
@@ -72,7 +84,11 @@ const siteConfig = {
       name: "Upwork",
       url: "https://www.upwork.com/freelancers/~018ef1b9d37e5a886b",
     },
-    { platform: "x", name: "X", url: "https://x.com/theanurin" },
+    {
+      platform: "x",
+      name: "X",
+      url: "https://x.com/theanurin",
+    },
   ],
 };
 
@@ -220,7 +236,7 @@ module.exports = function (eleventyConfig) {
   //
   // Extend Liquid by some Jekyll-friendly filters
   //
-  eleventyConfig.addLiquidFilter("capitalize_all", function (words) {
+  eleventyConfig.addFilter("capitalize_all", function (words) {
     return words.split(" ").map(capitalizeWord).join(" ");
   });
 
@@ -248,7 +264,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("required", function (value, errorMessage) {
     if (!value) {
-      throw new Error(errorMessage || "Missing required argument in template");
+      throw new Error(errorMessage || "Missing required data");
     }
     return value;
   });

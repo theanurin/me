@@ -3,7 +3,7 @@
 
 * {
 	font-family: 'Helvetica', 'Arial', sans-serif;
-	text-align: justify;
+	//text-align: justify;
 	line-height: 1.5;
 }
 
@@ -23,16 +23,21 @@ body {
 	margin-bottom: 30px;
 
 	.container-block {
-		width: 90%;
-		margin: 0 auto;
-		padding: 20px;
-		display: grid;
-		grid-template-columns: 2fr 5fr;
+        width: 90%;
+        margin: 0 auto;
+        padding: 20px;
+        /* Видаляємо або коментуємо ці рядки: */
+        /* display: grid; */
+        /* grid-template-columns: 2fr 5fr; */
+
+        /* Додаємо це для коректної обробки висоти блоку, що містить float: */
+        display: block;
+        overflow: hidden;
 
 		.sidebar {
 			margin-top: 20px;
 		}
-	}
+    }
 }
 
 @media print {
@@ -118,7 +123,7 @@ body {
 
 @mixin sub-header {
 	font-size: 16px;
-	font-weight: 700; 
+	font-weight: 700;
 	color: var(--fg-color);
 }
 
@@ -146,11 +151,17 @@ body {
 }
 
 .main {
+    /* Текст автоматично почне обтікати сайдбар */
+    display: block;
+
 	section {
 		@include body-text;
 
 		h2 {
 			@include header;
+            clear: none; /* дозволяє обтікання */
+            display: flex; /* залишає лінію */
+            overflow: hidden; /* змушує блок "підлаштуватися" під вільний простір поруч з float */
 		}
 	}
 }
@@ -185,6 +196,12 @@ body {
 .sidebar {
 	color: var(--fg-color);
 	width: auto;
+    padding-right: 2em; /* збільшив відступ, щоб текст не прилипав */
+
+    /* Додайте ці рядки: */
+    float: left;
+    width: 30%; /* або конкретне значення, наприклад 250px */
+    margin-top: 20px;
 
 	section {
 		margin-top: 1em;
@@ -220,31 +237,31 @@ body {
 
 .contact {
 	// margin-bottom: 20px;
-	
+
 	h1 {
 		color: var(--fg-color);
 	}
-		
+
 	.contact-item {
 		display: flex;
 		align-items: center;
-		
+
 		svg {
 			width: 18px;
 			display: inline-block;
 			color: var(--fg-color);
 		}
-		
+
 		i {
 			color: var(--fg-color);
 		}
-		
+
 		a {
 			text-decoration: none;
 			padding-top: 4px;
 			padding-left: 4px;
 			@include body-text;
-			
+
 			&:hover {
 				text-decoration: underline;
 			}
@@ -252,37 +269,68 @@ body {
 	}
 }
 
+/* Контейнер стає флекс-панеллю з перенесенням рядків */
+.skills-container-inline {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px; /* Відступ між елементами */
+}
 
-.projects {
-// .title {
-	// 	@include header;
-	// }
-	
-	.project {
-		a {
-			@include body-text;
-		}
-		
-		.company {
-			@include body-text;
-			font-weight: bold;
-			
-			.time {
-				float: right;
-				color: var(--fg-color-title-sm);
-				font-weight: 100;
-			}
-		}
-	}
+/* Налаштування окремого елемента */
+.skills-container-inline .skill {
+    display: inline-block;
+}
+
+/* Додавання коми після кожного елемента, крім останнього */
+.skills-container-inline .skill:not(:last-child)::after {
+    content: ", ";
 }
 
 
+.experience-item, .education-item {
+    font-family: Arial, sans-serif; /* або ваш шрифт */
+    line-height: 1.5;
+    margin-bottom: 20px;
 
+    /* Додайте цей рядок */
+    display: flow-root;
+}
 
-// @import "includes/career-profile";
-// @import "includes/education";
-// @import "includes/languages";
-// @import "includes/skills";
-// @import "includes/experience";
-// @import "includes/publications";
-// @import "includes/volunteering";
+/* Верхній рядок з датами */
+.experience-item .date, .education-item .date {
+    color: #b0b0b0;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Посада та компанія */
+.experience-item .job-title {
+    font-size: 1.1rem;
+    margin: 4px 0;
+}
+
+/* Список обов'язків */
+.details-list {
+    list-style: none; /* прибираємо стандартні точки */
+    padding: 0;
+    margin: 0;
+}
+
+.details-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 4px;
+}
+
+/* Створення тире через псевдоелемент */
+.details-list li::before {
+    content: "—";
+    margin-right: 15px;
+    margin-left: 20px;
+    color: #333333;
+    flex-shrink: 0; /* щоб тире не стискалося */
+}
+[data-theme='dark'] .details-list li::before {
+    color: #a9b2bd;
+}

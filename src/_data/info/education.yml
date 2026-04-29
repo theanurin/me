@@ -1,0 +1,23 @@
+- period:
+    from: "2023"
+    to: "PRESENT"
+  comments:
+    en-GB:
+    - "Central Ukrainian National Technical University"
+    - "Automation, Computer-Integrated Technologies and Robotics"
+    uk-UA:
+    - "Центральноукраїнський національний технічний університет"
+    - "Автоматизація, комп'ютерно-інтегровані технології та робототехніка"
+
+- period:
+    from: "2001"
+    to: "2005"
+  comments:
+    en-GB:
+    - "Kirovograd National Technical University"
+    - "Operation System Programming"
+    - "Bachelor's degree"
+    uk-UA:
+    - "Кіровоградський Національний Технічний Університет"
+    - "Системне програмування"
+    - "Ступінь бакалавра"

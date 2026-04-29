@@ -1,0 +1,37 @@
+{%- comment %}
+{% endcomment -%}
+{%- if locale == "en-GB" -%}
+    {%- case month -%}
+        {%- when "01" -%}January
+        {%- when "02" -%}February
+        {%- when "03" -%}March
+        {%- when "04" -%}April
+        {%- when "05" -%}May
+        {%- when "06" -%}June
+        {%- when "07" -%}July
+        {%- when "08" -%}August
+        {%- when "09" -%}September
+        {%- when "10" -%}October
+        {%- when "11" -%}November
+        {%- when "12" -%}December
+        {%- else -%}{{ month }}
+    {%- endcase -%}
+{%- elsif locale == "uk-UA" -%}
+    {%- case month -%}
+        {%- when "01" -%}Січень
+        {%- when "02" -%}Лютий
+        {%- when "03" -%}Березень
+        {%- when "04" -%}Квітень
+        {%- when "05" -%}Травень
+        {%- when "06" -%}Червень
+        {%- when "07" -%}Ліпень
+        {%- when "08" -%}Серпень
+        {%- when "09" -%}Вересень
+        {%- when "10" -%}Жовтень
+        {%- when "11" -%}Листопад
+        {%- when "12" -%}Грудень
+        {%- else -%}{{ month }}
+    {%- endcase -%}
+{%- else -%}
+{{ month }}
+{%- endif -%}

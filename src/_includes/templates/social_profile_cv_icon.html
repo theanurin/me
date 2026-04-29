@@ -1,0 +1,30 @@
+{% comment %}
+Render <i class="..."></i> from passed social profile entry
+{% endcomment %}
+{%- case platform | required -%}
+  {%- when "youtube" -%}
+    {%- assign icon_color = '#FF0000' -%}
+    {%- assign icon_kind = 'fa' -%}
+  {%- when "facebook" -%}
+    {%- assign icon_color = '#3A5795' -%}
+    {%- assign icon_kind = 'fa' -%}
+  {%- when "github" -%}
+    {%- assign icon_color = '#000000' -%}
+    {%- assign icon_kind = 'fa' -%}
+  {%- when "linkedin" -%}
+    {%- assign icon_color = '#0A66C2' -%}
+    {%- assign icon_kind = 'fa' -%}
+  {%- when "reddit" -%}
+    {%- assign icon_color = '#FF4500' -%}
+    {%- assign icon_kind = 'fa' -%}
+  {%- when "stack-overflow" -%}
+    {%- assign icon_color = '#F48024' -%}
+    {%- assign icon_kind = 'fa' -%}
+  {%- else -%}
+    {%- assign icon_color = '#828282' -%}
+{%- endcase -%}
+{%- if icon_kind == 'fa' -%}
+<i class="fa fa-{{ platform }}" aria-hidden="true"></i>
+{%- else -%}
+<i class="fa fa-{{ platform }}" aria-hidden="true"></i>
+{%- endif -%}

@@ -1,0 +1,156 @@
+# yaml-language-server: $schema=./experience.schema.json
+
+- period:
+    from: "2025-04"
+    to: "PRESENT"
+  position:
+    en-GB: "IT Consultant"
+    uk-UA: "ІТ-консультант"
+  employer:
+    en-GB: "Freelancer"
+    uk-UA: "Фрілансер"
+  comments:
+    - en-GB: "Reviewed implementation of crypto processing solutions"
+      uk-UA: "Перевіряв реалізацію рішень для обробки криптовалютних транзакцій"
+    - en-GB: "Deployed and maintained a high-availability Docker Swarm infrastructure handling 5k+ QPS and 100k+ concurrent WebSocket connections"
+      uk-UA: "Розгортав і підтримував високодоступну інфраструктуру Docker Swarm, що обробляла понад 5 тис. запитів за секунду та понад 100 тис. одночасних WebSocket-з’єднань"
+    - en-GB: "Maintained \"three nines\" (99.9%) uptime for a high-traffic web platform"
+      uk-UA: "Забезпечував доступність високонавантаженої веб-платформи на рівні 99,9% (три дев’ятки)"
+    - en-GB: "Boosted team performance by establishing SDLC processes and implementing robust CI/CD pipelines"
+      uk-UA: "Підвищив ефективність команди шляхом впровадження процесів SDLC та надійних CI/CD-пайплайнів."
+    - en-GB: "Technologies: TypeScript, SQL, PHP, Docker, Kubernetes, Redis, MySQL, PostgreSQL, Google Cloud Platform (GCP), Amazon Web Services (AWS)"
+      uk-UA: "Технології: TypeScript, SQL, PHP, Docker, Kubernetes, Redis, MySQL, PostgreSQL, Google Cloud Platform (GCP), Amazon Web Services (AWS)"
+
+- period:
+    from: "2024-04"
+    to: "2025-04"
+  position:
+    en-GB: "Senior Full-Stack Engineer"
+    uk-UA: "Старший Full-Stack інженер"
+  employer:
+    en-GB: "EVO (RozetkaPay)"
+    uk-UA: "EVO (RozetkaPay)"
+  comments:
+    - en-GB: "Managed the full lifecycle of a web application for bank loan origination, from development to production, including automated CI/CD and UAT"
+      uk-UA: "Керував повним життєвим циклом вебзастосунку для оформлення банківських кредитів — від розробки до продакшну, включно з автоматизованими CI/CD-процесами та UAT"
+    - en-GB: "Technologies: TypeScript, Docker, Kubernetes, ArgoCD, RabbitMQ, Redis, PostgreSQL, Google Cloud Platform"
+      uk-UA: "Технології: TypeScript, Docker, Kubernetes, ArgoCD, RabbitMQ, Redis, PostgreSQL, Google Cloud Platform"
+
+- period:
+    from: "2018-04"
+    to: "2024-04"
+  position:
+    en-GB: "Senior Developer / DevOps / Team Lead"
+    uk-UA: "Старший розробник / DevOps інженер / Тімлід"
+  employer:
+    en-GB: "CEXIO Labs"
+    uk-UA: "CEXIO Labs"
+  comments:
+    - en-GB: "Architected and deployed a custom crypto payment gateway from the ground up"
+      uk-UA: "Спроєктував і розгорнув власний шлюз для криптовалютних платежів з нуля"
+    - en-GB: "Maintained and optimized legacy systems to ensure continued stability and performance"
+      uk-UA: "Підтримував та оптимізував застарілі системи для забезпечення стабільності та продуктивності"
+    - en-GB: "Technologies: TypeScript, JavaScript, C#, Lua, Python, Docker (+Swarm), Kubernetes, RabbitMQ, Redis, PostgreSQL"
+      uk-UA: "Технології: TypeScript, JavaScript, C#, Lua, Python, Docker (+Swarm), Kubernetes, RabbitMQ, Redis, PostgreSQL"
+
+- period:
+    from: "2013-09"
+    to: "2018-03"
+  position:
+    en-GB: "Senior Developer"
+    uk-UA: "Старший розробник"
+  employer:
+    en-GB: "UBS (via Luxoft)"
+    uk-UA: "UBS (в Luxoft)"
+  comments:
+    - en-GB: "Developed and maintained a strategic banking analytics platform for MBS (Mortgage-Backed Securities) and ABS (Asset-Backed Securities), featuring advanced market risk calculation capabilities."
+      uk-UA: "Розробляв і підтримував стратегічну аналітичну платформу для банківського сектору (MBS — іпотечні цінні папери, ABS — забезпечені активами цінні папери) з розширеними можливостями розрахунку ринкових ризиків."
+    - en-GB: "Technologies: Java, C/C++, C#, Python, TypeScript(JavaScript), Perl, WPF, WCF, ASP.NET, SyBase, MSSQL, Tibco EMS, XML Stack, JSON, Gradle, Maven, MSBuild"
+      uk-UA: "Технології: Java, C/C++, C#, Python, TypeScript(JavaScript), Perl, WPF, WCF, ASP.NET, SyBase, MSSQL, Tibco EMS, XML Stack, JSON, Gradle, Maven, MSBuild"
+
+- period:
+    from: "2012-09"
+    to: "2013-06"
+  position:
+    en-GB: "Middle Developer"
+    uk-UA: "Розробник"
+  employer:
+    en-GB: "Freelancer (Upwork.com)"
+    uk-UA: "Фрілансер (Upwork.com)"
+  comments:
+    - en-GB: "Engineered a highly extensible, plugin-based trading platform"
+      uk-UA: "Розробив високорозширювану торгову платформу з плагінною архітектурою"
+    - en-GB: "Developed a native email client optimized for Windows 8"
+      uk-UA: "Розробив нативний поштовий клієнт, оптимізований для Windows 8"
+    - en-GB: "Technologies: C++, C#, Java, JavaScript, HTML, CSS, ASP.NET, .NET 4.5, WPF, WCF, MEF, Metro, WPF, T-SQL"
+      uk-UA: "Технології: C++, C#, Java, JavaScript, HTML, CSS, ASP.NET, .NET 4.5, WPF, WCF, MEF, Metro, WPF, T-SQL"
+
+- period:
+    from: "2010-09"
+    to: "2012-08"
+  position:
+    en-GB: "Middle Developer"
+    uk-UA: "Розробник"
+  employer:
+    en-GB: "Software MacKiev"
+    uk-UA: "Software MacKiev"
+  comments:
+    - en-GB: "Developed a suite of creative tools for children, including graphics, movie, and sound editors"
+      uk-UA: "Розробив набір креативних інструментів для дітей, включаючи графічний, відео- та аудіоредактори"
+    - en-GB: "Technologies: C++, C#, QuickTime SDK, iTunes SDK, .NET 4, WPF, CLR/C#/C++, Managed/Unmanaged bridges"
+      uk-UA: "Технології: C++, C#, QuickTime SDK, iTunes SDK, .NET 4, WPF, CLR/C#/C++, Managed/Unmanaged bridges"
+
+- period:
+    from: "2008-06"
+    to: "2010-09"
+  position:
+    en-GB: "Middle Developer"
+    uk-UA: "Розробник"
+  employer:
+    en-GB: "OTP Bank (via ALG Systems)"
+    uk-UA: "OTP Bank (via ALG Systems)"
+  comments:
+    - en-GB: "Developed an automated reporting system for debit cards, ensuring timely and secure delivery to clients"
+      uk-UA: "Розробив автоматизовану систему звітності для дебетових карток, що забезпечувала своєчасну та безпечну доставку клієнтам"
+    - en-GB: "Maintained and supported automated systems for credit and deposit sales"
+      uk-UA: "Підтримував та супроводжував автоматизовані системи продажу кредитних і депозитних продуктів"
+    - en-GB: "Managed the development and maintenance of a centralized Fees and Commissions Management System"
+      uk-UA: "Керував розробкою та підтримкою централізованої системи управління комісіями та зборами"
+    - en-GB: "Technologies: C#, PowerScript, T-SQL, SQL Server, MS Reporting Service, DBMail, ActiveX, Hosting WPF/.NET 3.0 in Win32App, XML, XSLT, XSD, XPath"
+      uk-UA: "Технології: C#, PowerScript, T-SQL, SQL Server, MS Reporting Service, DBMail, ActiveX, Hosting WPF/.NET 3.0 in Win32App, XML, XSLT, XSD, XPath"
+
+- period:
+    from: "2004-11"
+    to: "2008-05"
+  position:
+    en-GB: "Junoir Developer"
+    uk-UA: "Молодший розробник"
+  employer:
+    en-GB: "SystemGroup"
+    uk-UA: "SystemGroup"
+  comments:
+    - en-GB: "Automated retail operations by engineering a mobile data collection solution with barcode scanning and seamless CRM integration"
+      uk-UA: "Автоматизував роздрібні операції, розробивши мобільне рішення для збору даних зі скануванням штрихкодів та безшовною інтеграцією з CRM"
+    - en-GB: "Engineered an RFID-driven warehouse management solution to automate pallet tracking, positioning, and logistics workflows at major airport"
+      uk-UA: "Розробив RFID-рішення для управління складом, що автоматизувало відстеження палет, їх позиціонування та логістичні процеси в одному з великих аеропортів"
+    - en-GB: "Technologies: C++, C#, T-SQL, SQLCE, .NET 2.0/CF, SQL Server, SOAP, WinCE, XML WebService, Windows Service, Barcode, RFID"
+      uk-UA: "Технології: C++, C#, T-SQL, SQLCE, .NET 2.0/CF, SQL Server, SOAP, WinCE, XML WebService, Windows Service, Barcode, RFID"
+
+- period:
+    from: "1998-06"
+    to: "2004-10"
+  position:
+    en-GB: "System Administrator"
+    uk-UA: "Системний адміністратор"
+  employer:
+    en-GB: "LAN gaming club"
+    uk-UA: "Компьютерний клуб"
+  comments:
+    - en-GB: "Managed hardware and software maintenance for a large fleet of workstations, ensuring 24/7 operational stability"
+      uk-UA: "Керував обслуговуванням апаратного та програмного забезпечення великого парку робочих станцій, забезпечуючи безперервну (24/7) стабільність роботи"
+    - en-GB: "Managed a complex network environment for 1,000+ nodes, including hardware configuration, cabling, and ongoing infrastructure maintenance"
+      uk-UA: "Керував складним мережевим середовищем із понад 1 000 вузлів, включаючи налаштування обладнання, кабельну інфраструктуру та поточне обслуговування інфраструктури"
+    - en-GB: "Developed a workstation management and billing system for an internet café, controlling user session time and access"
+      uk-UA: "Розробив систему управління робочими станціями та білінгу для інтернет-клубу, що контролювала час користувацьких сесій та доступ"
+    - en-GB: "Technologies: Windows, DOS, Linux, Visual Basic, MS Access, PHP, HTML, MySQL, DHCP, BOOTP, FTP, PPTP, VPN, iptables"
+      uk-UA: "Технології: Windows, DOS, Linux, Visual Basic, MS Access, PHP, HTML, MySQL, DHCP, BOOTP, FTP, PPTP, VPN, iptables"
