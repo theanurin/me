@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /me/preview/
+Disallow: /preview/
