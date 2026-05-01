@@ -55,7 +55,7 @@ module.exports = function (eleventyConfig) {
 				`Undefined BUILD_PUBLIC_URL variable. This variable is required for '${buildConfiguration}' build.`,
 			);
 		}
-		while (value.endsWith("/")) { value = value.slice(0, -1); }
+		if (!value.endsWith("/")) { value = value + '/'; }
 		return new URL(value).toString();
 	})();
 

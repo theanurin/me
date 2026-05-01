@@ -1,8 +1,12 @@
+{%- raw %}{% endraw -%}
 {%- assign contact = contact | required -%}
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+	<title>{{ contact.name[locale] | required }} {{ title | default: site.title }}</title>
+
+	{%- render 'templates/favicon.html' %}
+
 	<!-- Styles -->
 	<link rel="stylesheet" href="/assets/css/cv.css">
 	<link rel="stylesheet" href="/vendor/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" />
@@ -14,24 +18,19 @@
 	<!-- Open Graph / Facebook -->
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="theanurin">
-	<meta property="og:url" content="[{{ site.buildPublicUrl | required }}]({{ site.buildPublicUrl | required }}/en-GB/cv/)">
+	<meta property="og:url" content="[{{ site.buildPublicUrl | required }}]({{ site.buildPublicUrl | required }}en-GB/cv/)">
 	<meta property="og:title" content="{{ contact.name[locale] | required }} | CV">
 	<meta property="og:description" content="{{ og_description | required }}">
-	<meta property="og:image" content="{{ site.buildPublicUrl | required }}/assets/images/avatar.jpg">
+	<meta property="og:image" content="{{ site.buildPublicUrl | required }}assets/img/og_image.png">
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image">
-	<meta property="twitter:url" content="[{{ site.buildPublicUrl | required }}]({{ site.buildPublicUrl | required }}/en-GB/cv/)">
+	<meta property="twitter:url" content="[{{ site.buildPublicUrl | required }}]({{ site.buildPublicUrl | required }}en-GB/cv/)">
 	<meta property="twitter:title" content="{{ contact.name[locale] | required }} | CV">
 	<meta property="twitter:description" content="{{ og_description | required }}">
-	<meta property="twitter:image" content="{{ site.buildPublicUrl | required }}/assets/images/avatar.jpg">
-
-	<!-- Favicon -->
-	<link rel="shortcut icon" href="favicon.ico">
+	<meta property="twitter:image" content="{{ site.buildPublicUrl | required }}assets/img/og_image.png">
 
 	{%- render 'templates/umami_script.html', umami: site.analytics.umami %}
-
-	<title>{{ contact.name[locale] | required }} {{ title | default: site.title }}</title>
 </head>
 
 <body>
@@ -240,3 +239,5 @@
 {% endif %}
 <script async src="/assets/js/cv-analytics.js"></script>
 </html>
+{%- raw %}{% endraw -%}
+{{""}}

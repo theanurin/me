@@ -1,5 +1,6 @@
-{%- raw %}{% endraw %}<!doctype html>
-{%- if site.buildConfiguration != 'release' -%}
+{%- raw %}{% endraw -%}
+<!DOCTYPE html>
+{%- if site.buildConfiguration != 'release' %}
 <!-- (layout: base) site.buildConfiguration: {{ site.buildConfiguration }} -->
 <!-- (layout: base) site.defaultLocale: {{ site.defaultLocale }} -->
 <!-- (layout: base) page keys: {% for page_item in page %}{{ page_item[0] }}, {% endfor %} -->
@@ -15,29 +16,26 @@
 {% raw %}{% endraw -%}{%- endif -%}
 {%- assign locale = locale | default: "uk-UA" -%}
 <html lang="{{ locale }}">
-
-  <head>
-    <title>{{ title | default: site.name }}</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {%- if disableRobots -%}
-    <meta name="robots" content="noindex, nofollow">
-    {% endif -%}
-    <link rel="icon" href="/favicon-48.ico" sizes="48x48" />
-    <link rel="icon" href="/favicon.svg" sizes="any" type="image/svg+xml" />
-    <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <meta name="description" content="{{ site.description }}" />
-    <link rel="stylesheet" href="/vendor/bootstrap/v5.2.3/bootstrap.min.css" integrity="sha384-zsixv+GzRX8l37UyyztdfbLSTHSHb2cfsqIE0OgKkQ/bF5lh08Ija6eBihBru5us" />
-    <link rel="stylesheet" href="/vendor/bootstrap-icons/v1.13.1/bootstrap-icons.min.css" integrity="sha384-CK2SzKma4jA5H/MXDUU7i1TqZlCFaD4T01vtyDFvPlD97JQyS+IsSh1nI2EFbpyk" />
-    <link rel="stylesheet" href="/vendor/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" />
-    <link rel="stylesheet" href="/assets/css/style.css">
-{%- if css %}
-    <link rel="stylesheet" href="{{ css }}">
-{% endif %}
-    {%- render 'templates/umami_script.html', umami: site.analytics.umami %}
-    {% render 'templates/head_og.html', buildPublicUrl: site.buildPublicUrl, title: title | default: site.name %}
-  </head>
-
+	<head>
+		<title>{{ title | default: site.name }}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		{%- if disableRobots %}
+		<meta name="robots" content="noindex, nofollow">
+		{% endif -%}
+		{%- render 'templates/favicon.html' %}
+		<meta name="referrer" content="strict-origin-when-cross-origin" />
+		<meta name="description" content="{{ site.description }}" />
+		<link rel="stylesheet" href="/vendor/bootstrap/v5.2.3/bootstrap.min.css" integrity="sha384-zsixv+GzRX8l37UyyztdfbLSTHSHb2cfsqIE0OgKkQ/bF5lh08Ija6eBihBru5us" />
+		<link rel="stylesheet" href="/vendor/bootstrap-icons/v1.13.1/bootstrap-icons.min.css" integrity="sha384-CK2SzKma4jA5H/MXDUU7i1TqZlCFaD4T01vtyDFvPlD97JQyS+IsSh1nI2EFbpyk" />
+		<link rel="stylesheet" href="/vendor/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" />
+		<link rel="stylesheet" href="/assets/css/style.css">
+		{%- if css %}
+		<link rel="stylesheet" href="{{ css }}">
+		{% endif %}
+		{%- render 'templates/umami_script.html', umami: site.analytics.umami %}
+		{% render 'templates/head_og.html', buildPublicUrl: site.buildPublicUrl, title: title | default: site.name %}
+	</head>
   <body class="font-roboto antialiased d-flex flex-column min-vh-100">
     <div class="container-fluid d-flex flex-column flex-grow-1" id="root">
       <header>
@@ -122,3 +120,5 @@
     <script src="/assets/js/script.js"></script>
   </body>
 </html>
+{%- raw %}{% endraw -%}
+{{""}}
