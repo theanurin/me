@@ -20,7 +20,7 @@
     <title>{{ title | default: site.name }}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    {% if disableRobots -%}
+    {%- if disableRobots -%}
     <meta name="robots" content="noindex, nofollow">
     {% endif -%}
     <link rel="icon" href="/favicon-48.ico" sizes="48x48" />
@@ -35,6 +35,7 @@
     <link rel="stylesheet" href="{{ css }}">
 {% endif %}
     {%- render 'templates/umami_script.html', umami: site.analytics.umami %}
+    {% render 'templates/head_og.html', buildPublicUrl: site.buildPublicUrl, title: title | default: site.name %}
   </head>
 
   <body class="font-roboto antialiased d-flex flex-column min-vh-100">

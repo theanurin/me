@@ -11,6 +11,21 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="theanurin">
+	<meta property="og:url" content="[{{ site.buildPublicUrl | required }}]({{ site.buildPublicUrl | required }}/en-GB/cv/)">
+	<meta property="og:title" content="{{ contact.name[locale] | required }} | CV">
+	<meta property="og:description" content="{{ og_description | required }}">
+	<meta property="og:image" content="{{ site.buildPublicUrl | required }}/assets/images/avatar.jpg">
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image">
+	<meta property="twitter:url" content="[{{ site.buildPublicUrl | required }}]({{ site.buildPublicUrl | required }}/en-GB/cv/)">
+	<meta property="twitter:title" content="{{ contact.name[locale] | required }} | CV">
+	<meta property="twitter:description" content="{{ og_description | required }}">
+	<meta property="twitter:image" content="{{ site.buildPublicUrl | required }}/assets/images/avatar.jpg">
+
 	<!-- Favicon -->
 	<link rel="shortcut icon" href="favicon.ico">
 

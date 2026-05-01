@@ -1,6 +1,7 @@
 name: CI/CD Website Pipeline
 
 env:
+  SITE_PAGES_URL: "https://www.anurin.name"
   SITE_ANALYTICS_UNAMI_URL: "https://umami.infra.anurin.name"
   SITE_ANALYTICS_UNAMI_WEBSITE_ID: "1d7fe2cc-1c86-4633-9549-c33f6e4d8e5a"
   # Коли переїдете на власний домен, просто змініть це на: SITE_PREFIX: "/"
@@ -31,7 +32,7 @@ jobs:
           npm install --include dev
       - name: Build History Version
         run: |
-          BUILD_CONFIGURATION=release npx eleventy --pathprefix='${{ env.SITE_PREFIX }}history/${{ github.ref_name }}' --output='dist-history/${{ github.ref_name }}/'
+          BUILD_CONFIGURATION=release BUILD_PUBLIC_URL="${{ env.SITE_PAGES_URL }}/history/${{ github.ref_name }}" npx eleventy --pathprefix='${{ env.SITE_PREFIX }}history/${{ github.ref_name }}' --output='dist-history/${{ github.ref_name }}/'
       - uses: actions/upload-artifact@v7
         with:
           name: history-artifact
@@ -50,7 +51,7 @@ jobs:
           npm install --include dev
       - name: Build Root Version
         run: |
-          BUILD_CONFIGURATION=release BUILD_ANALYTICS_UNAMI_URL="${{ env.SITE_ANALYTICS_UNAMI_URL }}" BUILD_ANALYTICS_UNAMI_WEBSITE_ID="${{ env.SITE_ANALYTICS_UNAMI_WEBSITE_ID }}" npx eleventy --pathprefix='${{ env.SITE_PREFIX }}' --output='dist-root/'
+          BUILD_CONFIGURATION=release BUILD_PUBLIC_URL="${{ env.SITE_PAGES_URL }}" BUILD_ANALYTICS_UNAMI_URL="${{ env.SITE_ANALYTICS_UNAMI_URL }}" BUILD_ANALYTICS_UNAMI_WEBSITE_ID="${{ env.SITE_ANALYTICS_UNAMI_WEBSITE_ID }}" npx eleventy --pathprefix='${{ env.SITE_PREFIX }}' --output='dist-root/'
       - uses: actions/upload-artifact@v7
         with:
           name: root-artifact
@@ -69,7 +70,7 @@ jobs:
           npm install --include dev
       - name: Build Preview
         run: |
-          BUILD_CONFIGURATION=snapshot npx eleventy --pathprefix='${{ env.SITE_PREFIX }}preview' --output='dist-preview/'
+          BUILD_CONFIGURATION=snapshot BUILD_PUBLIC_URL="${{ env.SITE_PAGES_URL }}/preview" npx eleventy --pathprefix='${{ env.SITE_PREFIX }}preview' --output='dist-preview/'
       - uses: actions/upload-artifact@v7
         with:
           name: preview-artifact

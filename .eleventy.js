@@ -48,14 +48,27 @@ module.exports = function (eleventyConfig) {
 			);
 	}
 
-	const buildAnalyticsUnamiInstanceUrl =
-		process.env.BUILD_ANALYTICS_UNAMI_URL || "https://umami.infra.anurin.name";
+	const buildPublicUrl = (function () {
+		let value = process.env.BUILD_PUBLIC_URL || null;
+		if (value === null) {
+			throw new Error(
+				`Undefined BUILD_PUBLIC_URL variable. This variable is required for '${buildConfiguration}' build.`,
+			);
+		}
+		while (value.endsWith("/")) { value = value.slice(0, -1); }
+		return new URL(value).toString();
+	})();
+
+	const buildAnalyticsUnamiInstanceUrl = new URL(
+		process.env.BUILD_ANALYTICS_UNAMI_URL || "https://umami.infra.anurin.name",
+	).toString();
 	const buildAnalyticsUnamiWebsiteId =
 		process.env.BUILD_ANALYTICS_UNAMI_WEBSITE_ID || null;
 
 	eleventyConfig.addGlobalData("site", {
 		...siteConfig,
 		buildConfiguration,
+		buildPublicUrl,
 		...(buildAnalyticsUnamiInstanceUrl && buildAnalyticsUnamiWebsiteId
 			? {
 					analytics: {
