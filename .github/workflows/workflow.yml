@@ -3,7 +3,7 @@ name: CI/CD Website Pipeline
 env:
   SITE_PAGES_URL: "https://www.anurin.name"
   SITE_ANALYTICS_UNAMI_URL: "https://umami.infra.anurin.name"
-  SITE_ANALYTICS_UNAMI_WEBSITE_ID: "1d7fe2cc-1c86-4633-9549-c33f6e4d8e5a"
+  SITE_ANALYTICS_UNAMI_WEBSITE_ID: "b7ccede8-b068-44ad-94ed-4358b8a2b57e"
   # Коли переїдете на власний домен, просто змініть це на: SITE_PREFIX: "/"
   #SITE_PREFIX: "/${{ github.event.repository.name }}/"
   SITE_PREFIX: "/"
