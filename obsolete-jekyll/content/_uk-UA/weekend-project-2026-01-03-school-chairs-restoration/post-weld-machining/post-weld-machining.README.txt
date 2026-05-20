@@ -1,0 +1,5 @@
+Програми:
+- post-weld-machining-left.gcode
+- post-weld-machining-right.gcode
+З висоти Z40, спускаються на Z20 та роблять фрезерування на 1мм глибини (з шагом 0.25).
+Фреза метал: 3mm
