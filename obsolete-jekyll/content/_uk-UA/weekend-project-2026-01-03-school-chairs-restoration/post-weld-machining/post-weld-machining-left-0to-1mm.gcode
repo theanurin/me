@@ -6,7 +6,7 @@ G90         ; Absolute positioning
 G21         ; Set units to mm
 G54         ;
 
-G1 Z40 F900 ; Move to clearance level
+G1 Z20 F900 ; Move to clearance level
 M3          ; Start spindle
 
 
@@ -507,4 +507,5 @@ G1 Z20.0000 F900
 
 ; Return to 0,0
 G0 X0 Y0 F900
-M2
+M5       ; Stop spindle
+M30      ; End of the program (move to start)
