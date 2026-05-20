@@ -28,9 +28,9 @@ M3          ; Start spindle
 ; Path 0
 ; Rapid to initial position
 G1 X2.7379 Y3.5266 F900
-G1 Z20.0000
+G1 Z0.0000
 ; plunge
-G1 Z19.7500 F30
+G1 Z-0.2500 F30
 ; cut
 G1 X2.7635 Y3.4882 F80
 G1 X2.8237 Y3.4024
@@ -147,9 +147,9 @@ G1 X3.7010 Y4.2497
 G1 X3.7470 Y4.1756
 ; Rapid to initial position
 G1 X2.7379 Y3.5266 F900
-G1 Z19.7500
+G1 Z-0.2500
 ; plunge
-G1 Z19.5000 F30
+G1 Z-0.5000 F30
 ; cut
 G1 X2.7635 Y3.4882 F80
 G1 X2.8237 Y3.4024
@@ -266,9 +266,9 @@ G1 X3.7010 Y4.2497
 G1 X3.7470 Y4.1756
 ; Rapid to initial position
 G1 X2.7379 Y3.5266 F900
-G1 Z19.5000
+G1 Z-0.5000
 ; plunge
-G1 Z19.2500 F30
+G1 Z-0.7500 F30
 ; cut
 G1 X2.7635 Y3.4882 F80
 G1 X2.8237 Y3.4024
@@ -385,9 +385,9 @@ G1 X3.7010 Y4.2497
 G1 X3.7470 Y4.1756
 ; Rapid to initial position
 G1 X2.7379 Y3.5266 F900
-G1 Z19.2500
+G1 Z-0.7500
 ; plunge
-G1 Z19.0000 F30
+G1 Z-1.0000 F30
 ; cut
 G1 X2.7635 Y3.4882 F80
 G1 X2.8237 Y3.4024
@@ -503,7 +503,8 @@ G1 X3.6596 Y4.3267
 G1 X3.7010 Y4.2497
 G1 X3.7470 Y4.1756
 ; Retract
-G1 Z40.0000 F900
+G1 Z20.0000 F900
 
-M5       ; Stop spindle
-M30      ; End of the program (move to start)
+; Return to 0,0
+G0 X0 Y0 F900
+M2
