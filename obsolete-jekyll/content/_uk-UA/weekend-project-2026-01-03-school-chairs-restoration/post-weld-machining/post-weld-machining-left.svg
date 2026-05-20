@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24mm"
+    height="24mm"
+    viewBox="-1 -1 24 24"
+>
+    <path
+        d="M 0 22 L 0 0 L 5 0 L 5 17 L 21.95 15.47 L 21.95 20.47 L 0 22 Z"
+        fill="none"
+        stroke="black"
+        stroke-width="0.1"
+    />
+</svg>
