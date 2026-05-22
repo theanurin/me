@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    width="24mm"
-    height="24mm"
-    viewBox="-1 -1 24 24"
+    width="26mm"
+    height="26mm"
+    viewBox="-1 -1 26 26"
 >
     <path
-        d="M 0 0 L 0 22 L 5 22 L 5 5  L 21.95 6.53 L 21.95 1.53 L 0 0 Z"
+        d="M 0 0 L 0 24 A 25 25 0 0 0 23.94 1.67 L 0 0 Z"
         fill="none"
         stroke="black"
         stroke-width="0.1"
