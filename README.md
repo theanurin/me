@@ -18,8 +18,11 @@ Note: This repository uses Git Large File Storage (Git LFS) to store large binar
 
 ```shell
 git lfs install # required once per machine
+
 git clone -b dev git@github.com:theanurin/me.git theanurin-me
 cd theanurin-me
+
+git config --local core.hooksPath .githooks
 git submodule update --init
 ```
 
