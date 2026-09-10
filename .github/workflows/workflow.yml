@@ -27,6 +27,9 @@ jobs:
       - uses: actions/checkout@v6
         with:
           lfs: true
+      - name: Verify LFS pointers integrity
+        run: |
+          git lfs fsck --objects
       - name: Fetch dependencies
         run: |
           npm install --include dev
@@ -46,6 +49,9 @@ jobs:
       - uses: actions/checkout@v6
         with:
           lfs: true
+      - name: Verify LFS pointers integrity
+        run: |
+          git lfs fsck --objects
       - name: Fetch dependencies
         run: |
           npm install --include dev
@@ -65,6 +71,9 @@ jobs:
       - uses: actions/checkout@v6
         with:
           lfs: true
+      - name: Verify LFS pointers integrity
+        run: |
+          git lfs fsck --objects
       - name: Fetch dependencies
         run: |
           npm install --include dev
@@ -76,7 +85,6 @@ jobs:
           name: preview-artifact
           path: dist-preview/
 
-  # 2. Деплой джоба
   deploy:
     needs: [build-history, build-root, build-preview]
     if: always() && !contains(needs.*.result, 'failure') && !contains(needs.*.result, 'cancelled')
@@ -91,7 +99,7 @@ jobs:
           ref: 'gh-pages'
           path: 'deployment-dir'
 
-# 1. Завантажуємо корінь (тільки якщо був тег)
+      # Завантажуємо корінь (тільки якщо був тег)
       - name: Download Root Artifact
         if: github.ref_type == 'tag'
         uses: actions/download-artifact@v7
@@ -99,7 +107,7 @@ jobs:
           name: root-artifact
           path: incoming-artifacts/root-artifact
 
-      # 2. Завантажуємо історію (тільки якщо був тег)
+      # Завантажуємо історію (тільки якщо був тег)
       - name: Download History Artifact
         if: github.ref_type == 'tag'
         uses: actions/download-artifact@v7
@@ -107,7 +115,7 @@ jobs:
           name: history-artifact
           path: incoming-artifacts/history-artifact
 
-      # 3. Завантажуємо прев'ю (тільки якщо це бранч)
+      # Завантажуємо прев'ю (тільки якщо це бранч)
       - name: Download Preview Artifact
         if: github.ref_type != 'tag'
         uses: actions/download-artifact@v7
@@ -143,7 +151,8 @@ jobs:
           if [ -d "../incoming-artifacts/history-artifact/${{ github.ref_name }}" ]; then
             mkdir -p history
             rm -rf history/${{ github.ref_name }}
-            cp -r ../incoming-artifacts/history-artifact/${{ github.ref_name }} history/
+            mkdir -p history/${{ github.ref_name }}
+            cp -r ../incoming-artifacts/history-artifact/${{ github.ref_name }}/* history//${{ github.ref_name }}
           fi
 
           # 3. Обробка preview (якщо прийшов коміт у main)
