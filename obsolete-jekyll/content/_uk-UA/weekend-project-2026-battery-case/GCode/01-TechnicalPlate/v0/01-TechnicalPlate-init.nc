@@ -12,7 +12,7 @@ G54
 (machine: mach3_4, mm/min)
 (TC: Default Tool)
 M5
-M6 T1 
+M6 T1
 G43 H1
 M3 S12000
 (finish operation: MB31.TechnicalPlate.Job.Tools.ToolBit)
