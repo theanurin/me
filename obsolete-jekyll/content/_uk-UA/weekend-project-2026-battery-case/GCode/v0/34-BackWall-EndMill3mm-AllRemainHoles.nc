@@ -1840,11 +1840,11 @@ G2 X136.752 Y244.000 Z-0.050 I-1.424 J7.616 F320.000
 G0 Z12.000
 ;
 G0 Z20
-(stopping spindle)
-M05
 (goto center)
 G0 X105
 G0 Y500
+(stopping spindle)
+M05
 G17 G54 G90 G80 G40
 (bye-bye)
 M2
