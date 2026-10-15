@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3NmWKD"
 # Відступ
 offset_x = 40
-offset_y = 221
-# offset_y = 5
+# offset_y = 221
+offset_y = 5
 
 # factory = qrcode.image.svg.SvgPathImage
 # img = qrcode.make(
@@ -120,22 +120,25 @@ for point in points:
     y_offset_pos = point[1]
 
     if first_drill_point:
-        first_drill_point = False
         gcode_lines.append("G0 Z[#1003]")
         gcode_lines.append(f"G0 X{x_offset_pos:.3f} Y{y_offset_pos:.3f}")
-        gcode_lines.append("G0 Z[#1003]")
+        gcode_lines.append("G0 Z[#1002]")
         gcode_lines.append("G98")
+    
+    
+    if point_count % 4 == 0:
+        if not first_drill_point:
+            # перезапуск цикла кожні 4 крапок, щоб можна було використати паузу Feed Hold
+            gcode_lines.append("G80")
+        qr_dot_count = int(point_count / 4)
+        qr_dot_total = int(point_total / 4)
+        gcode_lines.append(f"(drilling {qr_dot_count}/{qr_dot_total})")
         gcode_lines.append(f"G82 X{x_offset_pos:.3f} Y{y_offset_pos:.3f} Z[#1000] F[#1004] R[#1001] P0.100")
     else:
-        gcode_lines.append(f"(drilling {point_count}/{point_total})")
-        if point_count % 10 == 0:
-            # перезапуск цикла кожні 10 крапок, щоб можна було використати паузу Feed Hold
-            gcode_lines.append("G80")
-            gcode_lines.append(f"G82 X{x_offset_pos:.3f} Y{y_offset_pos:.3f} Z[#1000] F[#1004] R[#1001] P0.100")
-
         gcode_lines.append(f"X{x_offset_pos:.3f} Y{y_offset_pos:.3f}")
 
     point_count += 1
+    first_drill_point = False
 
     pass
 
