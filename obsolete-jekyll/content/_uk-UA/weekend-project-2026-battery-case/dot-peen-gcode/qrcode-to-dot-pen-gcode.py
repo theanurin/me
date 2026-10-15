@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3NmWKD"
 # Відступ
 offset_x = 40
-# offset_y = 221
-offset_y = 5
+offset_y = 221
+# offset_y = 5
 
 # factory = qrcode.image.svg.SvgPathImage
 # img = qrcode.make(
@@ -52,25 +52,37 @@ pitch = 1.08
 x_coords = []
 y_coords = []
 
+# Відступи для 4 точок усередині однієї комірки (сітка 2х2)
+sub_offsets = [
+    (-0.25, -0.25),
+    (0.25, -0.25),
+    (-0.25, 0.25),
+    (0.25, 0.25)
+]
+
 # Проходимо по матриці та генеруємо координати
 points = []
-first_drill_point = True
 for row_idx, row in enumerate(matrix):
-    y_pos = row_idx * pitch
+    y_base = row_idx * pitch
     for col_idx, cell in enumerate(row):
         if cell:  # Якщо тут є точка
 
-            x_pos = col_idx * pitch
+            x_base = col_idx * pitch
+            for dx, dy in sub_offsets:
+                x_pos = x_base + dx
+                y_pos = y_base + dy
 
-            x_coords.append(x_pos)
-            y_coords.append(y_pos)
+                x_coords.append(x_pos)
+                y_coords.append(y_pos)
 
-            x_offset_pos = x_pos + offset_x
-            y_offset_pos = y_pos + offset_y
+                x_offset_pos = x_pos + offset_x
+                y_offset_pos = y_pos + offset_y
 
-            points.append([x_offset_pos, y_offset_pos])
+                points.append([x_offset_pos, y_offset_pos])
 
             pass
+
+point_total = len(points)
 
 gcode_lines = [
     ";",
@@ -79,7 +91,7 @@ gcode_lines = [
     f"; QR Content  : {url}",
     f"; QR Offset X : {offset_x}",
     f"; QR Offset Y : {offset_y}",
-    f"; QR Total Points : {len(points)}",
+    f"; QR Total Points : {point_total}",
     ";",
     "; Safe Z    : 3.5 (12.1)",
     "; Working Z : 3.2 -> #1000",
@@ -101,6 +113,8 @@ gcode_lines = [
     ";",
 ]
 
+first_drill_point = True
+point_count = 0
 for point in points:
     x_offset_pos = point[0]
     y_offset_pos = point[1]
@@ -113,7 +127,15 @@ for point in points:
         gcode_lines.append("G98")
         gcode_lines.append(f"G82 X{x_offset_pos:.3f} Y{y_offset_pos:.3f} Z[#1000] F[#1004] R[#1001] P0.100")
     else:
+        gcode_lines.append(f"(drilling {point_count}/{point_total})")
+        if point_count % 10 == 0:
+            # перезапуск цикла кожні 10 крапок, щоб можна було використати паузу Feed Hold
+            gcode_lines.append("G80")
+            gcode_lines.append(f"G82 X{x_offset_pos:.3f} Y{y_offset_pos:.3f} Z[#1000] F[#1004] R[#1001] P0.100")
+
         gcode_lines.append(f"X{x_offset_pos:.3f} Y{y_offset_pos:.3f}")
+
+    point_count += 1
 
     pass
 
@@ -137,7 +159,7 @@ with open(filename_nc, "w", encoding="utf-8") as f:
 
 # Генерація зображення (прев'ю) для візуальної перевірки
 plt.figure(figsize=(6, 6))
-plt.scatter(x_coords, y_coords, s=30, c='black', marker='o')
+plt.scatter(x_coords, y_coords, s=5, c='black', marker='o')
 plt.gca().set_aspect('equal', adjustable='box')
 plt.title("Візуальна перевірка масиву точок QR-коду")
 plt.xlabel("X (мм)")
