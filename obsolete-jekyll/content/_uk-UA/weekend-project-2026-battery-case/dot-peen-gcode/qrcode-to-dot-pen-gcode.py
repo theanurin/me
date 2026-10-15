@@ -16,9 +16,9 @@ import matplotlib.pyplot as plt
 # Дані для QR-коду
 url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3NmWKD"
 # Відступ
-offset_x = 45
-# offset_y = 226
-offset_y = 10
+offset_x = 40
+# offset_y = 221
+offset_y = 5
 
 # factory = qrcode.image.svg.SvgPathImage
 # img = qrcode.make(
@@ -85,13 +85,17 @@ gcode_lines = [
     "; Working Z : 3.2 -> #1000",
     "; Tool      : Center Drill 3-4mm",
     ";",
-    "#1000 = 2.200     (total drilling in Z)",
+    "#1000 = 2.700     (total drilling depth in Z)",
+    "#1001 = 3.100     (reference plane in Z)",
+    "#1002 = 3.500     (safe move plane in Z)",
+    "#1003 = 12.100    (clearance plane in Z)",
+    "#1004 = 30.000    (drilling feed in Z)",
     "G17 G54 G40 G49 G80 G90",
     "G21",
     ";",
     "G0 X180",
     "G0 Y213",
-    "G0 Z12.1",
+    "G0 Z[#1003]",
     ";",
     "M3 S4000",
     ";",
@@ -103,20 +107,19 @@ for point in points:
 
     if first_drill_point:
         first_drill_point = False
-        gcode_lines.append("G0 Z12.1")
+        gcode_lines.append("G0 Z[#1003]")
         gcode_lines.append(f"G0 X{x_offset_pos:.3f} Y{y_offset_pos:.3f}")
-        gcode_lines.append("G0 Z4.000")
+        gcode_lines.append("G0 Z[#1003]")
         gcode_lines.append("G98")
-        gcode_lines.append(f"G82 X{x_offset_pos:.3f} Y{y_offset_pos:.3f} Z[#1000] F30.000 R3.200 P0.100")
+        gcode_lines.append(f"G82 X{x_offset_pos:.3f} Y{y_offset_pos:.3f} Z[#1000] F[#1004] R[#1001] P0.100")
     else:
         gcode_lines.append(f"X{x_offset_pos:.3f} Y{y_offset_pos:.3f}")
 
     pass
 
 gcode_lines.append("G80")
-gcode_lines.append("G0 Z12.1")
 gcode_lines.append(";")
-gcode_lines.append("G0 Z12.1")
+gcode_lines.append("G0 Z[#1003]")
 gcode_lines.append("(goto center)")
 gcode_lines.append("G0 X180 Y213")
 gcode_lines.append("G0 Y480")
