@@ -14,7 +14,8 @@ import qrcode.image.svg
 import matplotlib.pyplot as plt
 
 # Дані для QR-коду
-url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3NmWKD"
+#url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3NmWKD" # id:3
+url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3QFXzb" # id:4
 # Відступ
 offset_x = 40
 # offset_y = 221
@@ -95,19 +96,20 @@ gcode_lines = [
     ";",
     "; Tool      : Center Drill 3-4mm",
     ";",
-    "#1000 = 3.000     (total drilling depth in Z)",
-    "#1001 = 3.300     (reference plane in Z)",
+    "#1000 = 2.600     (total drilling depth in Z)",
+    "#1001 = 3.100     (reference plane in Z)",
     "#1002 = 3.600     (safe move plane in Z)",
     "#1003 = 12.100    (clearance plane in Z)",
     "#1004 = 30.000    (drilling feed in Z)",
     "G17 G54 G40 G49 G80 G90",
     "G21",
     ";",
+    "G0 Z[#1003]",
     "G0 X180",
     "G0 Y213",
-    "G0 Z[#1003]",
     ";",
     "M3 S4000",
+    "M0 (!!! override spindle speed override to 66Hz/4000RPM)",
     ";",
 ]
 
