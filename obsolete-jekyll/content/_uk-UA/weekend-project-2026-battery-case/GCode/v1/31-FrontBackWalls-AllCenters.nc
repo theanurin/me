@@ -7,11 +7,10 @@
 G17 G54 G40 G49 G80 G90
 G21
 ;
-G0 X180
-G0 Y213
 G0 Z12.1
 ;
 M3 S4000
+M0 (!!! override spindle speed override to 66Hz/4000RPM)
 ;
 (begin operation: MB31.1P.CompoundFrontBackWalls.Job.Operations.02-DrillingFoldLine1)
 (Drilling Fold Line/Front - 105 centers, X34.0, Y1.5 to Y209.5, step 2mm)
@@ -188,8 +187,9 @@ G80
 G0 Z12.1
 (finish operation: MB31.1P.CompoundFrontBackWalls.Job.Operations.02-DrillingFoldLine3)
 ;
-(Drilling start point for final profile)
-X318.484 Y208.484
+(Drilling start points for final profile)
+X314.318 Y215.884
+X317.777 Y207.778
 ;
 (MB31.1P.CompoundFrontBackWalls.Job.Operations.02-DrillingFoldLine4)
 (Drilling Fold Line/Back - 105 centers, X34.0, Y216.500 to Y424.500, step 1mm)
@@ -419,11 +419,10 @@ X18.000 Y386.000
 X15.000 Y386.000
 X12.000 Y386.000
 G80
-G0 Z12.1
 ;
-G0 Z12.1
-(goto center)
-G0 X180 Y213
+G0 Z20.0
+(goto parking zone)
+G0 X360 Y213
 G0 Y480
 (stopping spindle)
 M05

@@ -2676,11 +2676,10 @@ X72.000 Y73.500
 X72.500 Y73.500
 X65.000 Y73.000
 G80
-G0 Z12.1
 ;
-G0 Z12.1
-(goto center)
-G0 X180 Y213
+G0 Z20.0
+(goto parking zone)
+G0 X360 Y213
 G0 Y480
 (stopping spindle)
 M05

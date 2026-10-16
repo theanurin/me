@@ -50,9 +50,6 @@ G1 Z-2 F250  (go to original position)
 
 G90         (switch to absolute coordinates)
 
-G0 X180
-G0 Y480
-
 M30         (turn off spindle)
 
 

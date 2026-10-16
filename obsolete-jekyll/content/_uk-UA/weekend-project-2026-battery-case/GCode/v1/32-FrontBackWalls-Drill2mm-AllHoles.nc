@@ -44,7 +44,9 @@ X260.000 Y144.500
 X248.500 Y156.000
 X248.500 Y133.000
 ; Drilling start point for final profiling
-X318.484 Y208.484
+X314.318 Y215.884
+; Drilling start point for final profiling
+X317.777 Y207.778
 X271.500 Y156.000
 X198.000 Y163.000
 X170.000 Y198.000
@@ -71,11 +73,10 @@ X18.000 Y386.000
 X15.000 Y386.000
 X12.000 Y386.000
 G80
-G0 Z12.1
 ;
-G0 Z12.1
-(goto center)
-G0 X180 Y213
+G0 Z20.0
+(goto parking zone)
+G0 X360 Y213
 G0 Y480
 (stopping spindle)
 M05
