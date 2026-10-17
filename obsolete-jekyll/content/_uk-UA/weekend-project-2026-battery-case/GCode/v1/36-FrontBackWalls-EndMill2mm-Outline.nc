@@ -1,7 +1,7 @@
 ;
 ; Safe Z    : Z6.1 (12.1)
 ; Working Z : 3.4 -> -0.2
-; Tool      : End Mill 4mm
+; Tool      : End Mill 2mm
 ;
 G17 G54 G40 G49 G80 G90
 G21

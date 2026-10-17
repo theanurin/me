@@ -421,9 +421,9 @@ X12.000 Y386.000
 G80
 ;
 G0 Z20.0
-(goto parking zone)
+(goto change tool zone)
 G0 X360 Y213
-G0 Y480
+G0 Y-80
 (stopping spindle)
 M05
 G17 G54 G90 G80 G40
