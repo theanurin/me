@@ -7,7 +7,9 @@
 G17 G54 G40 G49 G80 G90
 G21
 ;
-G0 Z12.1
+(go to center)
+G0 Z20
+G0 X180 Y213
 ;
 M3 S4000
 M0 (!!! override spindle speed override to 66Hz/4000RPM)
