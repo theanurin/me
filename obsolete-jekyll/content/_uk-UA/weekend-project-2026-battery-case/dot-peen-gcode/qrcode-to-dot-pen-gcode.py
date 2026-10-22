@@ -15,7 +15,13 @@ import matplotlib.pyplot as plt
 
 # Дані для QR-коду
 #url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3NmWKD" # id:3
-url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3QFXzb" # id:4
+#url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3QFXzb" # id:4
+url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3NmYiF" # id:5
+#url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3QFY2o" # id:6
+#url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt3NmYkT" # id:7
+#url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt6g1udV" # id:8
+#url = "https://thebattery.in.ua/p/battery-case-mb31-4s-v1?id=bt6eXvM9" # id:9
+
 # Відступ
 offset_x = 40
 # offset_y = 221
