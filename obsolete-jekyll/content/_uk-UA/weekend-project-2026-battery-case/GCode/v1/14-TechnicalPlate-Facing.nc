@@ -50,6 +50,13 @@ G1 Z-2 F250  (go to original position)
 
 G90         (switch to absolute coordinates)
 
+(goto parking zone)
+G0 Z20
+G0 X180
+G0 Y480
+G0 Z2
+G1 Z0
+
 M30         (turn off spindle)
 
 
