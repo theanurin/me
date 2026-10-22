@@ -1,15 +1,6 @@
 {
     "[gcode]": {
-        "files.encoding": "iso88591",
-        // Not used; superseded by .editorconfig. Kept as a reminder.
-        "files.eol": "\r\n"
-    },
-    "[nc]": {
-        "files.encoding": "iso88591",
-        // Not used; superseded by .editorconfig. Kept as a reminder.
-        "files.eol": "\r\n"
-    },
-    "[tap]": {
+        "editor.colorDecorators": false,
         "files.encoding": "iso88591",
         // Not used; superseded by .editorconfig. Kept as a reminder.
         "files.eol": "\r\n"
@@ -41,7 +32,9 @@
     "editor.useTabStops": true,
     "editor.wordWrapColumn": 1024,
     "files.associations": {
-        "*.nc": "gcode"
+        "*.gcode": "gcode",
+        "*.nc": "gcode",
+        "*.tap": "gcode",
     },
     "files.autoSave": "afterDelay",
     "files.autoSaveDelay": 5000,
