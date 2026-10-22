@@ -21,6 +21,7 @@ G0 Y213
 G0 Z[#1003]
 ;
 M3 S4000
+M0 (!!! override spindle speed override to 66Hz/4000RPM)
 ;
 G0 Z[#1003]
 G0 X44.070 Y9.070

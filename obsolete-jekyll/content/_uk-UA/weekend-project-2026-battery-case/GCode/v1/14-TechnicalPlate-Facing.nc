@@ -21,6 +21,7 @@ F1800
 
 G0 Z2
 M3 S12000   (turn on spindle)
+M0 (!!! override spindle speed override to 200Hz/12000RPM)
 G1 Z-2 F250
 
 G1 Z[0 - #4] F250

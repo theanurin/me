@@ -17,6 +17,7 @@ G54
 (machine: mach3_4, mm/min)
 (MB31.1P.CompoundTechnicalPlates.Job.Tools.ToolBit)
 M3 S12000
+M0 (!!! override spindle speed override to 200Hz/12000RPM)
 (finish operation: MB31.1P.CompoundTechnicalPlates.Job.Tools.ToolBit)
 (begin operation: MB31.1P.CompoundTechnicalPlates.Job.Operations.05-Profile)
 (machine: mach3_4, mm/min)

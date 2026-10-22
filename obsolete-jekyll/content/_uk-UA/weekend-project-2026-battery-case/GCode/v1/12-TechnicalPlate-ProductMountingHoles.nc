@@ -16,7 +16,8 @@ G54
 (begin operation: MB31.1P.CompoundTechnicalPlates.Job.Tools.ToolBit)
 (machine: mach3_4, mm/min)
 (MB31.1P.CompoundTechnicalPlates.Job.Tools.ToolBit)
-M3 S12000
+M3 S12000   (turn on spindle)
+M0 (!!! override spindle speed override to 200Hz/12000RPM)
 (finish operation: MB31.1P.CompoundTechnicalPlates.Job.Tools.ToolBit)
 (begin operation: MB31.1P.CompoundTechnicalPlates.Job.Operations.03-ProductMountingHoles-Helix-8x25)
 (machine: mach3_4, mm/min)
