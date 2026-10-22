@@ -1,7 +1,7 @@
 ;
 ; Safe Z    : 4.0 (12.1)
-; Working Z : 3.2 -> 2.0
-; Tool      : Center Drill 4mm
+; Working Z : 3.2 -> #1000
+; Tool      : Center Drill 3-4mm
 ;
 #1000 = 2.200     (total drilling in Z)
 G17 G54 G40 G49 G80 G90
