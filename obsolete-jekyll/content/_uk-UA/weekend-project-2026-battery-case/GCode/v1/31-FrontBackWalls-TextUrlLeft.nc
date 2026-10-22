@@ -8,22 +8,21 @@
 ; Text Y Distance   : 416 .. 288.5
 ; Text Total Points : 2649
 ;
-; Safe Z    : 3.5 (12.1)
+; Safe Z    : 3.5 (20.0)
 ; Working Z : 3.2 -> #1000
 ; Tool      : Center Drill 3-4mm
 ;
-#1000 = 2.700     (total drilling in Z)
+#1000 = 2.300     (total drilling in Z)
 G17 G54 G40 G49 G80 G90
 G21
 ;
+G0 Z20
 G0 X180
 G0 Y213
-G0 Z12.1
 ;
 M3 S4000
 M0 (!!! override spindle speed override to 66Hz/4000RPM)
 ;
-G0 Z12.1
 G0 X73.500 Y415.500
 G0 Z4.000
 G98
@@ -2677,7 +2676,6 @@ X72.000 Y289.500
 X72.500 Y289.500
 X65.000 Y289.000
 G80
-G0 Z12.1
 ;
 G0 Z20.0
 (goto parking zone)

@@ -73,17 +73,17 @@ gcode_lines = [
     f"; Text Y Distance   : {offset_y} .. {offset_y - width * scale}",
     f"; Text Total Points : {len(points)}",
     ";",
-    "; Safe Z    : 3.5 (12.1)",
+    "; Safe Z    : 3.5 (20.0)",
     "; Working Z : 3.2 -> #1000",
     "; Tool      : Center Drill 3-4mm",
     ";",
-    "#1000 = 2.200     (total drilling in Z)",
+    "#1000 = 2.300     (total drilling in Z)",
     "G17 G54 G40 G49 G80 G90",
     "G21",
     ";",
+    "G0 Z20",
     "G0 X180",
     "G0 Y213",
-    "G0 Z12.1",
     ";",
     "M3 S4000",
     ";",
@@ -100,7 +100,7 @@ for point in points:
 
     if first_drill_point:
         first_drill_point = False
-        gcode_lines.append("G0 Z12.1")
+        gcode_lines.append("G0 Z20")
         gcode_lines.append(f"G0 X{x_offset_pos:.3f} Y{y_offset_pos:.3f}")
         gcode_lines.append("G0 Z4.000")
         gcode_lines.append("G98")
@@ -111,9 +111,8 @@ for point in points:
     pass
 
 gcode_lines.append("G80")
-gcode_lines.append("G0 Z12.1")
 gcode_lines.append(";")
-gcode_lines.append("G0 Z12.1")
+gcode_lines.append("G0 Z20")
 gcode_lines.append("(goto center)")
 gcode_lines.append("G0 X180 Y213")
 gcode_lines.append("G0 Y480")
