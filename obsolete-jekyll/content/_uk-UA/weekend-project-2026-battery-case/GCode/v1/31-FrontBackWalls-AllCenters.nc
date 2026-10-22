@@ -187,10 +187,6 @@ G80
 G0 Z12.1
 (finish operation: MB31.1P.CompoundFrontBackWalls.Job.Operations.02-DrillingFoldLine3)
 ;
-(Drilling start points for final profile)
-X314.318 Y215.884
-X317.777 Y207.778
-;
 (MB31.1P.CompoundFrontBackWalls.Job.Operations.02-DrillingFoldLine4)
 (Drilling Fold Line/Back - 105 centers, X34.0, Y216.500 to Y424.500, step 1mm)
 G0 Z12.1
