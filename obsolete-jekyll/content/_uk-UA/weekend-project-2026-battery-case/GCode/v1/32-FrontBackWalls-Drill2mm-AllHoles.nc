@@ -19,7 +19,7 @@ M0 (!!! override spindle speed override to 66Hz/4000RPM)
 G0 X[16.000 - 1.750] Y[16.000 + 0]
 G0 Z5
 G98
-;X16.000 Y16.000 !!! Do not drill center !!!
+;X16.000 Y16.000 !!! Do not drill center to prevent broken tool !!!
 (drilling 1/34 - helix enter hole)
 G83 X[16.000 - 1.750] Y[16.000 + 0] Z[#1000] F[#1004] Q0.250 R3.200
 (drilling 2/34 - helix enter hole pocket slot)
@@ -27,14 +27,14 @@ X12.000 Y40.000
 ;
 ; center of hole - X102.000 Y12.000
 (drilling 3/34 - helix enter hole)
-X[102.000 - 3.8] Y[12.000 + 0]
+X[102.000 - 3.8] Y12.000
 ;
 (drilling 4/34 - front display)
 X121.000 Y47.000
 ;
 ; center of hole - X170.000 Y12.000
 (drilling 5/34 - helix enter hole)
-X[170.000 - 3.8] Y[12.000 + 0]
+X[170.000 - 3.8] Y12.000
 ;
 (drilling 6/34 - front display)
 X198.000 Y47.000
@@ -72,18 +72,18 @@ X198.000 Y163.000
 ;
 ; center of hole - X170.000 Y198.000
 (drilling 18/34 - helix enter hole)
-X[170.000 - 3.8] Y[198.000 + 0]
+X[170.000 - 3.8] Y198.000
 ;
 ; center of hole - X170.000 Y228.000
 (drilling 19/34 - helix enter hole)
-X[170.000 - 3.8] Y[228.000 + 0]
+X[170.000 - 3.8] Y228.000
 ;
 ; center of hole - X102.000 Y228.000
 (drilling 20/34 - helix enter hole)
-X[102.000 - 3.8] Y[228.000 + 0]
+X[102.000 - 3.8] Y228.000
 ; center of hole - X102.000 Y198.000
 (drilling 21/34 - helix enter hole)
-X[102.000 - 3.8] Y[198.000 + 0]
+X[102.000 - 3.8] Y198.000
 ;
 (drilling 22/34 - front display)
 X121.000 Y163.000
@@ -94,11 +94,11 @@ X99.000 Y263.000
 (drilling 24/34 - helix enter hole pocket slot)
 X12.000 Y256.000
 ;
-;X16.000 Y232.000  !!! Do not drill center to prevent broken tool !!!
+;X16.000 Y232.000 !!! Do not drill center to prevent broken tool !!!
 (drilling 25/34 - helix enter hole)
 X[16.000 - 1.750] Y[232.000 + 0]
 ;
-;X16.000 Y194.000  !!! Do not drill center to prevent broken tool !!!
+;X16.000 Y194.000 !!! Do not drill center to prevent broken tool !!!
 (drilling 26/34 - helix enter hole)
 X[16.000 - 1.750] Y[194.000 + 0]
 ;
@@ -113,14 +113,14 @@ X240.000 Y379.000
 ;
 ; center of hole - X170.000 Y414.000
 (drilling 30/34 - helix enter hole)
-X[170.000 - 3.8] Y[414.000 + 0]
+X[170.000 - 3.8] YY414.000
 ;
 (drilling 31/34 - BMS)
 X99.000 Y379.000
 ;
 ; center of hole - X102.000 Y414.000
 (drilling 32/34 - helix enter hole)
-X[102.000 - 3.8] Y[414.000 + 0]
+X[102.000 - 3.8] Y414.000
 ;
 ; X16.000 Y410.000 !!! Do not drill center to prevent broken tool !!!
 (drilling 33/34 - helix enter hole)
