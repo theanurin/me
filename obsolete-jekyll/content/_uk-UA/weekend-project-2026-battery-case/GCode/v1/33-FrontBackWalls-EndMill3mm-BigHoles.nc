@@ -1,6 +1,6 @@
 ;
 ; Safe Z    : 4.0 (20.0)
-; Working Z : 3.2 -> -0.8
+; Working Z : 3.2 -> -1.0
 ; Tool      : End Mill 3mm
 ;
 
@@ -17,7 +17,7 @@ M0 (!!! override spindle speed override to 133Hz/8000RPM)
 ; shared setting for each hole
 #9702 = 3       ; end-mill diameter
 #9703 = 0.2     ; depth per cycle, should be multiple to #9704
-#9704 = 4.0     ; depth Z
+#9704 = 4.2     ; depth Z
 
 (drilling left big hole)
 G0 Z20
