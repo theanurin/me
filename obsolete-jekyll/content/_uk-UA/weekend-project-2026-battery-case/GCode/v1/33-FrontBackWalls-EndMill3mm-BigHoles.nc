@@ -1,6 +1,6 @@
 ;
-; Safe Z    : 12.0 (20.0)
-; Working Z : 3.6 -> -0.4
+; Safe Z    : 4.0 (20.0)
+; Working Z : 3.2 -> -0.8
 ; Tool      : End Mill 3mm
 ;
 
