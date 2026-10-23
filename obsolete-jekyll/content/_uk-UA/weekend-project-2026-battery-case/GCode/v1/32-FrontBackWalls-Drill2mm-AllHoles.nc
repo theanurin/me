@@ -42,9 +42,9 @@ X198.000 Y47.000
 (drilling 7/36 - connector red)
 X248.500 Y54.000
 ;
-; large hole right center - X260.000 Y65.500
-(drilling 8/36 - large hole enter hole right)
-X[260.000 - 9.0000] Y[65.500 + 0]
+; large hole right center - X260.000 Y65.500 (X offset 18.0 - 3.0 = -7.5)
+(drilling 8/36 - large hole enter right)
+X[260.000 - 7.500] Y65.500
 ;
 (drilling 9/36 - connector red)
 X248.500 Y77.000
@@ -55,9 +55,9 @@ X271.500 Y54.000
 (drilling 12/36 - connector black)
 X271.500 Y133.000
 ;
-; large hole left center - X260.000 Y144.500
-(drilling 13/36 - large hole enter hole left)
-X[260.000 + 0.0000] Y[144.500 - 9.0000]
+; large hole left center - X260.000 Y144.500 (X offset 18.0 - 3.0 = -7.5)
+(drilling 13/36 - large hole enter left)
+X[260.000 - 7.500] Y144.500
 ;
 (drilling 14/36 - connector black)
 X248.500 Y156.000
