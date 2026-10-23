@@ -25,24 +25,24 @@ G0 Z20
 ; center of right a large hole
 G0 X260.000 Y144.500
 G0 Z3.6
-G91               (switch to incremental coordinates)
-#9701 = 18.0    (drilling diameter)
-M98 P9700         (call drill sub-program)
-#9701 = 18.5    (drilling diameter)
-M98 P9700         (call drill sub-program)
-G90               (switch to absolute coordinates)
+G91               ; switch to incremental coordinates
+#9701 = 18.0    ; drilling diameter
+M98 P9700         ; call drill sub-program
+#9701 = 18.5    ; drilling diameter
+M98 P9700         ; call drill sub-program
+G90               ; switch to absolute coordinates
 ;
 (drilling right big hole)
 G0 Z20
 ; center of right a large hole
 G0 X260.000 Y65.500
 G0 Z3.6
-G91               (switch to incremental coordinates)
-#9701 = 18.0    (drilling diameter)
-M98 P9700         (call drill sub-program)
-#9701 = 18.5    (drilling diameter)
-M98 P9700         (call drill sub-program)
-G90               (switch to absolute coordinates)
+G91               ; switch to incremental coordinates
+#9701 = 18.0    ; drilling diameter
+M98 P9700         ; call drill sub-program
+#9701 = 18.5    ; drilling diameter
+M98 P9700         ; call drill sub-program
+G90               ; switch to absolute coordinates
 ;
 ; finishing
 G0 Z20.0
