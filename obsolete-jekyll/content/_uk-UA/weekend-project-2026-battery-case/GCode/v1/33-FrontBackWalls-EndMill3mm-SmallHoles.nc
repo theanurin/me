@@ -26,11 +26,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.25    ; drilling diameter
-#9709 = 80      ; drilling feed
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 3.50    ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -44,10 +44,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.25    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 3.50    ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -61,10 +62,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.50    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 4.20     ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -78,10 +80,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.50    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 4.20     ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -95,10 +98,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.50    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 4.20     ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -112,10 +116,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.50    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 4.20     ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -129,10 +134,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.50    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 4.20     ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -146,10 +152,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.50    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 4.20     ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -163,10 +170,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.50    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 4.20     ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -180,10 +188,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.50    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 4.20     ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -197,10 +206,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.25    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 3.50    ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -214,10 +224,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.25    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 3.50    ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -231,10 +242,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.25    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 3.50    ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -248,10 +260,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.25    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 3.50    ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -265,10 +278,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.25    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 3.50    ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
@@ -282,10 +296,11 @@ G0 Z4
 G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 3.25    ; drilling diameter
+#9709 = 30      ; drilling feed
 S8000
 M98 P9700         ; call drill sub-program
 #9701 = 3.50    ; drilling diameter
-#9709 = 100     ; drilling feed
+#9709 = 60     ; drilling feed
 S10000
 M98 P9700         ; call drill sub-program
 S8000
