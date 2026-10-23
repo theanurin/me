@@ -24,7 +24,7 @@ G0 Z20
 ; center of right a large hole
 G0 X260.000 Y144.500
 G0 Z4
-G1 Z3.2
+G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 18.0    ; drilling diameter
 #9709 = 80      ; drilling feed
@@ -42,7 +42,7 @@ G0 Z20
 ; center of right a large hole
 G0 X260.000 Y65.500
 G0 Z4
-G1 Z3.2
+G1 Z3.2 F30
 G91               ; switch to incremental coordinates
 #9701 = 18.0    ; drilling diameter
 #9709 = 80      ; drilling feed
