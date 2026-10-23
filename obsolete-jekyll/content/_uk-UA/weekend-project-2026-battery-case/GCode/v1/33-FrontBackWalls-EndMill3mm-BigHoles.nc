@@ -18,30 +18,40 @@ M0 (!!! override spindle speed override to 133Hz/8000RPM)
 #9702 = 3       ; end-mill diameter
 #9703 = 0.2     ; depth per cycle, should be multiple to #9704
 #9704 = 4.0     ; depth Z
-#9709 = 80      ; drilling feed
 
 (drilling left big hole)
 G0 Z20
 ; center of right a large hole
 G0 X260.000 Y144.500
-G0 Z3.6
+G0 Z4
+G1 Z3.2
 G91               ; switch to incremental coordinates
 #9701 = 18.0    ; drilling diameter
+#9709 = 80      ; drilling feed
+S8000
 M98 P9700         ; call drill sub-program
 #9701 = 18.5    ; drilling diameter
+#9709 = 100     ; drilling feed
+S10000
 M98 P9700         ; call drill sub-program
+S8000
 G90               ; switch to absolute coordinates
 ;
 (drilling right big hole)
 G0 Z20
 ; center of right a large hole
 G0 X260.000 Y65.500
-G0 Z3.6
+G0 Z4
+G1 Z3.2
 G91               ; switch to incremental coordinates
 #9701 = 18.0    ; drilling diameter
+#9709 = 80      ; drilling feed
 M98 P9700         ; call drill sub-program
 #9701 = 18.5    ; drilling diameter
+#9709 = 100     ; drilling feed
+S10000
 M98 P9700         ; call drill sub-program
+S8000
 G90               ; switch to absolute coordinates
 ;
 ; finishing
