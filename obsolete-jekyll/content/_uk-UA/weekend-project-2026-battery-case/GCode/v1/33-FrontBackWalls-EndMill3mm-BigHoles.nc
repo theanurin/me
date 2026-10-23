@@ -10,15 +10,15 @@ G21
 ;
 G0 Z20.0
 ;
-M3 S6000
-M0 (!!! override spindle speed override to 100Hz/6000RPM)
+M3 S8000
+M0 (!!! override spindle speed override to 133Hz/8000RPM)
 ;
 
 ; shared setting for each hole
 #9702 = 3       ; end-mill diameter
-#9703 = 0.125   ; depth per cycle, should be multiple to #9704
+#9703 = 0.2     ; depth per cycle, should be multiple to #9704
 #9704 = 4.0     ; depth Z
-#9709 = 60      ; drilling feed
+#9709 = 80      ; drilling feed
 
 (drilling left big hole)
 G0 Z20
