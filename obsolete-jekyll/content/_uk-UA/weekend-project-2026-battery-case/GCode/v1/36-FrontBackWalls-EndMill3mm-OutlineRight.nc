@@ -1,7 +1,7 @@
 ;
 ; Safe Z    : 20.0 (20.0)
-; Working Z : 3.1 -> -0.4
-; Tool      : End Mill 2mm
+; Working Z : 3.2 -> -1.0
+; Tool      : End Mill 3mm
 ;
 
 ;
@@ -22,7 +22,7 @@ G0 X-8 Y10
 G0 Z4.0
 S6000
 F180
-G1 Z3.1
+G1 Z3.2
 M98 P1000                           ; do dirty work
 S8000
 F240
@@ -54,13 +54,13 @@ O1000
 ; Start position offset X-8 Y10
 ;
 G91                                 ; switch to incremental coordinates
-M98 P1001 L[3.5 / 0.25]             ; make work few times
-G0 Z3.5                             ; restore original Z
+M98 P1001 L[4.2 / 0.2]              ; make work few times
+G0 Z4.2                             ; restore original Z
 G90                                 ; switch to absolute coordinates
 M99                                 ; return from sub-program
 ;
 O1001
-G1 Z-0.25
+G1 Z-0.2
 G1 X6.4
 G1 Y190
 G2 X11.6 Y11.6 I11.6 J0.0           ; 1/4 arc (1)
@@ -89,13 +89,13 @@ O1010
 ; Start position offset X-8 Y10
 ;
 G91                                 ; switch to incremental coordinates
-M98 P1011 L[3.5 / 0.25]             ; make work few times
-G0 Z3.5                             ; restore original Z
+M98 P1011 L[4.2 / 0.2]              ; make work few times
+G0 Z4.2                             ; restore original Z
 G90                                 ; switch to absolute coordinates
 M99                                 ; return from sub-program
 ;
 O1011
-G1 Z-0.25
+G1 Z-0.2
 G1 X6.5
 G1 Y190
 G2 X11.5 Y11.5 I11.5 J0.0           ; 1/4 arc (1)
