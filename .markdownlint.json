@@ -1,4 +1,8 @@
 {
     "blanks-around-fences": false,
-    "line-length": false
+    "blanks-around-lists": false,
+    "line-length": false,
+    "MD031": {
+        "list_items": false
+    }
 }
